@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751CB053253559CA00665CB4 /* AppDelegate.swift */; };
 		751CB056253559CA00665CB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751CB055253559CA00665CB4 /* SceneDelegate.swift */; };
-		751CB058253559CA00665CB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751CB057253559CA00665CB4 /* ViewController.swift */; };
+		751CB058253559CA00665CB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751CB057253559CA00665CB4 /* SearchViewController.swift */; };
 		751CB05B253559CA00665CB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751CB059253559CA00665CB4 /* Main.storyboard */; };
 		751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 751CB05C253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld */; };
 		751CB060253559CF00665CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751CB05F253559CF00665CB4 /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 		751CB050253559CA00665CB4 /* FengtianYu_JiayinQi-Ass2-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FengtianYu_JiayinQi-Ass2-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		751CB053253559CA00665CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		751CB055253559CA00665CB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		751CB057253559CA00665CB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		751CB057253559CA00665CB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		751CB05A253559CA00665CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		751CB05D253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FengtianYu_JiayinQi_Ass2_ios.xcdatamodel; sourceTree = "<group>"; };
 		751CB05F253559CF00665CB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				751CB053253559CA00665CB4 /* AppDelegate.swift */,
 				751CB055253559CA00665CB4 /* SceneDelegate.swift */,
-				751CB057253559CA00665CB4 /* ViewController.swift */,
+				751CB057253559CA00665CB4 /* SearchViewController.swift */,
 				751CB059253559CA00665CB4 /* Main.storyboard */,
 				751CB05F253559CF00665CB4 /* Assets.xcassets */,
 				751CB061253559CF00665CB4 /* LaunchScreen.storyboard */,
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				751CB058253559CA00665CB4 /* ViewController.swift in Sources */,
+				751CB058253559CA00665CB4 /* SearchViewController.swift in Sources */,
 				751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */,
 				751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */,
 				751CB056253559CA00665CB4 /* SceneDelegate.swift in Sources */,
