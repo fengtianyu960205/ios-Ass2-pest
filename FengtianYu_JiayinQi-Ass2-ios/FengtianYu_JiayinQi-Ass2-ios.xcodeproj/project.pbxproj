@@ -17,6 +17,7 @@
 		75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15CE25380F3B003CC46B /* UserViewController.swift */; };
 		75BD15D125380F4E003CC46B /* PestCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */; };
 		75BD15D325380F76003CC46B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15D225380F76003CC46B /* PhotoViewController.swift */; };
+		75BD15EF2538635F003CC46B /* detailInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15EE2538635F003CC46B /* detailInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		75BD15CE25380F3B003CC46B /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestCellTableViewCell.swift; sourceTree = "<group>"; };
 		75BD15D225380F76003CC46B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		75BD15EE2538635F003CC46B /* detailInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailInformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				751CB053253559CA00665CB4 /* AppDelegate.swift */,
 				751CB055253559CA00665CB4 /* SceneDelegate.swift */,
 				751CB057253559CA00665CB4 /* SearchViewController.swift */,
+				75BD15EE2538635F003CC46B /* detailInformationViewController.swift */,
 				751CB059253559CA00665CB4 /* Main.storyboard */,
 				751CB05F253559CF00665CB4 /* Assets.xcassets */,
 				751CB061253559CF00665CB4 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BD15EF2538635F003CC46B /* detailInformationViewController.swift in Sources */,
 				751CB058253559CA00665CB4 /* SearchViewController.swift in Sources */,
 				75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */,
 				751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */,

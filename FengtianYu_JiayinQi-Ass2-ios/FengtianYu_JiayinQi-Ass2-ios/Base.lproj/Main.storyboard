@@ -242,7 +242,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invaisve specied" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGm-Uh-eij">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invaisve species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGm-Uh-eij">
                                                     <rect key="frame" x="140" y="82" width="214" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -287,7 +287,8 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="VW7-IB-urw"/>
                     <connections>
                         <outlet property="logoImage" destination="yWi-Lb-gtX" id="93w-rc-ocA"/>
-                        <segue destination="Ikg-DJ-jtj" kind="show" id="Aev-vl-01c"/>
+                        <outlet property="tableView" destination="KDc-wo-t9K" id="N9b-j5-iLd"/>
+                        <segue destination="Ikg-DJ-jtj" kind="show" identifier="searchToDetail" id="Aev-vl-01c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaQ-V8-McW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -358,10 +359,10 @@
             </objects>
             <point key="canvasLocation" x="-1333" y="1251"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Information View Controller-->
         <scene sceneID="jMh-aR-xL9">
             <objects>
-                <viewController id="Ikg-DJ-jtj" sceneMemberID="viewController">
+                <viewController id="Ikg-DJ-jtj" customClass="detailInformationViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eKE-Bf-mkD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -876,7 +877,7 @@
             </objects>
             <point key="canvasLocation" x="1811.594202898551" y="1250.8928571428571"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Pest List-->
         <scene sceneID="4SI-z6-0xs">
             <objects>
                 <tableViewController id="M5W-Tw-wRT" sceneMemberID="viewController">
@@ -936,7 +937,7 @@
                             <outlet property="delegate" destination="M5W-Tw-wRT" id="gKf-dX-sJd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="h2T-1A-yeu"/>
+                    <navigationItem key="navigationItem" title="Pest List" id="h2T-1A-yeu"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTA-4r-m37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1068,6 +1069,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Aev-vl-01c"/>
+        <segue reference="NcX-iE-pPq"/>
     </inferredMetricsTieBreakers>
 </document>

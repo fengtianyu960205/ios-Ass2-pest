@@ -13,6 +13,7 @@ class PestCellTableViewCell: UITableViewCell {
     @IBOutlet weak var pestCategory: UILabel!
     @IBOutlet weak var pestName: UILabel!
     @IBOutlet weak var pestImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
