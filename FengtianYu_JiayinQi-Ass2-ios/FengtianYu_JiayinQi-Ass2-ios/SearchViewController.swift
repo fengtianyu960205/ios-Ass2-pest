@@ -9,10 +9,12 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    @IBOutlet weak var logoImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
+        logoImage?.image = UIImage(named: "logo")
         // Do any additional setup after loading the view.
     }
 

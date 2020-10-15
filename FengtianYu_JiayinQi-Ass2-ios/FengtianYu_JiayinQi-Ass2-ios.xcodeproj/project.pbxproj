@@ -14,6 +14,9 @@
 		751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 751CB05C253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld */; };
 		751CB060253559CF00665CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751CB05F253559CF00665CB4 /* Assets.xcassets */; };
 		751CB063253559CF00665CB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751CB061253559CF00665CB4 /* LaunchScreen.storyboard */; };
+		75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15CE25380F3B003CC46B /* UserViewController.swift */; };
+		75BD15D125380F4E003CC46B /* PestCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */; };
+		75BD15D325380F76003CC46B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15D225380F76003CC46B /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		751CB05F253559CF00665CB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		751CB062253559CF00665CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		751CB064253559CF00665CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75BD15CE25380F3B003CC46B /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestCellTableViewCell.swift; sourceTree = "<group>"; };
+		75BD15D225380F76003CC46B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				751CB061253559CF00665CB4 /* LaunchScreen.storyboard */,
 				751CB064253559CF00665CB4 /* Info.plist */,
 				751CB05C253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld */,
+				75BD15CE25380F3B003CC46B /* UserViewController.swift */,
+				75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */,
+				75BD15D225380F76003CC46B /* PhotoViewController.swift */,
 			);
 			path = "FengtianYu_JiayinQi-Ass2-ios";
 			sourceTree = "<group>";
@@ -142,9 +151,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				751CB058253559CA00665CB4 /* SearchViewController.swift in Sources */,
+				75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */,
 				751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */,
 				751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */,
+				75BD15D325380F76003CC46B /* PhotoViewController.swift in Sources */,
 				751CB056253559CA00665CB4 /* SceneDelegate.swift in Sources */,
+				75BD15D125380F4E003CC46B /* PestCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
