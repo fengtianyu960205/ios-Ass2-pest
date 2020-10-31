@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3489DC3B541D71CF71598676 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */; };
 		751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751CB053253559CA00665CB4 /* AppDelegate.swift */; };
 		751CB056253559CA00665CB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751CB055253559CA00665CB4 /* SceneDelegate.swift */; };
 		751CB058253559CA00665CB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751CB057253559CA00665CB4 /* SearchViewController.swift */; };
@@ -14,6 +15,7 @@
 		751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 751CB05C253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld */; };
 		751CB060253559CF00665CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751CB05F253559CF00665CB4 /* Assets.xcassets */; };
 		751CB063253559CF00665CB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751CB061253559CF00665CB4 /* LaunchScreen.storyboard */; };
+		759FF80D254D91F3003722C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 759FF80C254D91F3003722C1 /* GoogleService-Info.plist */; };
 		75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15CE25380F3B003CC46B /* UserViewController.swift */; };
 		75BD15D125380F4E003CC46B /* PestCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */; };
 		75BD15D325380F76003CC46B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15D225380F76003CC46B /* PhotoViewController.swift */; };
@@ -21,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		510D581AD6CBD1762FE5B5DA /* Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; path = "Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		751CB050253559CA00665CB4 /* FengtianYu_JiayinQi-Ass2-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FengtianYu_JiayinQi-Ass2-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		751CB053253559CA00665CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		751CB055253559CA00665CB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,10 +33,13 @@
 		751CB05F253559CF00665CB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		751CB062253559CF00665CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		751CB064253559CF00665CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		759FF80C254D91F3003722C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75BD15CE25380F3B003CC46B /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestCellTableViewCell.swift; sourceTree = "<group>"; };
 		75BD15D225380F76003CC46B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		75BD15EE2538635F003CC46B /* detailInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailInformationViewController.swift; sourceTree = "<group>"; };
+		8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FengtianYu_JiayinQi_Ass2_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E411D37DB9B5AA28E8445FFD /* Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig"; path = "Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3489DC3B541D71CF71598676 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		485418CB1D1F395E57B24AAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				510D581AD6CBD1762FE5B5DA /* Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig */,
+				E411D37DB9B5AA28E8445FFD /* Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		751CB047253559C900665CB4 = {
 			isa = PBXGroup;
 			children = (
 				751CB052253559CA00665CB4 /* FengtianYu_JiayinQi-Ass2-ios */,
 				751CB051253559CA00665CB4 /* Products */,
+				485418CB1D1F395E57B24AAF /* Pods */,
+				8B35A04B51B1C1DACA31A842 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +91,7 @@
 				751CB059253559CA00665CB4 /* Main.storyboard */,
 				751CB05F253559CF00665CB4 /* Assets.xcassets */,
 				751CB061253559CF00665CB4 /* LaunchScreen.storyboard */,
+				759FF80C254D91F3003722C1 /* GoogleService-Info.plist */,
 				751CB064253559CF00665CB4 /* Info.plist */,
 				751CB05C253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld */,
 				75BD15CE25380F3B003CC46B /* UserViewController.swift */,
@@ -82,6 +101,14 @@
 			path = "FengtianYu_JiayinQi-Ass2-ios";
 			sourceTree = "<group>";
 		};
+		8B35A04B51B1C1DACA31A842 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 751CB067253559CF00665CB4 /* Build configuration list for PBXNativeTarget "FengtianYu_JiayinQi-Ass2-ios" */;
 			buildPhases = (
+				641F97784790AEFDACF2B7D5 /* [CP] Check Pods Manifest.lock */,
 				751CB04C253559CA00665CB4 /* Sources */,
 				751CB04D253559CA00665CB4 /* Frameworks */,
 				751CB04E253559CA00665CB4 /* Resources */,
+				B4DCB7EC81B793E5FCFF49CB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,12 +170,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				751CB063253559CF00665CB4 /* LaunchScreen.storyboard in Resources */,
+				759FF80D254D91F3003722C1 /* GoogleService-Info.plist in Resources */,
 				751CB060253559CF00665CB4 /* Assets.xcassets in Resources */,
 				751CB05B253559CA00665CB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		641F97784790AEFDACF2B7D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FengtianYu_JiayinQi-Ass2-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4DCB7EC81B793E5FCFF49CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		751CB04C253559CA00665CB4 /* Sources */ = {
@@ -302,6 +374,7 @@
 		};
 		751CB068253559CF00665CB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 510D581AD6CBD1762FE5B5DA /* Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -319,6 +392,7 @@
 		};
 		751CB069253559CF00665CB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E411D37DB9B5AA28E8445FFD /* Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

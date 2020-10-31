@@ -1,0 +1,6 @@
+framework module Pods_FengtianYu_JiayinQi_Ass2_ios {
+  umbrella header "Pods-FengtianYu_JiayinQi-Ass2-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
