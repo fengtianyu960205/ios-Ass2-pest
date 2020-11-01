@@ -5,7 +5,7 @@
 //  Created by 俞冯天 on 1/11/20.
 //  Copyright © 2020 Monash University. All rights reserved.
 //
-
+import SDWebImage
 import UIKit
 
 class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISearchResultsUpdating{
@@ -84,14 +84,14 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
         pestCell.pestName.text = pest.name
         let urlkey = pest.image_url
         let url = URL(string : urlkey)
-        do{
-            let data = try Data(contentsOf : url!)
-            pestCell.imageView?.image = UIImage(data : data)
-        }catch let _{
-            print("error in fetching image")
-        }
+       // do{
+       //     let data = try Data(contentsOf : url!)
+       //     pestCell.imageView?.image = UIImage(data : data)
+       // }catch let _{
+       //     print("error in fetching image")
+      //  }
         
-        
+        pestCell.imageView?.sd_setImage(with: url, completed: nil)
 
         return pestCell
     }
