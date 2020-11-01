@@ -17,6 +17,10 @@ class Pest: NSObject,Decodable,Encodable {
     var height : String = ""
     var region : String = ""
     var harmScore: Int32?
+    var deal : String = ""
+    var aid : String = ""
+    var threat : String = ""
+    var fact : String = ""
     
     
     enum CodingKeys: String,CodingKey {
@@ -28,6 +32,10 @@ class Pest: NSObject,Decodable,Encodable {
         case height
         case region
         case harmScore
+        case deal
+        case aid
+        case threat
+        case fact
     }
 
 }

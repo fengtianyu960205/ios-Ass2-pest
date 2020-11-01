@@ -369,16 +369,16 @@
             </objects>
             <point key="canvasLocation" x="-761" y="542"/>
         </scene>
-        <!--View Controller-->
+        <!--Single Pest Location Map View Controller-->
         <scene sceneID="2BL-Va-FVe">
             <objects>
-                <viewController id="DZ4-ng-Ax6" sceneMemberID="viewController">
+                <viewController id="DZ4-ng-Ax6" customClass="SinglePestLocationMapViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mk2-f8-Omk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Sjc-ex-cIG">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -748,6 +748,7 @@
                         <outlet property="pestRegion" destination="nlh-fH-C0h" id="e4t-CI-68p"/>
                         <outlet property="pestWeight" destination="gtu-Pb-OkT" id="45H-CS-CLO"/>
                         <outlet property="tableview" destination="0Dv-OC-XF3" id="2Ap-Tm-wdm"/>
+                        <segue destination="DZ4-ng-Ax6" kind="show" identifier="detailtomapview" id="2tQ-yp-etd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNt-sz-2b5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

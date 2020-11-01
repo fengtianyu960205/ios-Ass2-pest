@@ -80,24 +80,46 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         }
     }
     
-    /*
+    
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-            tableView.deselectRow(at: indexPath, animated: false)
-            currentSelectedPlant = currentPlants[indexPath.row]
-            performSegue(withIdentifier: "gotoDetailPlant", sender: self)
+            
+            //currentSelectedPlant = currentPlants[indexPath.row]
+            //performSegue(withIdentifier: "gotoDetailPlant", sender: self)
+        if indexPath.section == 0{
+            let messagecontent = showedPest?.threat
+            displayMessage(title: "Threat", message: messagecontent!)
+        }
+        else if indexPath.section == 1{
+            let messagecontent = showedPest?.aid
+           displayMessage(title: "First Aid", message: messagecontent!)
+        }
+        else if indexPath.section == 2{
+            let messagecontent = showedPest?.deal
+            displayMessage(title: "Deal with the Pest", message: messagecontent!)
+        }
+        else if indexPath.section == 3{
+            let messagecontent = showedPest?.fact
+           displayMessage(title: "Fact about the Pest", message: messagecontent!)
+        }
         
-    }*/
+        else{
+            performSegue(withIdentifier: "detailtomapview", sender: self)
+        }
+        
+    }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }*/
+        if segue.identifier == "detailtomapview" {
+        let destination = segue.destination as! SinglePestLocationMapViewController
+        
+        }
+    }
      
      
     @IBAction func pestListBtn(_ sender: Any) {
@@ -110,4 +132,13 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         pestListbtn.isHidden = false
         
     }
+    
+    func displayMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message,
+            preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss",
+            style: UIAlertAction.Style.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+
 }
