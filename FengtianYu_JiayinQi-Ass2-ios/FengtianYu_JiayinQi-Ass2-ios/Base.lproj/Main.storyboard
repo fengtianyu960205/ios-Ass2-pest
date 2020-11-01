@@ -453,24 +453,221 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Australia/Italy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlh-fH-C0h">
-                                <rect key="frame" x="200" y="325" width="194" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Australia/Italy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlh-fH-C0h">
+                                <rect key="frame" x="200" y="325" width="194" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harm Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNL-Pe-YRI">
-                                <rect key="frame" x="15" y="358" width="112" height="27.5"/>
+                                <rect key="frame" x="15" y="368" width="112" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fmM-nA-poo">
-                                <rect key="frame" x="148" y="370" width="150" height="2"/>
+                                <rect key="frame" x="148" y="383" width="150" height="2"/>
                             </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Dv-OC-XF3">
-                                <rect key="frame" x="5" y="405.5" width="404" height="397.5"/>
+                                <rect key="frame" x="5" y="415.5" width="404" height="387.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pestThreatCell" id="8Oa-ck-FXN" customClass="PestInformationTableViewCell" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="404" height="60.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Oa-ck-FXN" id="pjI-Oy-LHS">
+                                            <rect key="frame" x="0.0" y="0.0" width="404" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.triangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cZV-pP-50R">
+                                                    <rect key="frame" x="10" y="5.5" width="30" height="48.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="2kd-bw-lLB"/>
+                                                        <constraint firstAttribute="width" constant="30" id="LAo-l2-0Ad"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greaterthan" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="h5p-DW-Irk">
+                                                    <rect key="frame" x="364" y="8" width="30" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="7Qz-cq-l8E"/>
+                                                        <constraint firstAttribute="height" constant="40" id="JYy-cY-Hk8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Threat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6B-aw-xEH">
+                                                    <rect key="frame" x="70" y="16" width="57" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="cZV-pP-50R" secondAttribute="bottom" constant="5" id="1i9-x0-bou"/>
+                                                <constraint firstItem="cZV-pP-50R" firstAttribute="leading" secondItem="pjI-Oy-LHS" secondAttribute="leading" constant="10" id="DP5-pP-jdB"/>
+                                                <constraint firstItem="cZV-pP-50R" firstAttribute="top" secondItem="pjI-Oy-LHS" secondAttribute="top" constant="5" id="ILT-VB-fb9"/>
+                                                <constraint firstItem="p6B-aw-xEH" firstAttribute="leading" secondItem="cZV-pP-50R" secondAttribute="trailing" constant="30" id="JYe-Y2-LFq"/>
+                                                <constraint firstAttribute="trailing" secondItem="h5p-DW-Irk" secondAttribute="trailing" constant="10" id="UZA-VI-mO4"/>
+                                                <constraint firstItem="h5p-DW-Irk" firstAttribute="top" secondItem="pjI-Oy-LHS" secondAttribute="top" constant="5" id="ajo-Qz-XUA"/>
+                                                <constraint firstItem="p6B-aw-xEH" firstAttribute="top" secondItem="pjI-Oy-LHS" secondAttribute="topMargin" constant="5" id="wGv-e0-cVP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pestAidCell" id="GnR-uI-aIC" customClass="PestInformationTableViewCell" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="88.5" width="404" height="60.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GnR-uI-aIC" id="osC-7O-Gwg">
+                                            <rect key="frame" x="0.0" y="0.0" width="404" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.slash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Hpk-P2-VtG">
+                                                    <rect key="frame" x="10" y="5.5" width="30" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="EDx-MZ-gJK"/>
+                                                        <constraint firstAttribute="height" constant="50" id="hW7-W8-CcQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greaterthan" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eh4-hL-Fxn">
+                                                    <rect key="frame" x="364" y="8" width="30" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="Fye-Ym-L3Y"/>
+                                                        <constraint firstAttribute="height" constant="40" id="NjO-xz-G5F"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Aid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7S-tW-b2l">
+                                                    <rect key="frame" x="70" y="16" width="72" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eh4-hL-Fxn" firstAttribute="top" secondItem="osC-7O-Gwg" secondAttribute="top" constant="5" id="100-76-r62"/>
+                                                <constraint firstItem="O7S-tW-b2l" firstAttribute="top" secondItem="osC-7O-Gwg" secondAttribute="topMargin" constant="5" id="4JW-JH-q68"/>
+                                                <constraint firstItem="O7S-tW-b2l" firstAttribute="leading" secondItem="Hpk-P2-VtG" secondAttribute="trailing" constant="30" id="McU-6m-KdH"/>
+                                                <constraint firstItem="Hpk-P2-VtG" firstAttribute="top" secondItem="osC-7O-Gwg" secondAttribute="top" constant="5" id="Q8J-27-5no"/>
+                                                <constraint firstAttribute="trailing" secondItem="eh4-hL-Fxn" secondAttribute="trailing" constant="10" id="QSZ-2H-DSe"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hpk-P2-VtG" secondAttribute="bottom" constant="5" id="k2R-RB-lnQ"/>
+                                                <constraint firstItem="Hpk-P2-VtG" firstAttribute="leading" secondItem="osC-7O-Gwg" secondAttribute="leading" constant="10" id="sSN-bM-bRa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pestDealCell" id="Sef-pc-9w0" customClass="PestInformationTableViewCell" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="149" width="404" height="60.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sef-pc-9w0" id="U5X-qV-yqK">
+                                            <rect key="frame" x="0.0" y="0.0" width="404" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.octagon.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nEe-Zg-han">
+                                                    <rect key="frame" x="10" y="5.5" width="30" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="7Eo-ES-s3o"/>
+                                                        <constraint firstAttribute="width" constant="30" id="rjL-Nb-rMd"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greaterthan" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mES-wH-or8">
+                                                    <rect key="frame" x="364" y="8" width="30" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="3da-Xs-24e"/>
+                                                        <constraint firstAttribute="width" constant="30" id="KQX-Fr-uhe"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deal with the Pest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAe-Ag-4Fa">
+                                                    <rect key="frame" x="70" y="16" width="156" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XAe-Ag-4Fa" firstAttribute="leading" secondItem="nEe-Zg-han" secondAttribute="trailing" constant="30" id="3yF-FL-lb7"/>
+                                                <constraint firstItem="nEe-Zg-han" firstAttribute="top" secondItem="U5X-qV-yqK" secondAttribute="top" constant="5" id="7Kh-8R-dEM"/>
+                                                <constraint firstAttribute="bottom" secondItem="nEe-Zg-han" secondAttribute="bottom" constant="5" id="ad2-2p-Qec"/>
+                                                <constraint firstItem="XAe-Ag-4Fa" firstAttribute="top" secondItem="U5X-qV-yqK" secondAttribute="topMargin" constant="5" id="dXj-um-xgO"/>
+                                                <constraint firstItem="nEe-Zg-han" firstAttribute="leading" secondItem="U5X-qV-yqK" secondAttribute="leading" constant="10" id="hWc-H9-jJ9"/>
+                                                <constraint firstItem="mES-wH-or8" firstAttribute="top" secondItem="U5X-qV-yqK" secondAttribute="top" constant="5" id="rFA-mu-tM8"/>
+                                                <constraint firstAttribute="trailing" secondItem="mES-wH-or8" secondAttribute="trailing" constant="10" id="ubd-2l-bCz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pestFactCell" id="CkD-Ic-S8T" customClass="PestInformationTableViewCell" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="209.5" width="404" height="60.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CkD-Ic-S8T" id="T7J-qa-eKO">
+                                            <rect key="frame" x="0.0" y="0.0" width="404" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-pt-knl">
+                                                    <rect key="frame" x="10" y="5.5" width="30" height="49.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="SBX-LK-Ghh"/>
+                                                        <constraint firstAttribute="width" constant="30" id="gGK-Om-2DS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greaterthan" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9ym-mK-yYV">
+                                                    <rect key="frame" x="364" y="8" width="30" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="IjO-af-wHU"/>
+                                                        <constraint firstAttribute="width" constant="30" id="fg8-97-tmA"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fact about the Pest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzU-OH-ADF">
+                                                    <rect key="frame" x="70" y="16" width="168" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rzU-OH-ADF" firstAttribute="top" secondItem="T7J-qa-eKO" secondAttribute="topMargin" constant="5" id="3xw-Cq-YiY"/>
+                                                <constraint firstItem="9ym-mK-yYV" firstAttribute="top" secondItem="T7J-qa-eKO" secondAttribute="top" constant="5" id="NKb-Og-WMc"/>
+                                                <constraint firstItem="EyS-pt-knl" firstAttribute="top" secondItem="T7J-qa-eKO" secondAttribute="top" constant="5" id="WKq-CI-ZjI"/>
+                                                <constraint firstAttribute="bottom" secondItem="EyS-pt-knl" secondAttribute="bottom" constant="5" id="hBt-Bl-ppN"/>
+                                                <constraint firstItem="rzU-OH-ADF" firstAttribute="leading" secondItem="EyS-pt-knl" secondAttribute="trailing" constant="30" id="hWI-5T-Mg6"/>
+                                                <constraint firstItem="EyS-pt-knl" firstAttribute="leading" secondItem="T7J-qa-eKO" secondAttribute="leading" constant="10" id="kpR-2O-4Zq"/>
+                                                <constraint firstAttribute="trailing" secondItem="9ym-mK-yYV" secondAttribute="trailing" constant="10" id="uQg-OW-K6X"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pestLocationCell" id="9Ny-CP-3ap" customClass="PestInformationTableViewCell" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="270" width="404" height="60.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Ny-CP-3ap" id="Ief-8A-Dl5">
+                                            <rect key="frame" x="0.0" y="0.0" width="404" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="udh-FV-Tnj">
+                                                    <rect key="frame" x="10" y="4.5" width="30" height="51"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="8dM-Pf-tnc"/>
+                                                        <constraint firstAttribute="width" constant="30" id="ZPC-S5-KN1"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greaterthan" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5tS-je-dG1">
+                                                    <rect key="frame" x="364" y="8" width="30" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="4Lt-KZ-G6Z"/>
+                                                        <constraint firstAttribute="height" constant="40" id="qSP-Z1-WYr"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pest Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxZ-CL-iMg">
+                                                    <rect key="frame" x="70" y="16" width="118" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="udh-FV-Tnj" secondAttribute="bottom" constant="5" id="2w8-IQ-cpx"/>
+                                                <constraint firstAttribute="trailing" secondItem="5tS-je-dG1" secondAttribute="trailing" constant="10" id="9HJ-eX-VQi"/>
+                                                <constraint firstItem="NxZ-CL-iMg" firstAttribute="leading" secondItem="udh-FV-Tnj" secondAttribute="trailing" constant="30" id="CjP-RX-9eq"/>
+                                                <constraint firstItem="NxZ-CL-iMg" firstAttribute="top" secondItem="Ief-8A-Dl5" secondAttribute="topMargin" constant="5" id="NaF-AP-Obh"/>
+                                                <constraint firstItem="udh-FV-Tnj" firstAttribute="leading" secondItem="Ief-8A-Dl5" secondAttribute="leading" constant="10" id="PqC-db-acS"/>
+                                                <constraint firstItem="5tS-je-dG1" firstAttribute="top" secondItem="Ief-8A-Dl5" secondAttribute="top" constant="5" id="WeS-b5-RhW"/>
+                                                <constraint firstItem="udh-FV-Tnj" firstAttribute="top" secondItem="Ief-8A-Dl5" secondAttribute="top" constant="5" id="bdS-mh-zmb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9c-h0-VNa">
                                 <rect key="frame" x="362" y="106" width="22" height="22"/>
@@ -511,10 +708,10 @@
                             <constraint firstItem="3h8-VE-cWx" firstAttribute="bottom" secondItem="0Dv-OC-XF3" secondAttribute="bottom" constant="10" id="Uuc-mz-7eI"/>
                             <constraint firstItem="0Dv-OC-XF3" firstAttribute="top" secondItem="PNL-Pe-YRI" secondAttribute="bottom" constant="20" id="Vwo-79-c3u"/>
                             <constraint firstItem="r4n-aA-qfv" firstAttribute="top" secondItem="3h8-VE-cWx" secondAttribute="top" constant="20" id="W8k-Ek-Yh8"/>
-                            <constraint firstItem="fmM-nA-poo" firstAttribute="top" secondItem="r4n-aA-qfv" secondAttribute="bottom" constant="22" id="XdJ-G7-tqt"/>
+                            <constraint firstItem="fmM-nA-poo" firstAttribute="top" secondItem="r4n-aA-qfv" secondAttribute="bottom" constant="35" id="XdJ-G7-tqt"/>
                             <constraint firstItem="gtu-Pb-OkT" firstAttribute="top" secondItem="Ugg-uC-HFT" secondAttribute="bottom" constant="10" id="YSZ-2s-xS9"/>
                             <constraint firstItem="52r-ei-UTA" firstAttribute="top" secondItem="gtu-Pb-OkT" secondAttribute="bottom" constant="9" id="cyi-DF-a06"/>
-                            <constraint firstItem="PNL-Pe-YRI" firstAttribute="top" secondItem="r4n-aA-qfv" secondAttribute="bottom" constant="10" id="dCz-Cc-TDd"/>
+                            <constraint firstItem="PNL-Pe-YRI" firstAttribute="top" secondItem="r4n-aA-qfv" secondAttribute="bottom" constant="20" id="dCz-Cc-TDd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fmM-nA-poo" secondAttribute="trailing" constant="96" id="diO-fM-NCY"/>
                             <constraint firstItem="3h8-VE-cWx" firstAttribute="trailing" secondItem="gtu-Pb-OkT" secondAttribute="trailing" constant="20" id="dsO-UM-tPe"/>
                             <constraint firstItem="3h8-VE-cWx" firstAttribute="trailing" secondItem="s9c-h0-VNa" secondAttribute="trailing" constant="30" id="e8O-Yg-sbT"/>
@@ -541,8 +738,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="harmScoreProgress" destination="fmM-nA-poo" id="JCd-3c-rGE"/>
+                        <outlet property="pestCategory" destination="Dej-ol-RMS" id="qSK-7t-dDp"/>
+                        <outlet property="pestHeight" destination="ugD-vP-a3K" id="bys-wS-HKI"/>
+                        <outlet property="pestImage" destination="r4n-aA-qfv" id="yCT-Og-4zR"/>
                         <outlet property="pestListbtn" destination="s9c-h0-VNa" id="zzp-r0-AiB"/>
                         <outlet property="pestListbtnFill" destination="Iwr-RI-PKS" id="lje-fh-33V"/>
+                        <outlet property="pestName" destination="DWc-lv-mWZ" id="wey-Gm-Lpk"/>
+                        <outlet property="pestRegion" destination="nlh-fH-C0h" id="e4t-CI-68p"/>
+                        <outlet property="pestWeight" destination="gtu-Pb-OkT" id="45H-CS-CLO"/>
+                        <outlet property="tableview" destination="0Dv-OC-XF3" id="2Ap-Tm-wdm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNt-sz-2b5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1109,6 +1314,12 @@
         <segue reference="NcX-iE-pPq"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="doc.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="exclamationmark.octagon.fill" catalog="system" width="128" height="112"/>
+        <image name="exclamationmark.triangle.fill" catalog="system" width="128" height="112"/>
+        <image name="greaterthan" catalog="system" width="128" height="111"/>
+        <image name="heart.slash.fill" catalog="system" width="128" height="112"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>

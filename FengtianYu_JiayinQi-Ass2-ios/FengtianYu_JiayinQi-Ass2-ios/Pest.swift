@@ -13,12 +13,21 @@ class Pest: NSObject,Decodable,Encodable {
     var name : String = ""
     var category : String = ""
     var image_url : String = ""
+    var weight : String = ""
+    var height : String = ""
+    var region : String = ""
+    var harmScore: Int32?
+    
     
     enum CodingKeys: String,CodingKey {
         case id
         case name
         case category
         case image_url
+        case weight
+        case height
+        case region
+        case harmScore
     }
 
 }
