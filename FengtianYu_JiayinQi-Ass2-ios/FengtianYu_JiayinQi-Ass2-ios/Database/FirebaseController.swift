@@ -78,7 +78,7 @@ class FirebaseController: NSObject,DatabaseProtocol {
             }
 
         listeners.invoke { (listener) in
-            if listener.listenerType == ListenerType.heroes ||
+            if listener.listenerType == ListenerType.pests ||
                 listener.listenerType == ListenerType.all {
                 listener.onPestChange(change: .update, pests: pestList)
             }
@@ -106,23 +106,49 @@ class FirebaseController: NSObject,DatabaseProtocol {
     
     
     func cleanup() {
-        <#code#>
+        
     }
     
     func addPest(name: String, category: String) -> Pest {
-        <#code#>
+        let pest = Pest()
+        pest.name = name
+        pest.category = category
+
+        do {
+        if let pestsRef = try pestsRef?.addDocument(from: pest) {
+        pest.id = pestsRef.documentID
+            }
+        } catch {
+        print("Failed to serialize pest")
+        }
+
+        return pest
     }
     
     func deletePest(pest: Pest) {
-        <#code#>
+        if let pestID = pest.id {
+        pestsRef?.document(pestID).delete()
+        }
     }
     
     func addListener(listener: DatabaseListener) {
-        <#code#>
+        listeners.addDelegate(listener)
+
+        if listener.listenerType == ListenerType.pests ||
+            listener.listenerType == ListenerType.all {
+            listener.onPestChange(change: .update, pests: pestList)
+            }
+
+        if listener.listenerType == ListenerType.pests ||
+            listener.listenerType == ListenerType.all {
+            listener.onPestChange(change: .update, pests: pestList)
+            }
     }
     
+    
+
     func removeListener(listener: DatabaseListener) {
-        <#code#>
+        listeners.removeDelegate(listener)
     }
     
 

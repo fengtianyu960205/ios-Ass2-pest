@@ -8,39 +8,85 @@
 
 import UIKit
 
-class AllPestsTableViewController: UITableViewController {
+class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISearchResultsUpdating{
+    
+    
+    
+    var allPest: [Pest] = []
+    var filteredPests: [Pest] = []
+    weak var databaseController: DatabaseProtocol?
+    var listenerType: ListenerType = .all
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databaseController = appDelegate.databaseController
+        
+        filteredPests = allPest
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Pests"
+        navigationItem.searchController = searchController
+        
+        // This view controller decides how the search controller is presented
+        definesPresentationContext = true
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseController?.addListener(listener: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text?.lowercased() else {
+            return
+        }
+        
+        if searchText.count > 0 {
+            filteredPests = allPest.filter({ (pest: Pest) -> Bool in
+                return pest.name.lowercased().contains(searchText) ?? false
+            })
+        } else {
+            filteredPests = allPest
+        }
+        
+        tableView.reloadData()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return filteredPests.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let pestCell = tableView.dequeueReusableCell(withIdentifier: "PestCell", for: indexPath) as! PestCellTableViewCell
 
-        // Configure the cell...
+        let pest = filteredPests[indexPath.row]
+        
+        pestCell.pestCategory.text = pest.category
+        pestCell.pestName.text = pest.name
+        
 
-        return cell
+        return pestCell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,5 +132,9 @@ class AllPestsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func onPestChange(change: DatabaseChange, pests: [Pest]) {
+           
+       }
 
 }

@@ -10,10 +10,10 @@ enum DatabaseChange {
     case add
     case remove
     case update
+    case delete
 }
 enum ListenerType {
-    case team
-    case heroes
+    case pests
     case all
 }
 protocol DatabaseListener: AnyObject {
