@@ -16,6 +16,7 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
     var filteredPests: [Pest] = []
     weak var databaseController: DatabaseProtocol?
     var listenerType: ListenerType = .all
+    var selectedPest : Pest?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,8 +81,18 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
 
         let pest = filteredPests[indexPath.row]
         
+        let verticalPadding: CGFloat = 8
+
+        let maskLayer = CALayer()
+        maskLayer.cornerRadius = 10    //if you want round edges
+        maskLayer.backgroundColor = UIColor.black.cgColor
+        maskLayer.frame = CGRect(x: pestCell.bounds.origin.x, y: pestCell.bounds.origin.y, width: pestCell.bounds.width, height: pestCell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
+        pestCell.layer.mask = maskLayer
+        
         pestCell.pestCategory.text = pest.category
+        //pestCell.pestCategory.textColor = .secondaryLabel
         pestCell.pestName.text = pest.name
+       // pestCell.pestName.textColor = .secondaryLabel
         let urlkey = pest.image_url
         let url = URL(string : urlkey)
        // do{
@@ -90,10 +101,17 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
        // }catch let _{
        //     print("error in fetching image")
       //  }
-        
-        pestCell.imageView?.sd_setImage(with: url, completed: nil)
-
+        //pestCell.imageView!.frame = pestCell.frame.offsetBy(dx: 10, dy: 10)
+        pestCell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "fox"))
         return pestCell
+    }
+    
+    override func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
+        // when click the row, it will go to detail information screen
+        
+        selectedPest = self.filteredPests[indexPath.row]
+        performSegue(withIdentifier: "AllPestToDetail", sender: self)
+        
     }
     
 
@@ -132,15 +150,18 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       if segue.identifier == "AllPestToDetail" {
+       let destination = segue.destination as! detailInformationViewController
+       destination.showedPest = selectedPest
+        destination.hidesBottomBarWhenPushed = true
+       }
     }
-    */
+    
     
     func onPestChange(change: DatabaseChange, pests: [Pest]) {
            allPest = pests

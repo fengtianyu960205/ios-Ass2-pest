@@ -14,8 +14,8 @@
             filePath = "FengtianYu_JiayinQi-Ass2-ios/AllPests/AllPestsTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "FengtianYu_JiayinQi-Ass2-ios/AllPests/AllPestsTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "onPestChange(change:pests:)"
             landmarkType = "7">
          </BreakpointContent>

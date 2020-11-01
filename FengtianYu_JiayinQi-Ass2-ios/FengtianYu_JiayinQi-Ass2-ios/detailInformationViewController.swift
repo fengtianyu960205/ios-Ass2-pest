@@ -9,10 +9,14 @@
 import UIKit
 
 class detailInformationViewController: UIViewController {
-
+    
+    @IBOutlet weak var pestListbtnFill: UIButton!
+    @IBOutlet weak var pestListbtn: UIButton!
+    var showedPest : Pest?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pestListbtnFill.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -24,7 +28,17 @@ class detailInformationViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+    }*/
+     
+     
+    @IBAction func pestListBtn(_ sender: Any) {
+        pestListbtn.isHidden = true
+         pestListbtnFill.isHidden = false
     }
-    */
-
+    
+    @IBAction func pestListBtnFill(_ sender: Any) {
+        pestListbtnFill.isHidden = true
+        pestListbtn.isHidden = false
+        
+    }
 }

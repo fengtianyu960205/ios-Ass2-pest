@@ -13,9 +13,14 @@ class PestCellTableViewCell: UITableViewCell {
     @IBOutlet weak var pestCategory: UILabel!
     @IBOutlet weak var pestName: UILabel!
     @IBOutlet weak var pestImage: UIImageView!
+        //= {
+       // let imageView = UIImageView(frame: CGRect(x:0,y:0,width:200,height:200))
+       // return imageView
+   // }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
