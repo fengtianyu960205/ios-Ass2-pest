@@ -16,6 +16,11 @@
 		751CB060253559CF00665CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751CB05F253559CF00665CB4 /* Assets.xcassets */; };
 		751CB063253559CF00665CB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751CB061253559CF00665CB4 /* LaunchScreen.storyboard */; };
 		759FF80D254D91F3003722C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 759FF80C254D91F3003722C1 /* GoogleService-Info.plist */; };
+		759FF811254E4826003722C1 /* AllPestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF810254E4826003722C1 /* AllPestsTableViewController.swift */; };
+		759FF816254E4C90003722C1 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF815254E4C90003722C1 /* MulticastDelegate.swift */; };
+		759FF818254E4D2B003722C1 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF817254E4D2B003722C1 /* DatabaseProtocol.swift */; };
+		759FF81A254E4DA8003722C1 /* Pest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF819254E4DA8003722C1 /* Pest.swift */; };
+		759FF821254E4F0E003722C1 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF820254E4F0E003722C1 /* FirebaseController.swift */; };
 		75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15CE25380F3B003CC46B /* UserViewController.swift */; };
 		75BD15D125380F4E003CC46B /* PestCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */; };
 		75BD15D325380F76003CC46B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15D225380F76003CC46B /* PhotoViewController.swift */; };
@@ -34,6 +39,11 @@
 		751CB062253559CF00665CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		751CB064253559CF00665CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		759FF80C254D91F3003722C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		759FF810254E4826003722C1 /* AllPestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPestsTableViewController.swift; sourceTree = "<group>"; };
+		759FF815254E4C90003722C1 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
+		759FF817254E4D2B003722C1 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
+		759FF819254E4DA8003722C1 /* Pest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pest.swift; sourceTree = "<group>"; };
+		759FF820254E4F0E003722C1 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		75BD15CE25380F3B003CC46B /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestCellTableViewCell.swift; sourceTree = "<group>"; };
 		75BD15D225380F76003CC46B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -84,9 +94,14 @@
 		751CB052253559CA00665CB4 /* FengtianYu_JiayinQi-Ass2-ios */ = {
 			isa = PBXGroup;
 			children = (
+				759FF81F254E4E32003722C1 /* AllPests */,
+				759FF81E254E4E21003722C1 /* Map */,
+				759FF81D254E4E0B003722C1 /* Photo */,
+				759FF81C254E4E02003722C1 /* User */,
+				759FF81B254E4DE9003722C1 /* Search */,
+				759FF812254E4BC5003722C1 /* Database */,
 				751CB053253559CA00665CB4 /* AppDelegate.swift */,
 				751CB055253559CA00665CB4 /* SceneDelegate.swift */,
-				751CB057253559CA00665CB4 /* SearchViewController.swift */,
 				75BD15EE2538635F003CC46B /* detailInformationViewController.swift */,
 				751CB059253559CA00665CB4 /* Main.storyboard */,
 				751CB05F253559CF00665CB4 /* Assets.xcassets */,
@@ -94,11 +109,59 @@
 				759FF80C254D91F3003722C1 /* GoogleService-Info.plist */,
 				751CB064253559CF00665CB4 /* Info.plist */,
 				751CB05C253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld */,
-				75BD15CE25380F3B003CC46B /* UserViewController.swift */,
 				75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */,
-				75BD15D225380F76003CC46B /* PhotoViewController.swift */,
+				759FF819254E4DA8003722C1 /* Pest.swift */,
 			);
 			path = "FengtianYu_JiayinQi-Ass2-ios";
+			sourceTree = "<group>";
+		};
+		759FF812254E4BC5003722C1 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				759FF817254E4D2B003722C1 /* DatabaseProtocol.swift */,
+				759FF815254E4C90003722C1 /* MulticastDelegate.swift */,
+				759FF820254E4F0E003722C1 /* FirebaseController.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		759FF81B254E4DE9003722C1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				751CB057253559CA00665CB4 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		759FF81C254E4E02003722C1 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				75BD15CE25380F3B003CC46B /* UserViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		759FF81D254E4E0B003722C1 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				75BD15D225380F76003CC46B /* PhotoViewController.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		759FF81E254E4E21003722C1 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		759FF81F254E4E32003722C1 /* AllPests */ = {
+			isa = PBXGroup;
+			children = (
+				759FF810254E4826003722C1 /* AllPestsTableViewController.swift */,
+			);
+			path = AllPests;
 			sourceTree = "<group>";
 		};
 		8B35A04B51B1C1DACA31A842 /* Frameworks */ = {
@@ -230,9 +293,14 @@
 				75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */,
 				751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */,
 				751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */,
+				759FF81A254E4DA8003722C1 /* Pest.swift in Sources */,
+				759FF818254E4D2B003722C1 /* DatabaseProtocol.swift in Sources */,
+				759FF811254E4826003722C1 /* AllPestsTableViewController.swift in Sources */,
 				75BD15D325380F76003CC46B /* PhotoViewController.swift in Sources */,
+				759FF816254E4C90003722C1 /* MulticastDelegate.swift in Sources */,
 				751CB056253559CA00665CB4 /* SceneDelegate.swift in Sources */,
 				75BD15D125380F4E003CC46B /* PestCellTableViewCell.swift in Sources */,
+				759FF821254E4F0E003722C1 /* FirebaseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
