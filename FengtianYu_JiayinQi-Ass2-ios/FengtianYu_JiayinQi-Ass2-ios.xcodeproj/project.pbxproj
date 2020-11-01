@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3489DC3B541D71CF71598676 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */; };
 		6399EE4A254F258F001493C6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399EE49254F258F001493C6 /* SignUpViewController.swift */; };
+		6399EE4D254F25DE001493C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399EE4C254F25DE001493C6 /* LoginViewController.swift */; };
 		7518D51B254ECA4900F2E957 /* PestInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */; };
 		7518D51E254EE75200F2E957 /* SinglePestLocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D51D254EE75200F2E957 /* SinglePestLocationMapViewController.swift */; };
 		7518D520254EF8AB00F2E957 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D51F254EF8AB00F2E957 /* LocationAnnotation.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		510D581AD6CBD1762FE5B5DA /* Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; path = "Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		6399EE49254F258F001493C6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		6399EE4C254F25DE001493C6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestInformationTableViewCell.swift; sourceTree = "<group>"; };
 		7518D51D254EE75200F2E957 /* SinglePestLocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePestLocationMapViewController.swift; sourceTree = "<group>"; };
 		7518D51F254EF8AB00F2E957 /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				6399EE49254F258F001493C6 /* SignUpViewController.swift */,
+				6399EE4C254F25DE001493C6 /* LoginViewController.swift */,
 			);
 			path = LoginAndSignUp;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6399EE4D254F25DE001493C6 /* LoginViewController.swift in Sources */,
 				75BD15EF2538635F003CC46B /* detailInformationViewController.swift in Sources */,
 				751CB058253559CA00665CB4 /* SearchViewController.swift in Sources */,
 				75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */,
