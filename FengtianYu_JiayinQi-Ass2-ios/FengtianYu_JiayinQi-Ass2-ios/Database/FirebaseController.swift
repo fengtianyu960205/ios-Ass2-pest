@@ -22,17 +22,23 @@ class FirebaseController: NSObject,DatabaseProtocol {
    
     override init(){
         
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         authController = Auth.auth()
         database = Firestore.firestore()
         pestList = [Pest]()
         super.init()
         
+        authController.signInAnonymously() { (authResult, error) in
+           guard authResult != nil else {
+           fatalError("Firebase authentication failed")
+           }
+        
         self.setUpPestListener()
+        }
     }
     
     func setUpPestListener() {
-        pestsRef = database.collection("pests")
+        pestsRef = database.collection("Pest")
         pestsRef?.addSnapshotListener { (querySnapshot, error) in
             guard let querySnapshot = querySnapshot else {
                 print("Error fetching documents: \(error!)")

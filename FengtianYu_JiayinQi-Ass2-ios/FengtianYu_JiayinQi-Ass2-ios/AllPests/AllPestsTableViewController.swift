@@ -19,7 +19,7 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
+        //self.navigationController?.navigationBar.isHidden = true
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
@@ -82,6 +82,15 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
         
         pestCell.pestCategory.text = pest.category
         pestCell.pestName.text = pest.name
+        let urlkey = pest.image_url
+        let url = URL(string : urlkey)
+        do{
+            let data = try Data(contentsOf : url!)
+            pestCell.imageView?.image = UIImage(data : data)
+        }catch let _{
+            print("error in fetching image")
+        }
+        
         
 
         return pestCell
@@ -134,7 +143,9 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
     */
     
     func onPestChange(change: DatabaseChange, pests: [Pest]) {
-           
+           allPest = pests
+        var a = allPest.count
+           updateSearchResults(for: navigationItem.searchController!)
        }
 
 }
