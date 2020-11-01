@@ -7,15 +7,69 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
+import CoreData
 
-class SinglePestLocationMapViewController: UIViewController {
+class SinglePestLocationMapViewController: UIViewController,MKMapViewDelegate{
 
+    @IBOutlet weak var mapView: MKMapView!
+    
+    var locationList = [LocationAnnotation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        mapView.delegate = self
+        for pestLocation in locationList{
+            self.mapView.addAnnotation(pestLocation)
+        }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        locationList.removeAll()
+        
+    }
+    
+    func focusOn(annotation: MKAnnotation) {
+        mapView.selectAnnotation(annotation, animated: true)
+     let zoomRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 20000,longitudinalMeters: 20000)
+     mapView.setRegion(mapView.regionThatFits(zoomRegion), animated: true)
+     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "pin"
+        var view : MKPinAnnotationView
+        if let annotation = annotation as? LocationAnnotation {
+            if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
+                annotationView.annotation = annotation
+                view = annotationView as! MKPinAnnotationView
+                return annotationView
+            } else {
+                let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
+                annotationView.isEnabled = true
+                annotationView.canShowCallout = true
+                
+                
+
+                let btn = UIButton(type: .detailDisclosure)
+                annotationView.rightCalloutAccessoryView = btn
+                return annotationView
+            }
+        }
+
+        return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        let annotation = view.annotation as? LocationAnnotation
+        focusOn(annotation: annotation as! MKAnnotation)
+       
+        
+    }
 
     /*
     // MARK: - Navigation

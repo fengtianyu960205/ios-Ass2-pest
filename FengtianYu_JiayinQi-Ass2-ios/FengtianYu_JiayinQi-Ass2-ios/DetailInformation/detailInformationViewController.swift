@@ -22,6 +22,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
     @IBOutlet weak var pestListbtnFill: UIButton!
     @IBOutlet weak var pestListbtn: UIButton!
     var showedPest : Pest?
+    var locationList = [LocationAnnotation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,17 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         }
         
         else{
+            
+            var index = 0
+            var size = integer_t((showedPest?.latitudes.count)!) as integer_t
+            for n in 1...size {
+                let location = LocationAnnotation(title: (showedPest?.cities[index])!,
+                subtitle: "",
+                lat: (showedPest?.latitudes[index])!, long: (showedPest?.longtitudes[index])!)
+                locationList.append(location)
+               index += 1
+            }
+            
             performSegue(withIdentifier: "detailtomapview", sender: self)
         }
         
@@ -117,7 +129,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailtomapview" {
         let destination = segue.destination as! SinglePestLocationMapViewController
-        
+            destination.locationList = self.locationList
         }
     }
      

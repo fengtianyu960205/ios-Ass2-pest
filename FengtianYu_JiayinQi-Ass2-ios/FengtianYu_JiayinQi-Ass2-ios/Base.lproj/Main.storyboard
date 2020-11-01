@@ -391,6 +391,9 @@
                         <viewLayoutGuide key="safeArea" id="h7e-sx-KHT"/>
                     </view>
                     <navigationItem key="navigationItem" id="AVV-Q7-qhR"/>
+                    <connections>
+                        <outlet property="mapView" destination="Sjc-ex-cIG" id="b03-cc-FfG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LjX-mt-xlM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -773,32 +776,22 @@
                                 <rect key="frame" x="0.0" y="148" width="414" height="605"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evJ-5m-zhB">
-                                <rect key="frame" x="0.0" y="780" width="414" height="33"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Write Comment">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="evJ-5m-zhB" firstAttribute="leading" secondItem="KTe-Zl-glB" secondAttribute="leading" id="DaW-Cq-2yn"/>
                             <constraint firstItem="BpI-Mr-jAU" firstAttribute="leading" secondItem="KTe-Zl-glB" secondAttribute="leading" id="JPX-qr-sGf"/>
-                            <constraint firstItem="evJ-5m-zhB" firstAttribute="bottom" secondItem="KTe-Zl-glB" secondAttribute="bottom" id="Nqr-Gd-mOO"/>
                             <constraint firstItem="KTe-Zl-glB" firstAttribute="trailing" secondItem="BpI-Mr-jAU" secondAttribute="trailing" id="OIf-TX-DTP"/>
                             <constraint firstItem="BpI-Mr-jAU" firstAttribute="top" secondItem="AXs-BL-NR3" secondAttribute="bottom" constant="20" id="Ppp-C8-QhD"/>
                             <constraint firstItem="KTe-Zl-glB" firstAttribute="trailing" secondItem="AXs-BL-NR3" secondAttribute="trailing" id="hHV-X5-evF"/>
                             <constraint firstItem="AXs-BL-NR3" firstAttribute="top" secondItem="KTe-Zl-glB" secondAttribute="top" constant="10" id="izt-h6-QBM"/>
                             <constraint firstItem="AXs-BL-NR3" firstAttribute="leading" secondItem="KTe-Zl-glB" secondAttribute="leading" id="meJ-mh-MYT"/>
-                            <constraint firstItem="KTe-Zl-glB" firstAttribute="trailing" secondItem="evJ-5m-zhB" secondAttribute="trailing" id="mei-4k-lSp"/>
                             <constraint firstItem="KTe-Zl-glB" firstAttribute="bottom" secondItem="BpI-Mr-jAU" secondAttribute="bottom" constant="60" id="nx8-hp-bed"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KTe-Zl-glB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Comment" id="e1g-1R-PId"/>
+                    <navigationItem key="navigationItem" title="Comment" id="e1g-1R-PId">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="PDg-zs-5EV"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucF-Q7-ClS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

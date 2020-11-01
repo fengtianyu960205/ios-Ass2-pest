@@ -10,6 +10,7 @@
 		3489DC3B541D71CF71598676 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */; };
 		7518D51B254ECA4900F2E957 /* PestInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */; };
 		7518D51E254EE75200F2E957 /* SinglePestLocationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D51D254EE75200F2E957 /* SinglePestLocationMapViewController.swift */; };
+		7518D520254EF8AB00F2E957 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D51F254EF8AB00F2E957 /* LocationAnnotation.swift */; };
 		751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751CB053253559CA00665CB4 /* AppDelegate.swift */; };
 		751CB056253559CA00665CB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751CB055253559CA00665CB4 /* SceneDelegate.swift */; };
 		751CB058253559CA00665CB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751CB057253559CA00665CB4 /* SearchViewController.swift */; };
@@ -33,6 +34,7 @@
 		510D581AD6CBD1762FE5B5DA /* Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; path = "Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestInformationTableViewCell.swift; sourceTree = "<group>"; };
 		7518D51D254EE75200F2E957 /* SinglePestLocationMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePestLocationMapViewController.swift; sourceTree = "<group>"; };
+		7518D51F254EF8AB00F2E957 /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		751CB050253559CA00665CB4 /* FengtianYu_JiayinQi-Ass2-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FengtianYu_JiayinQi-Ass2-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		751CB053253559CA00665CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		751CB055253559CA00665CB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				751CB05C253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld */,
 				75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */,
 				759FF819254E4DA8003722C1 /* Pest.swift */,
+				7518D51F254EF8AB00F2E957 /* LocationAnnotation.swift */,
 				7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */,
 			);
 			path = "FengtianYu_JiayinQi-Ass2-ios";
@@ -309,6 +312,7 @@
 				751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */,
 				759FF81A254E4DA8003722C1 /* Pest.swift in Sources */,
 				759FF818254E4D2B003722C1 /* DatabaseProtocol.swift in Sources */,
+				7518D520254EF8AB00F2E957 /* LocationAnnotation.swift in Sources */,
 				759FF811254E4826003722C1 /* AllPestsTableViewController.swift in Sources */,
 				7518D51B254ECA4900F2E957 /* PestInformationTableViewCell.swift in Sources */,
 				75BD15D325380F76003CC46B /* PhotoViewController.swift in Sources */,

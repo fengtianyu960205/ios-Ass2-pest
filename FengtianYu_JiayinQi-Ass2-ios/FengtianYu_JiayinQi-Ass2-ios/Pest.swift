@@ -21,6 +21,10 @@ class Pest: NSObject,Decodable,Encodable {
     var aid : String = ""
     var threat : String = ""
     var fact : String = ""
+    var latitudes : [Double] = []
+    var longtitudes : [Double] = []
+    var cities : [String] = []
+    var states : [String] = []
     
     
     enum CodingKeys: String,CodingKey {
@@ -36,6 +40,11 @@ class Pest: NSObject,Decodable,Encodable {
         case aid
         case threat
         case fact
+        case latitudes
+        case longtitudes
+        case cities
+        case states
+        
     }
 
 }
