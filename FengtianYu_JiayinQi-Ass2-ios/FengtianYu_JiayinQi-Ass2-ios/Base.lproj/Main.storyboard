@@ -60,13 +60,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKx-3T-N7i">
                                 <rect key="frame" x="20" y="554" width="374" height="44"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="YPo-49-viD"/>
                                 </constraints>
-                                <state key="normal" title="Sign up">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <state key="normal" title="Sign up"/>
                                 <connections>
                                     <segue destination="pPY-kR-uDa" kind="show" id="K5m-si-gf0"/>
                                 </connections>
