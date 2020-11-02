@@ -10,6 +10,8 @@ import UIKit
 
 class detailInformationViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
     
+   
+    @IBOutlet weak var commentBtn: UIBarButtonItem!
     @IBOutlet weak var pestImage: UIImageView!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var harmScoreProgress: UIProgressView!
@@ -19,14 +21,13 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
     @IBOutlet weak var pestCategory: UILabel!
     
     @IBOutlet weak var pestName: UILabel!
-    @IBOutlet weak var pestListbtnFill: UIButton!
     @IBOutlet weak var pestListbtn: UIButton!
     var showedPest : Pest?
     var locationList = [LocationAnnotation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pestListbtnFill.isHidden = true
+       
         
         tableview.delegate = self
         tableview.dataSource = self
@@ -40,6 +41,8 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         let urlkey = showedPest?.image_url
         let url = URL(string : urlkey!)
         pestImage.sd_setImage(with: url, placeholderImage: UIImage(named: "fox"))
+        
+        pestListbtn.addTarget(self, action: #selector(pestListBtn(_:)), for: .touchUpInside)
 
         // Do any additional setup after loading the view.
     }
@@ -131,19 +134,32 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         let destination = segue.destination as! SinglePestLocationMapViewController
             destination.locationList = self.locationList
         }
+        if segue.identifier == "detailToComment" {
+        let destination = segue.destination as! CommentViewController
+            destination.commentedPest = self.showedPest
+        }
     }
      
      
     @IBAction func pestListBtn(_ sender: Any) {
-        pestListbtn.isHidden = true
-         pestListbtnFill.isHidden = false
+        //pestListbtn.isHidden = true
+         //pestListbtnFill.isHidden = false
+        (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
+        if (sender as! UIButton).isSelected {
+            //self.pwTextField.isSecureTextEntry = false
+            pestListbtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }else{
+            //self.pwTextField.isSecureTextEntry = true
+            pestListbtn.setImage(UIImage(systemName: "star"), for: .normal)
+            
+        }
     }
     
-    @IBAction func pestListBtnFill(_ sender: Any) {
-        pestListbtnFill.isHidden = true
-        pestListbtn.isHidden = false
-        
-    }
+    @IBAction func gotoCommentBtn(_ sender: Any) {
+         performSegue(withIdentifier: "detailToComment", sender: self)
+       }
+    
+    
     
     func displayMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message,
