@@ -29,6 +29,9 @@ protocol DatabaseProtocol: AnyObject {
     //func addTeam(teamName: String) -> Team
     //func addHeroToTeam(hero: SuperHero, team: Team) -> Bool
     func deletePest(pest: Pest)
+    func addPestComment(id: String, comment: String)
+    //func getSpecificPest(id: String) -> Pest
+    func getPestByID(_ id: String) -> Pest?
     //func deleteTeam(team: Team)
     //func removeHeroFromTeam(hero: SuperHero, team: Team)
     func addListener(listener: DatabaseListener)

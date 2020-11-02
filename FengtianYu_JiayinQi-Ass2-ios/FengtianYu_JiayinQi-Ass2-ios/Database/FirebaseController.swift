@@ -14,6 +14,8 @@ import FirebaseFirestoreSwift
 
 class FirebaseController: NSObject,DatabaseProtocol {
     
+    
+    
     var listeners = MulticastDelegate<DatabaseListener>()
     var authController: Auth
     var database: Firestore
@@ -130,11 +132,47 @@ class FirebaseController: NSObject,DatabaseProtocol {
 
         return pest
     }
+    /*
+    func getSpecificPest(id: String) -> Pest {
+        var parsedPest : Pest?
+        var pest = Pest()
+        pestsRef?.document(id).getDocument{  (document,error) -> Void in
+            //check for error
+            if error == nil{
+                //check that this document exists
+                if document != nil && document!.exists{
+                    do {
+                        parsedPest = try document!.data(as: Pest.self)!
+                        
+                       return parsedPest
+                        } catch {
+                        print("Unable to decode pest. Is the pest malformed?")
+                        return pest
+                        }
+                }
+                else{
+                    print("there is an error to get pest ")
+                    return pest
+                }
+            }
+            else{
+                print("there is an error to get pest ")
+                return pest
+            }
+            
+        }
+        return parsedPest!
+         
+    }*/
     
     func addPestComment(id: String, comment: String)  {
         
+        var specificPestRef = pestsRef?.document(id);
+        // Atomically add a new region to the "regions" array field.
         
-        
+        specificPestRef?.updateData([
+            "comments": FieldValue.arrayUnion([comment])
+        ])
     }
     
     

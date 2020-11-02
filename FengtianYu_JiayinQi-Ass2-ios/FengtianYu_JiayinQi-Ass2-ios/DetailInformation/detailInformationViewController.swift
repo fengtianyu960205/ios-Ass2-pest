@@ -136,7 +136,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         }
         if segue.identifier == "detailToComment" {
         let destination = segue.destination as! CommentViewController
-            destination.commentedPest = self.showedPest
+            destination.pestId = self.showedPest?.id
         }
     }
      

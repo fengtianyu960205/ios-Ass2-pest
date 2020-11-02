@@ -165,7 +165,7 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
     
     func onPestChange(change: DatabaseChange, pests: [Pest]) {
            allPest = pests
-        var a = allPest.count
+       
            updateSearchResults(for: navigationItem.searchController!)
        }
 

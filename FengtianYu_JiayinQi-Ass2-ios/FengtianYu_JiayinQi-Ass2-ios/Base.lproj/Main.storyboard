@@ -261,7 +261,7 @@
                                 <rect key="frame" x="0.0" y="349" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to our APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aW4-s6-FH7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to our APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aW4-s6-FH7">
                                 <rect key="frame" x="10" y="318" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -427,7 +427,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Sjc-ex-cIG">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -521,7 +521,7 @@
                                 <rect key="frame" x="148" y="383" width="150" height="2"/>
                             </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Dv-OC-XF3">
-                                <rect key="frame" x="5" y="415.5" width="404" height="387.5"/>
+                                <rect key="frame" x="5" y="415.5" width="404" height="436.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pestThreatCell" id="8Oa-ck-FXN" customClass="PestInformationTableViewCell" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target">
@@ -813,7 +813,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-Mr-jAU">
-                                <rect key="frame" x="0.0" y="148" width="414" height="655"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="704"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" id="vyn-ci-fvI">
@@ -827,7 +827,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIM-qb-Sxp">
-                                <rect key="frame" x="314" y="713" width="70" height="70"/>
+                                <rect key="frame" x="314" y="762" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="1Gf-Bk-szY"/>
                                     <constraint firstAttribute="width" constant="70" id="487-93-AVu"/>
@@ -835,7 +835,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="square.and.pencil" catalog="system"/>
                                 <connections>
-                                    <action selector="writeComBtnAct:" destination="Ox9-wW-bx7" eventType="touchUpInside" id="oxx-K2-Sy6"/>
                                     <segue destination="8IM-dO-Eej" kind="show" identifier="commentToWrite" id="W3F-Of-7tx"/>
                                 </connections>
                             </button>
@@ -1002,7 +1001,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="imL-4n-t5T"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Photo" id="tqv-dJ-aid"/>
+                    <tabBarItem key="tabBarItem" title="Photo" selectedImage="camera.fill" catalog="system" id="tqv-dJ-aid"/>
                     <connections>
                         <outlet property="pestImage" destination="2fT-kU-Mu3" id="ece-c8-bdS"/>
                     </connections>
@@ -1032,7 +1031,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WdI-KT-XLe"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="yR8-2c-Xfz"/>
+                    <tabBarItem key="tabBarItem" title="Map" selectedImage="mappin.circle.fill" catalog="system" id="yR8-2c-Xfz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ8-bm-Dl1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1356,7 +1355,7 @@
         <scene sceneID="Jtk-ga-zTp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cqd-Yd-qhT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User" id="dvI-jd-VVb"/>
+                    <tabBarItem key="tabBarItem" title="User" selectedImage="person.crop.circle.fill.badge.plus" catalog="system" id="dvI-jd-VVb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lj3-RU-C2i">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1375,7 +1374,7 @@
         <scene sceneID="V5b-hW-B5L">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6fd-fF-xsA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Species" id="O56-yg-aAa"/>
+                    <tabBarItem key="tabBarItem" title="Species" selectedImage="book.fill" catalog="system" id="O56-yg-aAa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5lR-Dw-8oS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1410,16 +1409,20 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NcX-iE-pPq"/>
+        <segue reference="Aev-vl-01c"/>
         <segue reference="a9o-M3-4wc"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="book.fill" catalog="system" width="128" height="100"/>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
         <image name="doc.circle.fill" catalog="system" width="128" height="121"/>
         <image name="exclamationmark.octagon.fill" catalog="system" width="128" height="112"/>
         <image name="exclamationmark.triangle.fill" catalog="system" width="128" height="112"/>
         <image name="greaterthan" catalog="system" width="128" height="111"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="112"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="101"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
         <image name="star" catalog="system" width="128" height="116"/>
     </resources>

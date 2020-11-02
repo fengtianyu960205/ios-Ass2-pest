@@ -10,12 +10,16 @@ import UIKit
 
 class WriteCommentViewController: UIViewController {
 
-    
+    weak var databaseController: DatabaseProtocol?
     @IBOutlet weak var writeComment: UITextField!
     var commentedPest : Pest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databaseController = appDelegate.databaseController
+        
         writeComment.placeholder = "write your comment here"
         let bottonLine = CALayer()
         bottonLine.frame = CGRect(x:0,y:writeComment.frame.height-2,width: writeComment.frame.width, height : 2)
@@ -29,8 +33,9 @@ class WriteCommentViewController: UIViewController {
     }
     
     @IBAction func saveComment(_ sender: Any) {
-        var pestId = commentedPest?.id
-        
+        let pestId = (commentedPest?.id)!
+        databaseController!.addPestComment(id: pestId, comment: writeComment.text!)
+        navigationController?.popViewController(animated: true)
     }
     
 
