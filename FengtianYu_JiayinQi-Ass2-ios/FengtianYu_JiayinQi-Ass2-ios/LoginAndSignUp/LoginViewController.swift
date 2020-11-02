@@ -14,11 +14,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    let button = UIButton(type: .custom)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        errorLabel.alpha = 0
+        
         // Do any additional setup after loading the view.
+        errorLabel.alpha = 0
+        setupPWTextField()
     }
     
 
@@ -31,6 +35,33 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func setupPWTextField(){
+        pwTextField.rightViewMode = .unlessEditing
+        
+        button.setImage(UIImage(named: "closedEye"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 25)
+        button.frame = CGRect(x: CGFloat(pwTextField.frame.size.width - 5), y: CGFloat(5), width: CGFloat(5), height: CGFloat(5))
+        
+        button.addTarget(self, action: #selector(btnPWVisible(_:)), for: .touchUpInside)
+        pwTextField.rightView = button
+        pwTextField.rightViewMode = .always
+        pwTextField.isSecureTextEntry = true
+        
+    }
+    
+    @IBAction func btnPWVisible(_ sender: Any){
+        (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
+        
+        if (sender as! UIButton).isSelected {
+            self.pwTextField.isSecureTextEntry = false
+            button.setImage(UIImage(named: "openEye"), for: .normal)
+        }else{
+            self.pwTextField.isSecureTextEntry = true
+            button.setImage(UIImage(named: "closedEye"), for: .normal)
+        }
+    }
+    
     @IBAction func Login(_ sender: Any) {
         let validateError = validateField()
         

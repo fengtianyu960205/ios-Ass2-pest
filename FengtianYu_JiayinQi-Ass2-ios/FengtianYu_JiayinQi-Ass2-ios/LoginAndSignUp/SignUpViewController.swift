@@ -16,6 +16,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var pw2TextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
+    let button = UIButton(type: .custom)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,8 +25,43 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         errorLabel.alpha = 0;
+        setupPWTextField()
     }
     
+    func setupPWTextField(){
+        pwTextField.rightViewMode = .unlessEditing
+        
+        button.setImage(UIImage(named: "closedEye"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 25)
+        button.frame = CGRect(x: CGFloat(pwTextField.frame.size.width - 5), y: CGFloat(5), width: CGFloat(5), height: CGFloat(5))
+        
+        button.addTarget(self, action: #selector(btnPWVisible(_:)), for: .touchUpInside)
+        pwTextField.rightView = button
+        pwTextField.rightViewMode = .always
+        pwTextField.isSecureTextEntry = true
+        pw2TextField.isSecureTextEntry = true
+        
+    }
+    
+    @IBAction func btnPWVisible(_ sender: Any){
+        (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
+        
+        if (sender as! UIButton).isSelected {
+            self.pwTextField.isSecureTextEntry = false
+            self.pw2TextField.isSecureTextEntry = false
+            button.setImage(UIImage(named: "openEye"), for: .normal)
+        }else{
+            self.pwTextField.isSecureTextEntry = true
+            self.pw2TextField.isSecureTextEntry = true
+            button.setImage(UIImage(named: "closedEye"), for: .normal)
+        }
+    }
+    
+    
+    func isPasswordSecure(_ password: String) -> Bool{
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[0-9])[A-Za-z\\d$@$#!%*?&]{8,}")
+        return passwordTest.evaluate(with: password)
+    }
 
     /*
     // MARK: - Navigation
@@ -68,6 +105,12 @@ class SignUpViewController: UIViewController {
         
         if pwTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != pw2TextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
             return "Comfirm the password"
+        }
+        
+        let password = pwTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if !isPasswordSecure(password) {
+            return "Password must have characters and digits, length should be longer than 8"
         }
         
         return nil
