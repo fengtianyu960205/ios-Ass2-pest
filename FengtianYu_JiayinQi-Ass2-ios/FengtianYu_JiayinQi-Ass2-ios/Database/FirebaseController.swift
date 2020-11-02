@@ -131,6 +131,14 @@ class FirebaseController: NSObject,DatabaseProtocol {
         return pest
     }
     
+    func addPestComment(id: String, comment: String)  {
+        
+        
+        
+    }
+    
+    
+    
     func deletePest(pest: Pest) {
         if let pestID = pest.id {
         pestsRef?.document(pestID).delete()

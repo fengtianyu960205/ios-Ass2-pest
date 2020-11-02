@@ -10,10 +10,27 @@ import UIKit
 
 class WriteCommentViewController: UIViewController {
 
+    
+    @IBOutlet weak var writeComment: UITextField!
+    var commentedPest : Pest?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        writeComment.placeholder = "write your comment here"
+        let bottonLine = CALayer()
+        bottonLine.frame = CGRect(x:0,y:writeComment.frame.height-2,width: writeComment.frame.width, height : 2)
+        bottonLine.backgroundColor = UIColor.init(red: 48/255, green : 173/255, blue : 99/255, alpha: 1).cgColor
+        writeComment.borderStyle = .none
+        writeComment.layer.addSublayer(bottonLine)
 
+           
+          
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func saveComment(_ sender: Any) {
+        var pestId = commentedPest?.id
+        
     }
     
 

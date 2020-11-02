@@ -836,6 +836,7 @@
                                 <state key="normal" image="square.and.pencil" catalog="system"/>
                                 <connections>
                                     <action selector="writeComBtnAct:" destination="Ox9-wW-bx7" eventType="touchUpInside" id="oxx-K2-Sy6"/>
+                                    <segue destination="8IM-dO-Eej" kind="show" identifier="commentToWrite" id="W3F-Of-7tx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -863,6 +864,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucF-Q7-ClS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-665.21739130434787" y="1269.6428571428571"/>
+        </scene>
+        <!--Write Comment View Controller-->
+        <scene sceneID="eVv-ZR-tAJ">
+            <objects>
+                <viewController id="8IM-dO-Eej" customClass="WriteCommentViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oQM-Ne-xRu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZCf-x1-hHa">
+                                <rect key="frame" x="10" y="138" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZCf-x1-hHa" firstAttribute="leading" secondItem="kAn-Xt-phS" secondAttribute="leading" constant="10" id="14t-p3-Eo2"/>
+                            <constraint firstItem="ZCf-x1-hHa" firstAttribute="top" secondItem="kAn-Xt-phS" secondAttribute="top" constant="50" id="Oht-w9-CF3"/>
+                            <constraint firstItem="kAn-Xt-phS" firstAttribute="trailing" secondItem="ZCf-x1-hHa" secondAttribute="trailing" constant="10" id="uFk-Z0-uUR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kAn-Xt-phS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DHF-0e-7Nc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="eRE-40-C7g">
+                            <connections>
+                                <action selector="saveComment:" destination="8IM-dO-Eej" id="aCh-HC-HkY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="writeComment" destination="ZCf-x1-hHa" id="RNb-nF-S9H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2r-Qx-dX1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="1270"/>
         </scene>
         <!--Photo-->
         <scene sceneID="AWU-2f-PM7">
