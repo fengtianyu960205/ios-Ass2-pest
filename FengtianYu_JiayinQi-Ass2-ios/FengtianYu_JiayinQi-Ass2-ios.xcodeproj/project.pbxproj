@@ -32,6 +32,7 @@
 		75BD15EF2538635F003CC46B /* detailInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15EE2538635F003CC46B /* detailInformationViewController.swift */; };
 		75F97964254FBABB00B47AE8 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F97963254FBABB00B47AE8 /* CommentViewController.swift */; };
 		75F97966254FC8DD00B47AE8 /* WriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F97965254FC8DD00B47AE8 /* WriteCommentViewController.swift */; };
+		75F9796925517A8400B47AE8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9796825517A8300B47AE8 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		75BD15EE2538635F003CC46B /* detailInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailInformationViewController.swift; sourceTree = "<group>"; };
 		75F97963254FBABB00B47AE8 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		75F97965254FC8DD00B47AE8 /* WriteCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommentViewController.swift; sourceTree = "<group>"; };
+		75F9796825517A8300B47AE8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FengtianYu_JiayinQi_Ass2_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E411D37DB9B5AA28E8445FFD /* Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig"; path = "Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +175,7 @@
 		759FF81C254E4E02003722C1 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				75F9796725517A6700B47AE8 /* Setting */,
 				75BD15CE25380F3B003CC46B /* UserViewController.swift */,
 			);
 			path = User;
@@ -199,6 +202,14 @@
 				759FF810254E4826003722C1 /* AllPestsTableViewController.swift */,
 			);
 			path = AllPests;
+			sourceTree = "<group>";
+		};
+		75F9796725517A6700B47AE8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				75F9796825517A8300B47AE8 /* SettingViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		8B35A04B51B1C1DACA31A842 /* Frameworks */ = {
@@ -330,6 +341,7 @@
 				751CB058253559CA00665CB4 /* SearchViewController.swift in Sources */,
 				75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */,
 				751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */,
+				75F9796925517A8400B47AE8 /* SettingViewController.swift in Sources */,
 				751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */,
 				6399EE4A254F258F001493C6 /* SignUpViewController.swift in Sources */,
 				759FF81A254E4DA8003722C1 /* Pest.swift in Sources */,

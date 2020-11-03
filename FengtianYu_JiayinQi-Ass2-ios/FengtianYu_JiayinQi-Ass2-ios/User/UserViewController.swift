@@ -8,17 +8,79 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userImage: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       tableView.delegate = self
+       tableView.dataSource = self
+       tableView.tableFooterView = UIView()
+        
         userImage?.image = UIImage(named: "manPortrait")
+        
+        
+        // create a ui button
+        let button = UIButton(type: .custom)
+        //set image for button
+        button.setImage(UIImage(named: "settings"), for: .normal)
+        //add function for button
+        button.addTarget(self, action: #selector(settingButtonPressed), for: .touchUpInside)
+        //set frame
+        button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        let barButton = UIBarButtonItem(customView: button)
+        //assign button to navigationbar
+        self.navigationItem.rightBarButtonItem = barButton
 
-        // Do any additional setup after loading the view.
+        
     }
     
+    @IBAction func settingButtonPressed(_ sender: Any){
+           (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
+           
+           if (sender as! UIButton).isSelected {
+               self.performSegue(withIdentifier: "userToSetting", sender: nil)
+           }else{
+            self.performSegue(withIdentifier: "userToSetting", sender: nil)
+        }
+       }
 
+    func numberOfSections(in tableview: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+            let cell = tableView.dequeueReusableCell(withIdentifier: "pestListCell",
+            for: indexPath) as! PestInformationTableViewCell
+            return cell
+        
+        
+    }
+    
+    
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+            
+            //currentSelectedPlant = currentPlants[indexPath.row]
+            //performSegue(withIdentifier: "gotoDetailPlant", sender: self)
+        if indexPath.section == 0{
+             performSegue(withIdentifier: "userToPestList", sender: self)
+        }
+        
+        
+    }
     /*
     // MARK: - Navigation
 
