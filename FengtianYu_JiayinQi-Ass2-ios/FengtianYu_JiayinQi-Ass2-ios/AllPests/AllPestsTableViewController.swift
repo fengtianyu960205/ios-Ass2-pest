@@ -103,7 +103,7 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
        //     print("error in fetching image")
       //  }
         //pestCell.imageView!.frame = pestCell.frame.offsetBy(dx: 10, dy: 10)
-        pestCell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(systemName: "fox"))
+        pestCell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "fox"))
         return pestCell
     }
     
