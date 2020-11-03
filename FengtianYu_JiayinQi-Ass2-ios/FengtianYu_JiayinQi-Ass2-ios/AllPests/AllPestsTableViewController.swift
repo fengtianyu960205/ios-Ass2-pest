@@ -35,6 +35,7 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
         
         // This view controller decides how the search controller is presented
         definesPresentationContext = true
+        tableView.tableFooterView = UIView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
