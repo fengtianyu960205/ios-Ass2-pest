@@ -38,6 +38,7 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         
         commentedPest = databaseController?.getPestByID(pestId!)
         comments = commentedPest?.comments as! [String]
+        pestName.text = commentedPest?.name
     }
     
     override func viewWillAppear(_ animated: Bool) {
