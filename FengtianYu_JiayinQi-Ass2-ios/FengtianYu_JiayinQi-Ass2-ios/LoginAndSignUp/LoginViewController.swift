@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     let button = UIButton(type: .custom)
     
     override func viewDidLoad() {
@@ -23,6 +25,7 @@ class LoginViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         errorLabel.alpha = 0
+        setupView()
         setupPWTextField()
     }
     
@@ -36,6 +39,12 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func setupView(){
+        Utility.StyleButtonFilled(loginButton)
+        Utility.StyleButtonHollowed(signUpButton)
+        Utility.StyleTextField(usernameTextField)
+        Utility.StyleTextField(pwTextField)
+    }
     
     func setupPWTextField(){
         pwTextField.rightViewMode = .unlessEditing

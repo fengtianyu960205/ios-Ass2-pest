@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3489DC3B541D71CF71598676 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */; };
+		6364216B2552F6E8009FE455 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364216A2552F6E8009FE455 /* Utility.swift */; };
 		6399EE4A254F258F001493C6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399EE49254F258F001493C6 /* SignUpViewController.swift */; };
 		6399EE4D254F25DE001493C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399EE4C254F25DE001493C6 /* LoginViewController.swift */; };
 		7518D51B254ECA4900F2E957 /* PestInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		510D581AD6CBD1762FE5B5DA /* Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; path = "Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		6364216A2552F6E8009FE455 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		6399EE49254F258F001493C6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6399EE4C254F25DE001493C6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestInformationTableViewCell.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				6399EE49254F258F001493C6 /* SignUpViewController.swift */,
 				6399EE4C254F25DE001493C6 /* LoginViewController.swift */,
+				6364216A2552F6E8009FE455 /* Utility.swift */,
 			);
 			path = LoginAndSignUp;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				759FF811254E4826003722C1 /* AllPestsTableViewController.swift in Sources */,
 				7518D51B254ECA4900F2E957 /* PestInformationTableViewCell.swift in Sources */,
 				75BD15D325380F76003CC46B /* PhotoViewController.swift in Sources */,
+				6364216B2552F6E8009FE455 /* Utility.swift in Sources */,
 				759FF816254E4C90003722C1 /* MulticastDelegate.swift in Sources */,
 				7518D51E254EE75200F2E957 /* SinglePestLocationMapViewController.swift in Sources */,
 				751CB056253559CA00665CB4 /* SceneDelegate.swift in Sources */,

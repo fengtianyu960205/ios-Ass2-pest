@@ -25,7 +25,16 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         errorLabel.alpha = 0;
+        setupView()
         setupPWTextField()
+    }
+    
+    
+    func setupView(){
+        Utility.StyleButtonFilled(signUpButton)
+        Utility.StyleTextField(usernameTextField)
+        Utility.StyleTextField(pwTextField)
+        Utility.StyleTextField(pw2TextField)
     }
     
     func setupPWTextField(){
