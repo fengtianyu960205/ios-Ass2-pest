@@ -12,6 +12,7 @@ class SearchViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logoImage: UIImageView!
+    var userID : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class SearchViewController: UIViewController,UITableViewDataSource, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        
         // Do any additional setup after loading the view.
     }
     

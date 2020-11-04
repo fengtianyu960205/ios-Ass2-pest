@@ -34,6 +34,7 @@
 		75F97964254FBABB00B47AE8 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F97963254FBABB00B47AE8 /* CommentViewController.swift */; };
 		75F97966254FC8DD00B47AE8 /* WriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F97965254FC8DD00B47AE8 /* WriteCommentViewController.swift */; };
 		75F9796925517A8400B47AE8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9796825517A8300B47AE8 /* SettingViewController.swift */; };
+		75F9796F25530D2E00B47AE8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9796E25530D2D00B47AE8 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		75F97963254FBABB00B47AE8 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		75F97965254FC8DD00B47AE8 /* WriteCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommentViewController.swift; sourceTree = "<group>"; };
 		75F9796825517A8300B47AE8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		75F9796E25530D2D00B47AE8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FengtianYu_JiayinQi_Ass2_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E411D37DB9B5AA28E8445FFD /* Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig"; path = "Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 				759FF819254E4DA8003722C1 /* Pest.swift */,
 				7518D51F254EF8AB00F2E957 /* LocationAnnotation.swift */,
 				7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */,
+				75F9796E25530D2D00B47AE8 /* TabBarController.swift */,
 			);
 			path = "FengtianYu_JiayinQi-Ass2-ios";
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				751CB058253559CA00665CB4 /* SearchViewController.swift in Sources */,
 				75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */,
 				751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */,
+				75F9796F25530D2E00B47AE8 /* TabBarController.swift in Sources */,
 				75F9796925517A8400B47AE8 /* SettingViewController.swift in Sources */,
 				751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */,
 				6399EE4A254F258F001493C6 /* SignUpViewController.swift in Sources */,

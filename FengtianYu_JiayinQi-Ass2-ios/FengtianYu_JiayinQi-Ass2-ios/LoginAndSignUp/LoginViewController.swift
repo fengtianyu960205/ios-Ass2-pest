@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     let button = UIButton(type: .custom)
+    var userID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +31,19 @@ class LoginViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "loginSegue" {
+        let destination = segue.destination as! TabBarController
+            destination.userID = self.userID
+        }
     }
-    */
+    
     func setupView(){
         Utility.StyleButtonFilled(loginButton)
         Utility.StyleButtonHollowed(signUpButton)
@@ -87,6 +92,7 @@ class LoginViewController: UIViewController {
                 if error != nil {
                     self.showErrorMessage(error!.localizedDescription)
                 }else{
+                    self.userID = result?.user.uid
                     self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 }
             }

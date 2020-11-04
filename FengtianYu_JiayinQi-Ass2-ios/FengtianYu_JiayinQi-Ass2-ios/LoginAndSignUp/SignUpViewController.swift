@@ -8,6 +8,9 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class SignUpViewController: UIViewController {
 
@@ -17,6 +20,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
     let button = UIButton(type: .custom)
+    var userID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,15 +76,19 @@ class SignUpViewController: UIViewController {
         return passwordTest.evaluate(with: password)
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "signupAndLoginSegue" {
+        let destination = segue.destination as! TabBarController
+            destination.userID = self.userID
+        }
     }
-    */
+    
     @IBAction func SignUp(_ sender: Any) {
         //validate the text field
         let validateError = validateField()
@@ -98,7 +106,15 @@ class SignUpViewController: UIViewController {
                     //error occur
                     self.showErrorMessage("Error creating user")
                 }else{
+                    // store the user information to firebase
+                    let db = Firestore.firestore()
+                    db.collection("users").addDocument(data: ["userName" : username, "uid": result!.user.uid]){(error) in
+                        if error != nil{
+                            self.showErrorMessage("Error saving user data")
+                        }
+                    }
                     //transition to next screen
+                    self.userID = result!.user.uid
                     self.performSegue(withIdentifier: "signupAndLoginSegue", sender: nil)
                 }
             }
