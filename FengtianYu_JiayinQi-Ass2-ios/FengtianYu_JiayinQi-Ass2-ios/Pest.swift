@@ -21,8 +21,8 @@ class Pest: NSObject,Decodable,Encodable {
     var aid : String = ""
     var threat : String = ""
     var fact : String = ""
-    var latitudes : [Double] = []
-    var longtitudes : [Double] = []
+    var latitude : [String] = []
+    var longitude : [String] = []
     var cities : [String] = []
     var states : [String] = []
     var comments : [String] = []
@@ -41,8 +41,8 @@ class Pest: NSObject,Decodable,Encodable {
         case aid
         case threat
         case fact
-        case latitudes
-        case longtitudes
+        case latitude
+        case longitude
         case cities
         case states
         case comments

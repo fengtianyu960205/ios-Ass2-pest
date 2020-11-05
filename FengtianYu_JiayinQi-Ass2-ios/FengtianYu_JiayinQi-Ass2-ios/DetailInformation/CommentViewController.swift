@@ -36,7 +36,8 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         
-        commentedPest = databaseController?.getPestByID(pestId!)
+        //commentedPest = databaseController?.getPestByID(pestId!)
+        //commentedPest = databaseController?.getPestByID(pestId!)
         comments = commentedPest?.comments as! [String]
         pestName.text = commentedPest?.name
     }

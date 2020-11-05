@@ -110,11 +110,13 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         else{
             
             var index = 0
-            var size = integer_t((showedPest?.latitudes.count)!) as integer_t
+            var size = integer_t((showedPest?.latitude.count)!) as integer_t
             for n in 1...size {
+                let lat = Double((showedPest?.latitude[index])!)!
+                let lng = Double((showedPest?.longitude[index])!)!
                 let location = LocationAnnotation(title: (showedPest?.cities[index])!,
                 subtitle: "",
-                lat: (showedPest?.latitudes[index])!, long: (showedPest?.longtitudes[index])!)
+                lat: lat, long: lng)
                 locationList.append(location)
                index += 1
             }
@@ -136,7 +138,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         }
         if segue.identifier == "detailToComment" {
         let destination = segue.destination as! CommentViewController
-            destination.pestId = self.showedPest?.id
+            destination.commentedPest = self.showedPest
         }
     }
      
