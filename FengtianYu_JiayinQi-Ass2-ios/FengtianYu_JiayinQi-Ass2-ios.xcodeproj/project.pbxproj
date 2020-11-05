@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3489DC3B541D71CF71598676 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */; };
 		6364216B2552F6E8009FE455 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364216A2552F6E8009FE455 /* Utility.swift */; };
+		6364217325544A9F009FE455 /* PestCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217225544A9F009FE455 /* PestCD+CoreDataClass.swift */; };
+		6364217625544AF8009FE455 /* PestCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217525544AF8009FE455 /* PestCD+CoreDataProperties.swift */; };
+		6364217925544B0C009FE455 /* UserCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217825544B0C009FE455 /* UserCD+CoreDataClass.swift */; };
 		6399EE4A254F258F001493C6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399EE49254F258F001493C6 /* SignUpViewController.swift */; };
 		6399EE4D254F25DE001493C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399EE4C254F25DE001493C6 /* LoginViewController.swift */; };
 		7518D51B254ECA4900F2E957 /* PestInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */; };
@@ -38,14 +41,14 @@
 		75F979732553E9DB00B47AE8 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75F979712553E9DA00B47AE8 /* dataModel.xcdatamodeld */; };
 		75F979762553EA8200B47AE8 /* PestListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F979752553EA8200B47AE8 /* PestListTableViewController.swift */; };
 		75F979822554418F00B47AE8 /* UserCD+CoreDataProperties copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F979812554418F00B47AE8 /* UserCD+CoreDataProperties copy.swift */; };
-		75F979842554419300B47AE8 /* UserCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F979832554419300B47AE8 /* UserCD+CoreDataClass.swift */; };
-		75F979862554419600B47AE8 /* PestCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F979852554419600B47AE8 /* PestCD+CoreDataProperties.swift */; };
-		75F979882554419900B47AE8 /* PestCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F979872554419900B47AE8 /* PestCD+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		510D581AD6CBD1762FE5B5DA /* Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; path = "Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		6364216A2552F6E8009FE455 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		6364217225544A9F009FE455 /* PestCD+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PestCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6364217525544AF8009FE455 /* PestCD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PestCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6364217825544B0C009FE455 /* UserCD+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserCD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6399EE49254F258F001493C6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6399EE4C254F25DE001493C6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestInformationTableViewCell.swift; sourceTree = "<group>"; };
@@ -77,9 +80,6 @@
 		75F979722553E9DA00B47AE8 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
 		75F979752553EA8200B47AE8 /* PestListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestListTableViewController.swift; sourceTree = "<group>"; };
 		75F979812554418F00B47AE8 /* UserCD+CoreDataProperties copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserCD+CoreDataProperties copy.swift"; sourceTree = "<group>"; };
-		75F979832554419300B47AE8 /* UserCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserCD+CoreDataClass.swift"; path = "/Users/yufengtian/Documents/ios-Ass2-pest-7/FengtianYu_JiayinQi-Ass2-ios/FengtianYu_JiayinQi-Ass2-ios/Data Model/UserCD+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		75F979852554419600B47AE8 /* PestCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PestCD+CoreDataProperties.swift"; path = "/Users/yufengtian/Documents/ios-Ass2-pest-7/FengtianYu_JiayinQi-Ass2-ios/FengtianYu_JiayinQi-Ass2-ios/Data Model/PestCD+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		75F979872554419900B47AE8 /* PestCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PestCD+CoreDataClass.swift"; path = "/Users/yufengtian/Documents/ios-Ass2-pest-7/FengtianYu_JiayinQi-Ass2-ios/FengtianYu_JiayinQi-Ass2-ios/Data Model/PestCD+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FengtianYu_JiayinQi_Ass2_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E411D37DB9B5AA28E8445FFD /* Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig"; path = "Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,10 +235,10 @@
 		75F979702553E9B600B47AE8 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				75F979872554419900B47AE8 /* PestCD+CoreDataClass.swift */,
-				75F979852554419600B47AE8 /* PestCD+CoreDataProperties.swift */,
-				75F979832554419300B47AE8 /* UserCD+CoreDataClass.swift */,
+				6364217225544A9F009FE455 /* PestCD+CoreDataClass.swift */,
+				6364217525544AF8009FE455 /* PestCD+CoreDataProperties.swift */,
 				75F979812554418F00B47AE8 /* UserCD+CoreDataProperties copy.swift */,
+				6364217825544B0C009FE455 /* UserCD+CoreDataClass.swift */,
 				75F979712553E9DA00B47AE8 /* dataModel.xcdatamodeld */,
 			);
 			path = "Data Model";
@@ -376,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75F979862554419600B47AE8 /* PestCD+CoreDataProperties.swift in Sources */,
+				6364217625544AF8009FE455 /* PestCD+CoreDataProperties.swift in Sources */,
 				6399EE4D254F25DE001493C6 /* LoginViewController.swift in Sources */,
 				75F979732553E9DB00B47AE8 /* dataModel.xcdatamodeld in Sources */,
 				75BD15EF2538635F003CC46B /* detailInformationViewController.swift in Sources */,
@@ -388,16 +388,16 @@
 				751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */,
 				6399EE4A254F258F001493C6 /* SignUpViewController.swift in Sources */,
 				759FF81A254E4DA8003722C1 /* Pest.swift in Sources */,
+				6364217325544A9F009FE455 /* PestCD+CoreDataClass.swift in Sources */,
 				75F979822554418F00B47AE8 /* UserCD+CoreDataProperties copy.swift in Sources */,
 				759FF818254E4D2B003722C1 /* DatabaseProtocol.swift in Sources */,
 				7518D520254EF8AB00F2E957 /* LocationAnnotation.swift in Sources */,
-				75F979842554419300B47AE8 /* UserCD+CoreDataClass.swift in Sources */,
-				75F979882554419900B47AE8 /* PestCD+CoreDataClass.swift in Sources */,
 				759FF811254E4826003722C1 /* AllPestsTableViewController.swift in Sources */,
 				7518D51B254ECA4900F2E957 /* PestInformationTableViewCell.swift in Sources */,
 				75BD15D325380F76003CC46B /* PhotoViewController.swift in Sources */,
 				6364216B2552F6E8009FE455 /* Utility.swift in Sources */,
 				759FF816254E4C90003722C1 /* MulticastDelegate.swift in Sources */,
+				6364217925544B0C009FE455 /* UserCD+CoreDataClass.swift in Sources */,
 				75F979762553EA8200B47AE8 /* PestListTableViewController.swift in Sources */,
 				7518D51E254EE75200F2E957 /* SinglePestLocationMapViewController.swift in Sources */,
 				751CB056253559CA00665CB4 /* SceneDelegate.swift in Sources */,

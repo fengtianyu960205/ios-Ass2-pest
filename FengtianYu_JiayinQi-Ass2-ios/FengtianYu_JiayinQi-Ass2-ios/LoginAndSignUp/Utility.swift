@@ -32,8 +32,17 @@ class Utility{
     
     static func StyleTextField(_ textfield: UITextField){
         textfield.borderStyle = .none
+        textfield.isUserInteractionEnabled = true
         textfield.layer.borderWidth = 1
         textfield.layer.borderColor = UIColor.init(red: 15/255, green: 146/255, blue: 124/255, alpha: 1).cgColor
         textfield.layer.cornerRadius = 5.0
+    }
+    
+    static func StyleUneditTextField(_ textfield: UITextField){
+        textfield.borderStyle = .none
+        textfield.isUserInteractionEnabled = false
+        textfield.layer.borderWidth = 0
+        textfield.layer.borderColor = UIColor.init(red: 15/255, green: 146/255, blue: 124/255, alpha: 0).cgColor
+        textfield.layer.cornerRadius = 0
     }
 }

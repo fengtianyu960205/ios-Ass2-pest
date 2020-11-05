@@ -16,7 +16,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     
-    
+    var editable : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,12 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         userImage?.image = UIImage(named: "manPortrait")
         
         
+        setupView()
+
+        
+    }
+    
+    func setupView(){
         // create a ui button
         let button = UIButton(type: .custom)
         //set image for button
@@ -42,8 +48,15 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let barButton = UIBarButtonItem(customView: button)
         //assign button to navigationbar
         self.navigationItem.rightBarButtonItem = barButton
-
         
+        
+        //set textfield uneditable
+        Utility.StyleUneditTextField(nameTextField)
+        Utility.StyleUneditTextField(ageTextField)
+        Utility.StyleUneditTextField(locationTextField)
+        
+        //initialize the editable flag
+        editable = false
     }
     
     @IBAction func settingButtonPressed(_ sender: Any){
@@ -95,6 +108,18 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     */
     @IBAction func editProfile(_ sender: Any) {
+        editable = !editable
+        if editable == false{
+            //user finish edit the profile
+            Utility.StyleUneditTextField(nameTextField)
+            Utility.StyleUneditTextField(ageTextField)
+            Utility.StyleUneditTextField(locationTextField)
+        }else{
+            //user start to editting the profile
+            Utility.StyleTextField(nameTextField)
+            Utility.StyleTextField(ageTextField)
+            Utility.StyleTextField(locationTextField)
+        }
     }
     
 }
