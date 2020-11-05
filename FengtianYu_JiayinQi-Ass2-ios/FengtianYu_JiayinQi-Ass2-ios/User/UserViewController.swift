@@ -11,6 +11,10 @@ import UIKit
 class UserViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
     
     
     
@@ -90,5 +94,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func editProfile(_ sender: Any) {
+    }
+    
 }
