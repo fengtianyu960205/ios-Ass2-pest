@@ -15,6 +15,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var genderSegmentControl: UISegmentedControl!
     
     var editable : Bool = false
     
@@ -55,6 +56,9 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Utility.StyleUneditTextField(ageTextField)
         Utility.StyleUneditTextField(locationTextField)
         editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
+        
+        //set the segmentedControl
+        Utility.StyleUneditSegmentControl(genderSegmentControl)
         
         //initialize the editable flag
         editable = false
@@ -115,12 +119,16 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
             Utility.StyleUneditTextField(nameTextField)
             Utility.StyleUneditTextField(ageTextField)
             Utility.StyleUneditTextField(locationTextField)
+            //set the segmentedControl
+            Utility.StyleUneditSegmentControl(genderSegmentControl)
             editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
         }else{
             //user start to editting the profile
             Utility.StyleTextField(nameTextField)
             Utility.StyleTextField(ageTextField)
             Utility.StyleTextField(locationTextField)
+            //set the segmentedControl
+            Utility.StyleSegmentControl(genderSegmentControl)
             editButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
         }
     }

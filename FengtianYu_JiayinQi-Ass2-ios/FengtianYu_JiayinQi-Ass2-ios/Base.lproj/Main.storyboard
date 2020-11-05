@@ -1244,6 +1244,7 @@
                     <connections>
                         <outlet property="ageTextField" destination="Zd6-dc-nWz" id="4pX-hh-eRc"/>
                         <outlet property="editButton" destination="6Uo-vY-0u5" id="9ga-wk-cBF"/>
+                        <outlet property="genderSegmentControl" destination="9bP-hs-gfE" id="Yk8-xd-uKG"/>
                         <outlet property="locationTextField" destination="4qU-KH-2g8" id="GL7-Zc-MYq"/>
                         <outlet property="nameTextField" destination="liw-hf-J93" id="vQ3-kX-hAb"/>
                         <outlet property="tableView" destination="iie-bB-Pdc" id="yx8-zM-qpP"/>
