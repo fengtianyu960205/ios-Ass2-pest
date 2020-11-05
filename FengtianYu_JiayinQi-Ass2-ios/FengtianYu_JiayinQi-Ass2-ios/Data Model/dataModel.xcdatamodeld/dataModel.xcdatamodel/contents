@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class">
+    <entity name="PestCD" representedClassName="PestCD" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pestID" optional="YES" attributeType="String"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserCD" inverseName="pestlist" inverseEntity="UserCD"/>
+    </entity>
+    <entity name="UserCD" representedClassName="UserCD" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="nickName" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="String"/>
+        <relationship name="pestlist" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PestCD" inverseName="users" inverseEntity="PestCD"/>
     </entity>
     <elements>
-        <element name="Entity" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="PestCD" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="UserCD" positionX="-54" positionY="9" width="128" height="133"/>
     </elements>
 </model>

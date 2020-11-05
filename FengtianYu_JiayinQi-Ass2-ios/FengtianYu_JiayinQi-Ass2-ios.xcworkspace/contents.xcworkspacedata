@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/yufengtian/Documents/ios-Ass2-pest-7/FengtianYu_JiayinQi-Ass2-ios/FengtianYu_JiayinQi-Ass2-ios/Data Model/PestCD+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/yufengtian/Documents/ios-Ass2-pest-7/FengtianYu_JiayinQi-Ass2-ios/FengtianYu_JiayinQi-Ass2-ios/Data Model/PestCD+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/yufengtian/Documents/ios-Ass2-pest-7/FengtianYu_JiayinQi-Ass2-ios/FengtianYu_JiayinQi-Ass2-ios/Data Model/UserCD+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:FengtianYu_JiayinQi-Ass2-ios/Data Model/UserCD+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:FengtianYu_JiayinQi-Ass2-ios.xcodeproj">
    </FileRef>
    <FileRef
