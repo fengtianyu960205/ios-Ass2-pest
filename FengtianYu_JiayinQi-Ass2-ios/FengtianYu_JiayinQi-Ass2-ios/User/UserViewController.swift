@@ -54,6 +54,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Utility.StyleUneditTextField(nameTextField)
         Utility.StyleUneditTextField(ageTextField)
         Utility.StyleUneditTextField(locationTextField)
+        editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
         
         //initialize the editable flag
         editable = false
@@ -114,11 +115,13 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
             Utility.StyleUneditTextField(nameTextField)
             Utility.StyleUneditTextField(ageTextField)
             Utility.StyleUneditTextField(locationTextField)
+            editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
         }else{
             //user start to editting the profile
             Utility.StyleTextField(nameTextField)
             Utility.StyleTextField(ageTextField)
             Utility.StyleTextField(locationTextField)
+            editButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
         }
     }
     
