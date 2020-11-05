@@ -36,6 +36,7 @@ class Utility{
         textfield.layer.borderWidth = 1
         textfield.layer.borderColor = UIColor.init(red: 15/255, green: 146/255, blue: 124/255, alpha: 1).cgColor
         textfield.layer.cornerRadius = 5.0
+        textfield.clearButtonMode = .whileEditing
     }
     
     static func StyleUneditTextField(_ textfield: UITextField){
