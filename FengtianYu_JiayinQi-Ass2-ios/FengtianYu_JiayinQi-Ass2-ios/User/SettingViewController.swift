@@ -2,23 +2,33 @@
 //  SettingViewController.swift
 //  FengtianYu_JiayinQi-Ass2-ios
 //
-//  Created by 俞冯天 on 3/11/20.
+//  Created by heathcliff on 2020/11/6.
 //  Copyright © 2020 Monash University. All rights reserved.
 //
 
 import UIKit
 
-class SettingViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
+class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var logOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        // Do any additional setup after loading the view.
+        
+        setupView()
+    }
+    
+    func setupView(){
+        //if a user login
+        Utility.StyleButtonEmergency(logOutButton)
+        //if no user login
+        //Utility.StyleButtonDisable(logOutButton)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-
-        // Do any additional setup after loading the view.
     }
     
     func numberOfSections(in tableview: UITableView) -> Int {
@@ -74,5 +84,12 @@ class SettingViewController: UIViewController , UITableViewDataSource, UITableVi
     }
     */
 
-    
+    @IBAction func logOutAccount(_ sender: Any) {
+        //user want to log out
+        //diable the user interaction and make it invisible
+        Utility.StyleButtonDisable(logOutButton)
+        //go back to login view?
+        //use a dafault user?
+        
+    }
 }

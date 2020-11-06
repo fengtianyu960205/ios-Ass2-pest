@@ -12,6 +12,7 @@
 		6364217325544A9F009FE455 /* PestCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217225544A9F009FE455 /* PestCD+CoreDataClass.swift */; };
 		6364217625544AF8009FE455 /* PestCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217525544AF8009FE455 /* PestCD+CoreDataProperties.swift */; };
 		6364217925544B0C009FE455 /* UserCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217825544B0C009FE455 /* UserCD+CoreDataClass.swift */; };
+		6364217D2554DA9B009FE455 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217C2554DA9B009FE455 /* SettingViewController.swift */; };
 		6399EE4A254F258F001493C6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399EE49254F258F001493C6 /* SignUpViewController.swift */; };
 		6399EE4D254F25DE001493C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399EE4C254F25DE001493C6 /* LoginViewController.swift */; };
 		7518D51B254ECA4900F2E957 /* PestInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */; };
@@ -36,7 +37,6 @@
 		75BD15EF2538635F003CC46B /* detailInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15EE2538635F003CC46B /* detailInformationViewController.swift */; };
 		75F97964254FBABB00B47AE8 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F97963254FBABB00B47AE8 /* CommentViewController.swift */; };
 		75F97966254FC8DD00B47AE8 /* WriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F97965254FC8DD00B47AE8 /* WriteCommentViewController.swift */; };
-		75F9796925517A8400B47AE8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9796825517A8300B47AE8 /* SettingViewController.swift */; };
 		75F9796F25530D2E00B47AE8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9796E25530D2D00B47AE8 /* TabBarController.swift */; };
 		75F979732553E9DB00B47AE8 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75F979712553E9DA00B47AE8 /* dataModel.xcdatamodeld */; };
 		75F979762553EA8200B47AE8 /* PestListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F979752553EA8200B47AE8 /* PestListTableViewController.swift */; };
@@ -49,6 +49,7 @@
 		6364217225544A9F009FE455 /* PestCD+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PestCD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6364217525544AF8009FE455 /* PestCD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PestCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6364217825544B0C009FE455 /* UserCD+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6364217C2554DA9B009FE455 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		6399EE49254F258F001493C6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6399EE4C254F25DE001493C6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7518D51A254ECA4900F2E957 /* PestInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestInformationTableViewCell.swift; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		75BD15EE2538635F003CC46B /* detailInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailInformationViewController.swift; sourceTree = "<group>"; };
 		75F97963254FBABB00B47AE8 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		75F97965254FC8DD00B47AE8 /* WriteCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommentViewController.swift; sourceTree = "<group>"; };
-		75F9796825517A8300B47AE8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		75F9796E25530D2D00B47AE8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		75F979722553E9DA00B47AE8 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
 		75F979752553EA8200B47AE8 /* PestListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestListTableViewController.swift; sourceTree = "<group>"; };
@@ -195,8 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				75F979742553EA5A00B47AE8 /* PestList */,
-				75F9796725517A6700B47AE8 /* Setting */,
 				75BD15CE25380F3B003CC46B /* UserViewController.swift */,
+				6364217C2554DA9B009FE455 /* SettingViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -222,14 +222,6 @@
 				759FF810254E4826003722C1 /* AllPestsTableViewController.swift */,
 			);
 			path = AllPests;
-			sourceTree = "<group>";
-		};
-		75F9796725517A6700B47AE8 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				75F9796825517A8300B47AE8 /* SettingViewController.swift */,
-			);
-			path = Setting;
 			sourceTree = "<group>";
 		};
 		75F979702553E9B600B47AE8 /* Data Model */ = {
@@ -376,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6364217D2554DA9B009FE455 /* SettingViewController.swift in Sources */,
 				6364217625544AF8009FE455 /* PestCD+CoreDataProperties.swift in Sources */,
 				6399EE4D254F25DE001493C6 /* LoginViewController.swift in Sources */,
 				75F979732553E9DB00B47AE8 /* dataModel.xcdatamodeld in Sources */,
@@ -384,7 +377,6 @@
 				75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */,
 				751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */,
 				75F9796F25530D2E00B47AE8 /* TabBarController.swift in Sources */,
-				75F9796925517A8400B47AE8 /* SettingViewController.swift in Sources */,
 				751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */,
 				6399EE4A254F258F001493C6 /* SignUpViewController.swift in Sources */,
 				759FF81A254E4DA8003722C1 /* Pest.swift in Sources */,

@@ -1337,6 +1337,9 @@
                                 <state key="normal" title="Log out">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logOutAccount:" destination="np2-P2-jFV" eventType="touchUpInside" id="FCd-wd-haP"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z4D-ay-d6k">
                                 <rect key="frame" x="0.0" y="128" width="414" height="575"/>
@@ -1437,7 +1440,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Setting" id="TeD-GK-wCS"/>
                     <connections>
-                        <outlet property="tableView" destination="Z4D-ay-d6k" id="rJK-v1-I74"/>
+                        <outlet property="logOutButton" destination="Y51-1M-n9J" id="Alk-h6-yK6"/>
+                        <outlet property="tableView" destination="Z4D-ay-d6k" id="diE-fh-aMP"/>
                         <segue destination="991-Rb-WH2" kind="show" identifier="settingToAbout" id="tFL-IU-hN8"/>
                         <segue destination="3WU-oB-taY" kind="show" identifier="settingToQuestion" id="9wj-ez-1Li"/>
                     </connections>
@@ -1455,7 +1459,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hln-iM-utD">
-                                <rect key="frame" x="0.0" y="108" width="414" height="223.5"/>
+                                <rect key="frame" x="10" y="108" width="394" height="223.5"/>
                                 <string key="text">Pests, invasive specious and woody weeds cause enormous damage in Australia to the environment, agriculture and society. The Department of Environment and Heritage states that invasive wild animals cause immense damage to soils, native plants and species. The natural habitats of one of 20 native species has been destroyed by invasive animals. Which is important to ensure tourists can understand the dangers of invasive species and pests as well as learning ways to avoid significant damage to their safety and the environment. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1465,16 +1469,16 @@
                         <viewLayoutGuide key="safeArea" id="LH1-Co-x1w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hln-iM-utD" firstAttribute="leading" secondItem="LH1-Co-x1w" secondAttribute="leading" id="0XR-um-bLY"/>
-                            <constraint firstItem="hln-iM-utD" firstAttribute="top" secondItem="LH1-Co-x1w" secondAttribute="top" constant="20" id="sOa-W1-sGU"/>
-                            <constraint firstItem="hln-iM-utD" firstAttribute="trailing" secondItem="LH1-Co-x1w" secondAttribute="trailing" id="tsf-Vf-OM9"/>
+                            <constraint firstItem="hln-iM-utD" firstAttribute="leading" secondItem="LH1-Co-x1w" secondAttribute="leading" constant="10" id="3GO-ew-eNF"/>
+                            <constraint firstItem="LH1-Co-x1w" firstAttribute="trailing" secondItem="hln-iM-utD" secondAttribute="trailing" constant="10" id="7yt-nv-n1v"/>
+                            <constraint firstItem="hln-iM-utD" firstAttribute="top" secondItem="LH1-Co-x1w" secondAttribute="top" constant="20" id="uTX-Th-JZA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="hsk-ao-pPT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qZ-wA-ESA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3787" y="542"/>
+            <point key="canvasLocation" x="3786.9565217391309" y="541.74107142857144"/>
         </scene>
         <!--Q& A-->
         <scene sceneID="QJA-1p-ZFf">
@@ -1485,7 +1489,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qop-MS-zS3">
-                                <rect key="frame" x="0.0" y="98" width="414" height="95.5"/>
+                                <rect key="frame" x="10" y="98" width="394" height="95.5"/>
                                 <string key="text">Since some syllables of pests' names are foreign and hard to spell, how do I type them in the searching bar?
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1493,10 +1497,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJq-yA-cgc">
-                                <rect key="frame" x="0.0" y="213.5" width="414" height="101.5"/>
+                                <rect key="frame" x="10" y="213.5" width="394" height="119.5"/>
                                 <string key="text">In the search page, if you type any character in the searching bar, some pests’ names, states or cities’ names will pop up, which is a helpful prompt tool for you to type. 
 </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1504,19 +1508,19 @@
                         <viewLayoutGuide key="safeArea" id="dfA-dw-iiG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Qop-MS-zS3" firstAttribute="leading" secondItem="dfA-dw-iiG" secondAttribute="leading" id="94H-J2-AlY"/>
-                            <constraint firstItem="Qop-MS-zS3" firstAttribute="top" secondItem="dfA-dw-iiG" secondAttribute="top" constant="10" id="Mx9-Y7-gpS"/>
-                            <constraint firstItem="LJq-yA-cgc" firstAttribute="top" secondItem="Qop-MS-zS3" secondAttribute="bottom" constant="20" id="NtF-cP-s1L"/>
-                            <constraint firstItem="dfA-dw-iiG" firstAttribute="trailing" secondItem="Qop-MS-zS3" secondAttribute="trailing" id="baW-83-MQc"/>
-                            <constraint firstItem="dfA-dw-iiG" firstAttribute="trailing" secondItem="LJq-yA-cgc" secondAttribute="trailing" id="e9x-0B-Ayq"/>
-                            <constraint firstItem="LJq-yA-cgc" firstAttribute="leading" secondItem="dfA-dw-iiG" secondAttribute="leading" id="t90-MD-TJn"/>
+                            <constraint firstItem="dfA-dw-iiG" firstAttribute="trailing" secondItem="Qop-MS-zS3" secondAttribute="trailing" constant="10" id="98m-mv-2oe"/>
+                            <constraint firstItem="dfA-dw-iiG" firstAttribute="trailing" secondItem="LJq-yA-cgc" secondAttribute="trailing" constant="10" id="EEJ-q4-Sbv"/>
+                            <constraint firstItem="Qop-MS-zS3" firstAttribute="top" secondItem="dfA-dw-iiG" secondAttribute="top" constant="10" id="fnA-Ho-dqa"/>
+                            <constraint firstItem="LJq-yA-cgc" firstAttribute="leading" secondItem="dfA-dw-iiG" secondAttribute="leading" constant="10" id="iSR-sK-Y7H"/>
+                            <constraint firstItem="Qop-MS-zS3" firstAttribute="leading" secondItem="dfA-dw-iiG" secondAttribute="leading" constant="10" id="kfY-3j-451"/>
+                            <constraint firstItem="LJq-yA-cgc" firstAttribute="top" secondItem="Qop-MS-zS3" secondAttribute="bottom" constant="20" id="lxt-lZ-d1g"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Q&amp; A" id="IAN-b2-0oG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeL-7I-tH8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2957" y="1229"/>
+            <point key="canvasLocation" x="2956.521739130435" y="1228.7946428571429"/>
         </scene>
         <!--User-->
         <scene sceneID="Jtk-ga-zTp">
