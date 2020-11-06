@@ -38,6 +38,7 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         
         //commentedPest = databaseController?.getPestByID(pestId!)
         //commentedPest = databaseController?.getPestByID(pestId!)
+        pestId = commentedPest?.id
         comments = commentedPest?.comments as! [String]
         pestName.text = commentedPest?.name
     }
