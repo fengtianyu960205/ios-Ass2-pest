@@ -228,5 +228,149 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA225CB5-8C20-4B37-BC4C-EF476FA03531"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FengtianYu_JiayinQi-Ass2-ios/DetailInformation/detailInformationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB1BDCAD-CBAA-4A0E-91B1-52150AF4103D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FengtianYu_JiayinQi-Ass2-ios/DetailInformation/detailInformationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AB1BDCAD-CBAA-4A0E-91B1-52150AF4103D - f346bd870380e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FengtianYu_JiayinQi_Ass2_ios.detailInformationViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "FengtianYu_JiayinQi-Ass2-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yufengtian/Documents/ios-Ass2-pest-08/FengtianYu_JiayinQi-Ass2-ios/FengtianYu_JiayinQi-Ass2-ios/DetailInformation/detailInformationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "6635">
+               </Location>
+               <Location
+                  uuid = "AB1BDCAD-CBAA-4A0E-91B1-52150AF4103D - f346bd870380e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FengtianYu_JiayinQi_Ass2_ios.detailInformationViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "FengtianYu_JiayinQi-Ass2-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yufengtian/Documents/ios-Ass2-pest-08/FengtianYu_JiayinQi-Ass2-ios/FengtianYu_JiayinQi-Ass2-ios/DetailInformation/detailInformationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "9478">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D613239-BC8A-4897-B8D7-64962C6C0059"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FengtianYu_JiayinQi-Ass2-ios/DetailInformation/detailInformationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96199049-B92B-4C7D-9183-33E698004859"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FengtianYu_JiayinQi-Ass2-ios/DetailInformation/detailInformationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "96199049-B92B-4C7D-9183-33E698004859 - f346bd870380e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FengtianYu_JiayinQi_Ass2_ios.detailInformationViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "FengtianYu_JiayinQi-Ass2-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yufengtian/Documents/ios-Ass2-pest-08/FengtianYu_JiayinQi-Ass2-ios/FengtianYu_JiayinQi-Ass2-ios/DetailInformation/detailInformationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "6635">
+               </Location>
+               <Location
+                  uuid = "96199049-B92B-4C7D-9183-33E698004859 - f346bd870380e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FengtianYu_JiayinQi_Ass2_ios.detailInformationViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "FengtianYu_JiayinQi-Ass2-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yufengtian/Documents/ios-Ass2-pest-08/FengtianYu_JiayinQi-Ass2-ios/FengtianYu_JiayinQi-Ass2-ios/DetailInformation/detailInformationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "10315">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E17468F6-1BBC-4386-8B16-3C0845BAFBD4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FengtianYu_JiayinQi-Ass2-ios/DetailInformation/detailInformationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

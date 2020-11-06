@@ -46,7 +46,7 @@ protocol coreDataDatabaseProtocol: AnyObject {
 
     func cleanup()
     
-    
+    func fetchSpecificUser() -> [UserCD]
     func addPest(name: String, pestID: String, category : String ) -> PestCD
     
     func addUser(userID: String,age:Int32,gender:String,address:String ,nickName: String) -> UserCD

@@ -12,9 +12,9 @@ import CoreData
 class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedResultsControllerDelegate {
     
     var listeners = MulticastDelegate<DatabaseListener>()
-       var persistentContainer: NSPersistentContainer
-       //var PestsFetchedResultsController: NSFetchedResultsController<PestCD>?
-       var UsersFetchedResultsController: NSFetchedResultsController<UserCD>?
+    var persistentContainer: NSPersistentContainer
+    //var PestsFetchedResultsController: NSFetchedResultsController<PestCD>?
+    var UsersFetchedResultsController: NSFetchedResultsController<UserCD>?
     var userID : String?
     
     override init() {
@@ -29,7 +29,7 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
         }
         super.init()
         if  fetchSpecificUser().count == 0{
-            addUser(userID: userID!, age: 30, gender: "man", address: "", nickName: "nkj")
+            addUser(userID: userID!, age: 30, gender: "man", address: "", nickName: "nk")
         }
         
     }
@@ -54,7 +54,9 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
         let pest = NSEntityDescription.insertNewObject(forEntityName: "PestCD",
         into: persistentContainer.viewContext) as! PestCD
         pest.name = name
+        pest.pestID = pestID
         pest.category = category
+        saveContext()
         
         return pest
     }
@@ -67,16 +69,19 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
         user.gender = gender
         user.address = address
         user.nickName = nickName
+        saveContext()
         
         return user
     }
     
     func addPestToUser(pestCD: PestCD, userCD: UserCD) {
         userCD.addToPestlist(pestCD)
+        saveContext()
     }
     
     func removePestFromUser(pestCD: PestCD, userCD: UserCD) {
         userCD.removeFromPestlist(pestCD)
+        saveContext()
     }
     
     func addListener(listener: DatabaseListener) {
@@ -130,13 +135,16 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
 
       
         var users = [UserCD]()
+        
             if UsersFetchedResultsController?.fetchedObjects != nil {
                 users = (UsersFetchedResultsController?.fetchedObjects)!
             }
-
-            return users
         
+            return users
     }
     
-
+    
+    
+    
+    
 }
