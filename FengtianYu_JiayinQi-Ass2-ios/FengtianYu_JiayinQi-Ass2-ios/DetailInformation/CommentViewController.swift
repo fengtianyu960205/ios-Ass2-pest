@@ -9,6 +9,8 @@
 import UIKit
 
 class CommentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate ,DatabaseListener{
+    
+    
      
     
     var listenerType: ListenerType = .all
@@ -90,6 +92,10 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         commentedPest = databaseController?.getPestByID(pestId!)
         comments = commentedPest?.comments as! [String]
         tableView.reloadData()
+    }
+    
+    func onUserCDChange(change: DatabaseChange, user: [UserCD]) {
+        
     }
     
 

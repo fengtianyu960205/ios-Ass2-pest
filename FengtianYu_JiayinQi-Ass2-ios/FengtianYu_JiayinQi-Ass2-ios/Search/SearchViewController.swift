@@ -12,7 +12,7 @@ class SearchViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logoImage: UIImageView!
-    var userID : String?
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()

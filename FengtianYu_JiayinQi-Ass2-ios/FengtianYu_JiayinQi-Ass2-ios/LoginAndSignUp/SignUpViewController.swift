@@ -85,7 +85,9 @@ class SignUpViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "signupAndLoginSegue" {
         let destination = segue.destination as! TabBarController
-            destination.userID = self.userID
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.userId = self.userID
+            //destination.userID = self.userID
         }
     }
     

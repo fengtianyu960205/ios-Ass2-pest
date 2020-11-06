@@ -14,11 +14,13 @@ enum DatabaseChange {
 }
 enum ListenerType {
     case pests
+    case users
     case all
 }
 protocol DatabaseListener: AnyObject {
     var listenerType: ListenerType {get set}
     func onPestChange(change: DatabaseChange, pests: [Pest])
+    func onUserCDChange(change: DatabaseChange, user: [UserCD])
     //func onHeroListChange(change: DatabaseChange, heroes: [SuperHero])
 }
 protocol DatabaseProtocol: AnyObject {
@@ -36,4 +38,23 @@ protocol DatabaseProtocol: AnyObject {
     //func removeHeroFromTeam(hero: SuperHero, team: Team)
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)
+}
+
+
+protocol coreDataDatabaseProtocol: AnyObject {
+    
+
+    func cleanup()
+    
+    
+    func addPest(name: String, pestID: String, category : String ) -> PestCD
+    
+    func addUser(userID: String,age:Int32,gender:String,address:String ,nickName: String) -> UserCD
+    
+    func addPestToUser(pestCD: PestCD, userCD: UserCD)
+    func removePestFromUser(pestCD: PestCD, userCD: UserCD)
+
+    func addListener(listener: DatabaseListener)
+    func removeListener(listener: DatabaseListener)
+    
 }

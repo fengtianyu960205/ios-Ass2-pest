@@ -10,8 +10,6 @@ import UIKit
 
 class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISearchResultsUpdating{
     
-    
-    
     var allPest: [Pest] = []
     var filteredPests: [Pest] = []
     weak var databaseController: DatabaseProtocol?
@@ -170,4 +168,7 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
            updateSearchResults(for: navigationItem.searchController!)
        }
 
+    func onUserCDChange(change: DatabaseChange, user: [UserCD]) {
+        
+    }
 }

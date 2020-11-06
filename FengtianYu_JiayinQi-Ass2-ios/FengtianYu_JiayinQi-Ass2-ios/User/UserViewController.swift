@@ -8,7 +8,11 @@
 
 import UIKit
 
-class UserViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class UserViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,DatabaseListener {
+    
+    
+    
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var editButton: UIButton!
@@ -16,22 +20,45 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var genderSegmentControl: UISegmentedControl!
+    var listenerType: ListenerType = .users
+    weak var coreDataDatabaseController: coreDataDatabaseProtocol?
+    var user : UserCD?
     
     var editable : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        coreDataDatabaseController = appDelegate.coreDataDatabaseController
+        
        tableView.delegate = self
        tableView.dataSource = self
        tableView.tableFooterView = UIView()
-        
         userImage?.image = UIImage(named: "manPortrait")
-        
+    
         
         setupView()
 
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           coreDataDatabaseController?.addListener(listener: self)
+        nameTextField.text = self.user!.nickName
+       }
+       
+      
+       
+    override func viewWillDisappear(_ animated: Bool) {
+           super.viewWillDisappear(animated)
+           coreDataDatabaseController?.removeListener(listener: self)
+       }
+    
+    func onUserCDChange(change: DatabaseChange, user: [UserCD]) {
+        if user.count != 0{
+            self.user = user.first
+        }
     }
     
     func setupView(){
@@ -131,6 +158,9 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
             Utility.StyleSegmentControl(genderSegmentControl)
             editButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
         }
+    }
+    func onPestChange(change: DatabaseChange, pests: [Pest]) {
+        
     }
     
 }

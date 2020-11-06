@@ -10,13 +10,17 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
-    var userID : String?
+    var coreDataDatabaseController: coreDataDatabaseProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let searchVC = self.viewControllers![0] as! SearchViewController //first view controller in the tabbar
-        searchVC.userID = userID
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if appDelegate.userId == nil {
+            appDelegate.userId = "aaaaa"
+        }
+     
+        appDelegate.coreDataDatabaseController = CoreDataDatabaseController()
     }
     
 
