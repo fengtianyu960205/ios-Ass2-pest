@@ -115,16 +115,19 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
             displayMessage(title: "Threat", msg: messagecontent, button: "Dismiss")
         }
         else if indexPath.section == 1{
-            let messagecontent = showedPest?.aid
-           displayMessage(title: "First Aid", message: messagecontent!)
+            let messagecontent = showedPest?.aid ?? "No information"
+            //displayMessage(title: "First Aid", message: messagecontent!)
+            displayMessage(title: "Threat", msg: messagecontent, button: "Dismiss")
         }
         else if indexPath.section == 2{
-            let messagecontent = showedPest?.deal
-            displayMessage(title: "Deal with the Pest", message: messagecontent!)
+            let messagecontent = showedPest?.deal ?? "No information"
+            //displayMessage(title: "Deal with the Pest", message: messagecontent!)
+            displayMessage(title: "Threat", msg: messagecontent, button: "Dismiss")
         }
         else if indexPath.section == 3{
-            let messagecontent = showedPest?.fact
-           displayMessage(title: "Fact about the Pest", message: messagecontent!)
+            let messagecontent = showedPest?.fact ?? "No information"
+            //displayMessage(title: "Fact about the Pest", message: messagecontent!)
+            displayMessage(title: "Threat", msg: messagecontent, button: "Dismiss")
         }
         
         else{
