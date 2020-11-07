@@ -29,9 +29,9 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
         }
         super.init()
         if  fetchSpecificUser().count == 0{
-            addUser(userID: userID!, age: 30, gender: "man", address: "", nickName: "nk")
+            addUser(userID: userID!, age: 30, gender: "man", address: "", nickName: "nk",userImage : UIImage(named: "manPortrait")!.pngData()!)
         }
-        
+      
     }
     
     
@@ -50,18 +50,19 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
        
     }
     
-    func addPest(name: String, pestID: String , category : String) -> PestCD {
+    func addPest(name: String, pestID: String , category : String,pestImage : Data) -> PestCD {
         let pest = NSEntityDescription.insertNewObject(forEntityName: "PestCD",
         into: persistentContainer.viewContext) as! PestCD
         pest.name = name
         pest.pestID = pestID
         pest.category = category
+        pest.pestImage = pestImage
         saveContext()
         
         return pest
     }
     
-    func addUser(userID: String, age: Int32, gender: String, address: String, nickName: String) -> UserCD {
+    func addUser(userID: String, age: Int32, gender: String, address: String, nickName: String,userImage : Data) -> UserCD {
         let user = NSEntityDescription.insertNewObject(forEntityName: "UserCD",
         into: persistentContainer.viewContext) as! UserCD
         user.userID = userID
@@ -69,6 +70,7 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
         user.gender = gender
         user.address = address
         user.nickName = nickName
+        user.userImage = userImage
         saveContext()
         
         return user

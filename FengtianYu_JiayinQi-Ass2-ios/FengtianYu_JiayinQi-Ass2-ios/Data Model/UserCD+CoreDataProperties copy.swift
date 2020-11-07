@@ -21,6 +21,7 @@ extension UserCD {
     @NSManaged public var gender: String?
     @NSManaged public var address: String?
     @NSManaged public var nickName: String?
+    @NSManaged public var userImage: Data?
     @NSManaged public var pestlist: NSSet?
 
 }

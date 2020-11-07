@@ -4,6 +4,7 @@
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="pestID" optional="YES" attributeType="String"/>
+        <attribute name="pestImage" optional="YES" attributeType="Binary"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserCD" inverseName="pestlist" inverseEntity="UserCD"/>
     </entity>
     <entity name="UserCD" representedClassName="UserCD" syncable="YES">
@@ -12,10 +13,11 @@
         <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="nickName" optional="YES" attributeType="String"/>
         <attribute name="userID" optional="YES" attributeType="String"/>
+        <attribute name="userImage" optional="YES" attributeType="Binary"/>
         <relationship name="pestlist" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PestCD" inverseName="users" inverseEntity="PestCD"/>
     </entity>
     <elements>
-        <element name="PestCD" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="UserCD" positionX="-54" positionY="9" width="128" height="133"/>
+        <element name="PestCD" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="UserCD" positionX="-54" positionY="9" width="128" height="148"/>
     </elements>
 </model>

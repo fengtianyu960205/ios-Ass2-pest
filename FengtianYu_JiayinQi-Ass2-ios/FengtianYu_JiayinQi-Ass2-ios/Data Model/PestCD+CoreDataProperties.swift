@@ -19,7 +19,9 @@ extension PestCD {
     @NSManaged public var name: String?
     @NSManaged public var pestID: String?
     @NSManaged public var category: String?
+    @NSManaged public var pestImage: Data?
     @NSManaged public var users: NSSet?
+    
 
 }
 

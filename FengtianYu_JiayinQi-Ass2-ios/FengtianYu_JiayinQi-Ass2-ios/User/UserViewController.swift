@@ -56,9 +56,9 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
        }
     
     func onUserCDChange(change: DatabaseChange, user: [UserCD]) {
-        if user.count != 0{
-            self.user = user.first
-        }
+        
+        self.user = user.first
+        
     }
     
     func setupView(){
@@ -130,15 +130,17 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "userToPestList" {
+        let destination = segue.destination as! PestListTableViewController
+            destination.user = self.user
+        }
     }
-    */
+    
     @IBAction func editProfile(_ sender: Any) {
         editable = !editable
         if editable == false{

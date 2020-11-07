@@ -5,6 +5,9 @@
 //  Created by 俞冯天 on 29/8/20.
 //  Copyright © 2020 Monash University. All rights reserved.
 //
+import UIKit
+import CoreData
+
 
 enum DatabaseChange {
     case add
@@ -47,9 +50,9 @@ protocol coreDataDatabaseProtocol: AnyObject {
     func cleanup()
     
     func fetchSpecificUser() -> [UserCD]
-    func addPest(name: String, pestID: String, category : String ) -> PestCD
+    func addPest(name: String, pestID: String, category : String ,pestImage : Data) -> PestCD
     
-    func addUser(userID: String,age:Int32,gender:String,address:String ,nickName: String) -> UserCD
+    func addUser(userID: String,age:Int32,gender:String,address:String ,nickName: String, userImage : Data) -> UserCD
     
     func addPestToUser(pestCD: PestCD, userCD: UserCD)
     func removePestFromUser(pestCD: PestCD, userCD: UserCD)

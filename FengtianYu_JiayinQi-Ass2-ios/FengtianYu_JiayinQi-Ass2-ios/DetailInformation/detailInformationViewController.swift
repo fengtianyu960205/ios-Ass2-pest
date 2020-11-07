@@ -33,6 +33,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
     
     override func viewDidLoad() {
        super.viewDidLoad()
+        
        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         coreDataDatabaseController = appDelegate.coreDataDatabaseController
         user = coreDataDatabaseController?.fetchSpecificUser().first!
@@ -49,6 +50,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         let urlkey = showedPest?.image_url
         let url = URL(string : urlkey!)
         pestImage.sd_setImage(with: url, placeholderImage: UIImage(named: "fox"))
+        
         
         userPestList = (user!.pestlist?.allObjects as? [PestCD])!
       
@@ -107,8 +109,6 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
             
-            //currentSelectedPlant = currentPlants[indexPath.row]
-            //performSegue(withIdentifier: "gotoDetailPlant", sender: self)
         if indexPath.section == 0{
             let messagecontent = showedPest?.threat
             displayMessage(title: "Threat", message: messagecontent!)
@@ -169,7 +169,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
             (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
             
             if (sender as! UIButton).isSelected {
-                pestcd = coreDataDatabaseController?.addPest(name: showedPest!.name, pestID: showedPest!.id! , category : showedPest!.category)
+                pestcd = coreDataDatabaseController?.addPest(name: showedPest!.name, pestID: showedPest!.id! , category : showedPest!.category,pestImage : self.pestImage.image!.pngData()!)
                 coreDataDatabaseController?.addPestToUser(pestCD: pestcd!, userCD: user!)
                 pestListbtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
                    
@@ -187,7 +187,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
                 pestListbtn.setImage(UIImage(systemName: "star"), for: .normal)
                    
             }else{
-                pestcd = coreDataDatabaseController?.addPest(name: showedPest!.name, pestID: showedPest!.id! , category : showedPest!.category)
+                pestcd = coreDataDatabaseController?.addPest(name: showedPest!.name, pestID: showedPest!.id! , category : showedPest!.category,pestImage : self.pestImage.image!.pngData()!)
                 coreDataDatabaseController?.addPestToUser(pestCD: pestcd!, userCD: user!)
                 pestListbtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
                 }

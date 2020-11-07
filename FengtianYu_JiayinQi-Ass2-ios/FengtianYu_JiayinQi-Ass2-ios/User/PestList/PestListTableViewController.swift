@@ -8,40 +8,84 @@
 
 import UIKit
 
-class PestListTableViewController: UITableViewController {
-
+class PestListTableViewController: UITableViewController,DatabaseListener {
+    
+    
+    
+     var listenerType: ListenerType = .users
+    var user : UserCD?
+    var pestlist : [PestCD] = []
+    weak var coreDataDatabaseController: coreDataDatabaseProtocol?
+    weak var databaseController: DatabaseProtocol?
+    var selectedPest : Pest?
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.tableFooterView = UIView()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        coreDataDatabaseController = appDelegate.coreDataDatabaseController
+        
+        databaseController = appDelegate.databaseController
+       
+        pestlist = (user!.pestlist?.allObjects as? [PestCD])!
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           coreDataDatabaseController?.addListener(listener: self)
+        
+       }
+       
+      
+       
+    override func viewWillDisappear(_ animated: Bool) {
+           super.viewWillDisappear(animated)
+           coreDataDatabaseController?.removeListener(listener: self)
+       }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return pestlist.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let pestCell = tableView.dequeueReusableCell(withIdentifier: "PestListCell", for: indexPath) as! PestCellTableViewCell
 
-        // Configure the cell...
+          let pest = pestlist[indexPath.row]
+          
+          let verticalPadding: CGFloat = 8
 
-        return cell
+          let maskLayer = CALayer()
+          maskLayer.cornerRadius = 10    //if you want round edges
+          maskLayer.backgroundColor = UIColor.black.cgColor
+          maskLayer.frame = CGRect(x: pestCell.bounds.origin.x, y: pestCell.bounds.origin.y, width: pestCell.bounds.width, height: pestCell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
+          pestCell.layer.mask = maskLayer
+          
+          pestCell.pestCategory.text = pest.category
+          pestCell.pestName.text = pest.name
+      
+        pestCell.imageView!.image = UIImage(data: (pest.pestImage)!)!
+          return pestCell
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
+        
+        let pest = pestlist[indexPath.row]
+        selectedPest =  databaseController?.getPestByID(pest.pestID!)
+        performSegue(withIdentifier: "pestInterestedListToPestDetail", sender: self)
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -77,14 +121,26 @@ class PestListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "pestInterestedListToPestDetail" {
+        let destination = segue.destination as! detailInformationViewController
+            destination.showedPest = self.selectedPest
+        }
     }
-    */
+    
+    func onPestChange(change: DatabaseChange, pests: [Pest]) {
+        
+    }
+    
+    func onUserCDChange(change: DatabaseChange, user: [UserCD]) {
+        self.user = user.first
+        pestlist = (self.user!.pestlist?.allObjects as? [PestCD])!
+        tableView.reloadData()
+    }
+    
 
 }
