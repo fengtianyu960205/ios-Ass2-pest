@@ -110,8 +110,9 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         
             
         if indexPath.section == 0{
-            let messagecontent = showedPest?.threat
-            displayMessage(title: "Threat", message: messagecontent!)
+            let messagecontent = showedPest?.threat ?? "No information"
+            //displayMessage(title: "Threat", message: messagecontent!)
+            displayMessage(title: "Threat", msg: messagecontent, button: "Dismiss")
         }
         else if indexPath.section == 1{
             let messagecontent = showedPest?.aid
@@ -206,6 +207,16 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         alertController.addAction(UIAlertAction(title: "Dismiss",
             style: UIAlertAction.Style.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func displayMessage(title: String, msg: String, button: String){
+        let popUpViewC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "infoPopUpVC") as! infoPopUpViewController
+        self.addChild(popUpViewC)
+        popUpViewC.view.frame = self.view.frame
+        popUpViewC.updateInformation(title: title, msg: msg, button: button)
+        self.view.addSubview(popUpViewC.view)
+        popUpViewC.didMove(toParent: self)
+        
     }
 
 }
