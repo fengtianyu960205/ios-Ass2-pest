@@ -117,4 +117,8 @@ class LoginViewController: UIViewController {
         errorLabel.text = message
         errorLabel.alpha = 1
     }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+
+    }
 }

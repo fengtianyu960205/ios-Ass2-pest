@@ -38,6 +38,15 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         coreDataDatabaseController = appDelegate.coreDataDatabaseController
         user = coreDataDatabaseController?.fetchSpecificUser().first!
             
+        
+        
+        
+
+        // Do any additional setup after loading the view.
+        setupView()
+    }
+    
+    func setupView(){
         tableview.delegate = self
         tableview.dataSource = self
         tableview.tableFooterView = UIView()
@@ -47,9 +56,12 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         pestWeight.text = showedPest?.weight
         pestName.text = showedPest?.name
         pestCategory.text = showedPest?.category
+        let pestScore: Float = Float(showedPest?.harmScore ?? 0) / Float(100)
         let urlkey = showedPest?.image_url
         let url = URL(string : urlkey!)
         pestImage.sd_setImage(with: url, placeholderImage: UIImage(named: "fox"))
+        Utility.StyleProgressView(harmScoreProgress)
+        setProgressView(progress: pestScore)
         
         
         userPestList = (user!.pestlist?.allObjects as? [PestCD])!
@@ -64,8 +76,6 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         }
         
         pestListbtn.addTarget(self, action: #selector(pestListBtn(_:)), for: .touchUpInside)
-
-        // Do any additional setup after loading the view.
     }
     
      func numberOfSections(in tableview: UITableView) -> Int {
@@ -202,7 +212,21 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
          performSegue(withIdentifier: "detailToComment", sender: self)
        }
     
-    
+    func setProgressView(progress : Float) {
+        if progress <= 0.3 && progress > 0 {
+            self.harmScoreProgress.setProgress(progress, animated: false)
+            self.harmScoreProgress.progressTintColor = UIColor.green
+
+        }else if progress > 0.3 && progress <= 0.6{
+            self.harmScoreProgress.setProgress(progress, animated: false)
+            self.harmScoreProgress.progressTintColor = UIColor.orange
+
+        }else{
+            self.harmScoreProgress.setProgress(progress, animated: false)
+            self.harmScoreProgress.progressTintColor = UIColor.red
+  
+        }
+    }
     
     func displayMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message,

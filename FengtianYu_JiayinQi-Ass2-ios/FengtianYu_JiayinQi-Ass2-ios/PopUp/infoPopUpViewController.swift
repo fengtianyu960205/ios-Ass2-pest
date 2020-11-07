@@ -15,6 +15,8 @@ class infoPopUpViewController: UIViewController {
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var infoTextView: UITextView!
     @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var alertView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +26,8 @@ class infoPopUpViewController: UIViewController {
     }
     
     func setupView(){
-        self.view.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.4)
+        self.view.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.4)
+        //alertView.layer.cornerRadius = 5.0
         Utility.StyleButtonFilled(button1)
     }
     

@@ -90,4 +90,9 @@ class Utility{
         segmentControl.layer.borderColor = UIColor.init(red: 15/255, green: 146/255, blue: 124/255, alpha: 1).cgColor
         segmentControl.layer.borderWidth = 0
     }
+    
+    static func StyleProgressView(_ progressView: UIProgressView){
+        progressView.layer.cornerRadius = 7
+        progressView.transform = progressView.transform.scaledBy(x: 1, y: 2)
+    }
 }

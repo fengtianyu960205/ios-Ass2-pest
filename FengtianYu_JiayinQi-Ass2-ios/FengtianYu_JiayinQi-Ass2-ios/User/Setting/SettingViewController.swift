@@ -90,6 +90,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         Utility.StyleButtonDisable(logOutButton)
         //go back to login view?
         //use a dafault user?
-        
+        self.performSegue(withIdentifier: "unwindToViewController", sender: self)
     }
 }
