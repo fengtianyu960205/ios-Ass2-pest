@@ -989,9 +989,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y02-Vm-kwr">
                                 <rect key="frame" x="10" y="763" width="394" height="40"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Take Photo">
+                                <state key="normal" title="get address">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="takePhotoBtnAct:" destination="SuL-Er-Int" eventType="touchUpInside" id="Y5v-B9-UFw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1033,7 +1036,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Photo" image="camera.fill" catalog="system" selectedImage="camera.fill" id="tqv-dJ-aid"/>
                     <connections>
+                        <outlet property="city" destination="ViF-Qv-jbA" id="YXg-Bk-Q5U"/>
                         <outlet property="pestImage" destination="2fT-kU-Mu3" id="ece-c8-bdS"/>
+                        <outlet property="pestName" destination="H88-ya-cXX" id="cYj-5D-amj"/>
+                        <outlet property="state" destination="5H3-hd-Xtu" id="42f-p7-aHB"/>
+                        <outlet property="street" destination="INW-IV-vHU" id="6de-jy-n1p"/>
+                        <outlet property="takePhotoBtn" destination="Y02-Vm-kwr" id="6F7-VY-xzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOA-ed-jTi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
