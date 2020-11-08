@@ -48,6 +48,10 @@
 /* Begin PBXFileReference section */
 		510D581AD6CBD1762FE5B5DA /* Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; path = "Target Support Files/Pods-FengtianYu_JiayinQi-Ass2-ios/Pods-FengtianYu_JiayinQi-Ass2-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		6324B7C32556E48700F497D8 /* infoPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoPopUpViewController.swift; sourceTree = "<group>"; };
+		6324B7C72558065600F497D8 /* MontserratAlternates-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Regular.ttf"; sourceTree = "<group>"; };
+		6324B7C82558067600F497D8 /* MontserratAlternates-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Medium.ttf"; sourceTree = "<group>"; };
+		6324B7C92558069900F497D8 /* MontserratAlternates-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Italic.ttf"; sourceTree = "<group>"; };
+		6324B7CA255807AE00F497D8 /* MontserratAlternates-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Light.ttf"; sourceTree = "<group>"; };
 		6364216A2552F6E8009FE455 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		6364217225544A9F009FE455 /* PestCD+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PestCD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6364217525544AF8009FE455 /* PestCD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PestCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -117,6 +121,17 @@
 			path = PopUp;
 			sourceTree = "<group>";
 		};
+		6324B7C62558061C00F497D8 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6324B7C72558065600F497D8 /* MontserratAlternates-Regular.ttf */,
+				6324B7C92558069900F497D8 /* MontserratAlternates-Italic.ttf */,
+				6324B7C82558067600F497D8 /* MontserratAlternates-Medium.ttf */,
+				6324B7CA255807AE00F497D8 /* MontserratAlternates-Light.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		6399EE47254F2540001493C6 /* LoginAndSignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +174,7 @@
 		751CB052253559CA00665CB4 /* FengtianYu_JiayinQi-Ass2-ios */ = {
 			isa = PBXGroup;
 			children = (
+				6324B7C62558061C00F497D8 /* fonts */,
 				6324B7C12556E2B100F497D8 /* PopUp */,
 				75F979702553E9B600B47AE8 /* Data Model */,
 				6399EE47254F2540001493C6 /* LoginAndSignUp */,
