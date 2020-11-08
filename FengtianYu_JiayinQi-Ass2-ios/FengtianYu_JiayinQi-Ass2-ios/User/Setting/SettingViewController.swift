@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logOutButton: UIButton!
     
+    @IBOutlet weak var errorLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +26,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func setupView(){
         //if a user login
         Utility.StyleButtonEmergency(logOutButton)
-        //if no user login
-        //Utility.StyleButtonDisable(logOutButton)
+        errorLable.alpha = 0
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
@@ -86,10 +87,17 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBAction func logOutAccount(_ sender: Any) {
         //user want to log out
+        let firebaseAuth = Auth.auth()
+        do{
+            try firebaseAuth.signOut()
+        }catch let signoutError as NSError{
+            errorLable.alpha = 1
+            errorLable.text = "Error signing out: " + signoutError.localizedDescription
+        }
         //diable the user interaction and make it invisible
         Utility.StyleButtonDisable(logOutButton)
         //go back to login view?
-        //use a dafault user?
+        
         self.performSegue(withIdentifier: "unwindToViewController", sender: self)
     }
 }

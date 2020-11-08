@@ -284,7 +284,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a7Q-3p-UV4">
-                                <rect key="frame" x="20" y="164" width="374" height="568"/>
+                                <rect key="frame" x="20" y="308" width="374" height="280"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0v-0u-3Us">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -308,10 +308,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbE-yR-D3R">
-                                        <rect key="frame" x="0.0" y="50" width="374" height="448"/>
+                                        <rect key="frame" x="0.0" y="50" width="374" height="160"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6r6-oS-E8Z">
-                                                <rect key="frame" x="20" y="10" width="334" height="428"/>
+                                                <rect key="frame" x="20" y="10" width="334" height="140"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -327,7 +327,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-og-Ewp">
-                                        <rect key="frame" x="0.0" y="498" width="374" height="70"/>
+                                        <rect key="frame" x="0.0" y="210" width="374" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vg-Zy-t9E">
                                                 <rect key="frame" x="20" y="0.0" width="334" height="45"/>
@@ -360,6 +360,7 @@
                                     <constraint firstItem="p0v-0u-3Us" firstAttribute="top" secondItem="a7Q-3p-UV4" secondAttribute="top" id="csA-DL-K46"/>
                                     <constraint firstItem="hk2-og-Ewp" firstAttribute="leading" secondItem="a7Q-3p-UV4" secondAttribute="leading" id="eis-jh-BEF"/>
                                     <constraint firstAttribute="bottom" secondItem="hk2-og-Ewp" secondAttribute="bottom" id="hRJ-GY-6ae"/>
+                                    <constraint firstAttribute="height" constant="280" id="zu1-SO-BYN"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -370,7 +371,6 @@
                             <constraint firstItem="a7Q-3p-UV4" firstAttribute="centerX" secondItem="Flp-yY-9c4" secondAttribute="centerX" id="VSS-sq-N1T"/>
                             <constraint firstItem="a7Q-3p-UV4" firstAttribute="leading" secondItem="BZw-ge-yNh" secondAttribute="leading" constant="20" id="W7y-tJ-ZCb"/>
                             <constraint firstItem="a7Q-3p-UV4" firstAttribute="centerY" secondItem="Flp-yY-9c4" secondAttribute="centerY" id="ckX-xU-mwW"/>
-                            <constraint firstItem="a7Q-3p-UV4" firstAttribute="top" secondItem="BZw-ge-yNh" secondAttribute="top" constant="120" id="pkd-mV-GHG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1453,8 +1453,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y51-1M-n9J">
-                                <rect key="frame" x="10" y="773" width="394" height="30"/>
+                                <rect key="frame" x="10" y="759" width="394" height="44"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wMJ-Ve-rWP"/>
+                                </constraints>
                                 <state key="normal" title="Log out">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1463,7 +1466,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z4D-ay-d6k">
-                                <rect key="frame" x="0.0" y="128" width="414" height="575"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="590.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutCell" id="mU9-K3-ID8" customClass="PestInformationTableViewCell" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target">
@@ -1546,21 +1549,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8Z-eN-i9k">
+                                <rect key="frame" x="20" y="728.5" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nej-Ac-5V6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nej-Ac-5V6" firstAttribute="trailing" secondItem="Y51-1M-n9J" secondAttribute="trailing" constant="10" id="7bS-CK-B0r"/>
                             <constraint firstItem="Y51-1M-n9J" firstAttribute="leading" secondItem="nej-Ac-5V6" secondAttribute="leading" constant="10" id="Asp-eG-NC7"/>
-                            <constraint firstItem="Y51-1M-n9J" firstAttribute="top" secondItem="Z4D-ay-d6k" secondAttribute="bottom" constant="70" id="BUN-9a-sLm"/>
                             <constraint firstItem="Z4D-ay-d6k" firstAttribute="leading" secondItem="nej-Ac-5V6" secondAttribute="leading" id="Vry-gG-OUi"/>
+                            <constraint firstItem="B8Z-eN-i9k" firstAttribute="leading" secondItem="nej-Ac-5V6" secondAttribute="leading" constant="20" id="Wmd-GI-OVR"/>
                             <constraint firstItem="nej-Ac-5V6" firstAttribute="trailing" secondItem="Z4D-ay-d6k" secondAttribute="trailing" id="Z5n-Uj-P7U"/>
-                            <constraint firstItem="Z4D-ay-d6k" firstAttribute="top" secondItem="nej-Ac-5V6" secondAttribute="top" constant="40" id="deg-Wh-h6U"/>
+                            <constraint firstItem="nej-Ac-5V6" firstAttribute="trailing" secondItem="B8Z-eN-i9k" secondAttribute="trailing" constant="20" id="cOC-JZ-iaH"/>
+                            <constraint firstItem="Z4D-ay-d6k" firstAttribute="top" secondItem="nej-Ac-5V6" secondAttribute="top" constant="10" id="deg-Wh-h6U"/>
+                            <constraint firstItem="B8Z-eN-i9k" firstAttribute="top" secondItem="Z4D-ay-d6k" secondAttribute="bottom" constant="40" id="edP-bO-2ch"/>
+                            <constraint firstItem="Y51-1M-n9J" firstAttribute="top" secondItem="B8Z-eN-i9k" secondAttribute="bottom" constant="10" id="fsC-yT-GlH"/>
                             <constraint firstItem="nej-Ac-5V6" firstAttribute="bottom" secondItem="Y51-1M-n9J" secondAttribute="bottom" constant="10" id="xX3-55-iM2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Setting" id="TeD-GK-wCS"/>
                     <connections>
+                        <outlet property="errorLable" destination="B8Z-eN-i9k" id="VJh-2x-AXx"/>
                         <outlet property="logOutButton" destination="Y51-1M-n9J" id="Alk-h6-yK6"/>
                         <outlet property="tableView" destination="Z4D-ay-d6k" id="diE-fh-aMP"/>
                         <segue destination="991-Rb-WH2" kind="show" identifier="settingToAbout" id="tFL-IU-hN8"/>
@@ -1704,7 +1717,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="YRS-L4-m5b"/>
-        <segue reference="a9o-M3-4wc"/>
+        <segue reference="cbo-Ui-eQM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book.fill" catalog="system" width="128" height="102"/>
