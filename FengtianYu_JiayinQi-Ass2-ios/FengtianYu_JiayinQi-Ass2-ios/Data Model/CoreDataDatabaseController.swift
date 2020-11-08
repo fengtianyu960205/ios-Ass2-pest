@@ -145,8 +145,4 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
             return users
     }
     
-    
-    
-    
-    
 }

@@ -56,15 +56,16 @@ class infoPopUpViewController: UIViewController {
     }
     
     func finishPopUp(){
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.25,animations: {
             self.view.transform = CGAffineTransform(scaleX: 1.3,y: 1.3)
             self.view.alpha = 0.0
-        } completion: { (finished) in
+        },completion: { (finished) in
             if finished {
                 self.view.removeFromSuperview();
             }
-        }
-
+        });
+        
+        
     }
     
     func updateInformation(title: String, msg: String, button: String) {
