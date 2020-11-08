@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3489DC3B541D71CF71598676 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8A0404D1090C698D62D363 /* Pods_FengtianYu_JiayinQi_Ass2_ios.framework */; };
 		6324B7C42556E48700F497D8 /* infoPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324B7C32556E48700F497D8 /* infoPopUpViewController.swift */; };
+		6324B7CC255814F900F497D8 /* MontserratAlternates-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6324B7C72558065600F497D8 /* MontserratAlternates-Regular.ttf */; };
+		6324B7CE255815E200F497D8 /* MontserratAlternates-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6324B7C92558069900F497D8 /* MontserratAlternates-Italic.ttf */; };
+		6324B7D0255815E600F497D8 /* MontserratAlternates-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6324B7C82558067600F497D8 /* MontserratAlternates-Medium.ttf */; };
+		6324B7D2255815ED00F497D8 /* MontserratAlternates-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6324B7CA255807AE00F497D8 /* MontserratAlternates-Light.ttf */; };
 		6364216B2552F6E8009FE455 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364216A2552F6E8009FE455 /* Utility.swift */; };
 		6364217325544A9F009FE455 /* PestCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217225544A9F009FE455 /* PestCD+CoreDataClass.swift */; };
 		6364217625544AF8009FE455 /* PestCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217525544AF8009FE455 /* PestCD+CoreDataProperties.swift */; };
@@ -351,9 +355,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				751CB063253559CF00665CB4 /* LaunchScreen.storyboard in Resources */,
+				6324B7D2255815ED00F497D8 /* MontserratAlternates-Light.ttf in Resources */,
 				759FF80D254D91F3003722C1 /* GoogleService-Info.plist in Resources */,
 				751CB060253559CF00665CB4 /* Assets.xcassets in Resources */,
+				6324B7CC255814F900F497D8 /* MontserratAlternates-Regular.ttf in Resources */,
+				6324B7CE255815E200F497D8 /* MontserratAlternates-Italic.ttf in Resources */,
 				751CB05B253559CA00665CB4 /* Main.storyboard in Resources */,
+				6324B7D0255815E600F497D8 /* MontserratAlternates-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
