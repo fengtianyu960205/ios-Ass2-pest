@@ -35,7 +35,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
        tableView.delegate = self
        tableView.dataSource = self
        tableView.tableFooterView = UIView()
-        userImage?.image = UIImage(named: "manPortrait")
+        
     
         
         setupView()
@@ -43,10 +43,10 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-           coreDataDatabaseController?.addListener(listener: self)
-        nameTextField.text = self.user!.nickName
-       }
+        super.viewWillAppear(animated)
+        coreDataDatabaseController?.addListener(listener: self)
+        setValueforUIkits()
+    }
        
       
        
@@ -59,6 +59,18 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.user = user.first
         
+    }
+    
+    func setValueforUIkits(){
+        nameTextField.text = user!.nickName
+        ageTextField.text = "\(user!.age)"
+        locationTextField.text = user!.address
+        if user!.gender == "female"{
+            genderSegmentControl.selectedSegmentIndex = 1
+        }else{
+            genderSegmentControl.selectedSegmentIndex = 0
+        }
+        userImage.image = UIImage(data: user!.userImage!)
     }
     
     func setupView(){
@@ -83,9 +95,13 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Utility.StyleUneditTextField(ageTextField)
         Utility.StyleUneditTextField(locationTextField)
         editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
+       
         
         //set the segmentedControl
         Utility.StyleUneditSegmentControl(genderSegmentControl)
+        
+        userImage?.image = UIImage(named: "manPortrait")
+        
         
         //initialize the editable flag
         editable = false
@@ -144,13 +160,32 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func editProfile(_ sender: Any) {
         editable = !editable
         if editable == false{
-            //user finish edit the profile
-            Utility.StyleUneditTextField(nameTextField)
-            Utility.StyleUneditTextField(ageTextField)
-            Utility.StyleUneditTextField(locationTextField)
-            //set the segmentedControl
-            Utility.StyleUneditSegmentControl(genderSegmentControl)
-            editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
+
+            //check the data before saving the data to core data
+            if(inputValidation()){
+                //save the data
+                user!.setValue(nameTextField.text, forKey: "nickName")
+                user!.setValue(Int32(ageTextField.text!), forKey: "age")
+                user!.setValue(locationTextField.text, forKey: "address")
+                if genderSegmentControl.selectedSegmentIndex == 0{
+                    user!.setValue("male", forKey: "gender")
+                }else{
+                    user!.setValue("female", forKey: "gender")
+                }
+                
+                //save the image
+                
+                //user finish edit the profile
+                Utility.StyleUneditTextField(nameTextField)
+                Utility.StyleUneditTextField(ageTextField)
+                Utility.StyleUneditTextField(locationTextField)
+                //set the segmentedControl
+                Utility.StyleUneditSegmentControl(genderSegmentControl)
+                editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
+            }else{
+                editable = !editable
+            }
+            
         }else{
             //user start to editting the profile
             Utility.StyleTextField(nameTextField)
@@ -163,6 +198,34 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     func onPestChange(change: DatabaseChange, pests: [Pest]) {
         
+    }
+    
+    func inputValidation() -> Bool{
+        if nameTextField.text == "" || ageTextField.text == "" || locationTextField.text == ""{
+            displayMessage(title: "Error", message: "fill all the fields")
+            return false
+        }
+        
+        let age = Int(ageTextField.text!)
+        if age != nil{
+            if age! < 0 || age! > 150{
+                displayMessage(title: "Error", message: "the age should be in the range of 0 and 150")
+                return false
+            }
+        }else{
+            displayMessage(title: "Error", message: "The age should be a number")
+            return false
+        }
+        
+        return true
+    }
+    
+    func displayMessage(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message,
+            preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss",
+            style: UIAlertAction.Style.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }

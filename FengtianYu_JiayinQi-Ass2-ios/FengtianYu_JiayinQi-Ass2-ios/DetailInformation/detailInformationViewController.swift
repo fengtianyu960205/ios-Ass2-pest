@@ -70,8 +70,8 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
             if showedPest!.id == pest.pestID {
                 flag = false
                 pestcd = pest
-                 pestListbtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
-               break
+                pestListbtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
+                break
             }
         }
         
@@ -121,22 +121,18 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
             
         if indexPath.section == 0{
             let messagecontent = showedPest?.threat ?? "No information"
-            //displayMessage(title: "Threat", message: messagecontent!)
             displayMessage(title: "Threat", msg: messagecontent, button: "Dismiss")
         }
         else if indexPath.section == 1{
             let messagecontent = showedPest?.aid ?? "No information"
-            //displayMessage(title: "First Aid", message: messagecontent!)
             displayMessage(title: "Threat", msg: messagecontent, button: "Dismiss")
         }
         else if indexPath.section == 2{
             let messagecontent = showedPest?.deal ?? "No information"
-            //displayMessage(title: "Deal with the Pest", message: messagecontent!)
             displayMessage(title: "Threat", msg: messagecontent, button: "Dismiss")
         }
         else if indexPath.section == 3{
             let messagecontent = showedPest?.fact ?? "No information"
-            //displayMessage(title: "Fact about the Pest", message: messagecontent!)
             displayMessage(title: "Threat", msg: messagecontent, button: "Dismiss")
         }
         

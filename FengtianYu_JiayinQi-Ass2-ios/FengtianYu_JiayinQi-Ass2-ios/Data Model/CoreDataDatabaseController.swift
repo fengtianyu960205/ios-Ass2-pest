@@ -29,7 +29,7 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
         }
         super.init()
         if  fetchSpecificUser().count == 0{
-            addUser(userID: userID!, age: 30, gender: "man", address: "", nickName: "nk",userImage : UIImage(named: "manPortrait")!.pngData()!)
+            addUser(userID: userID!, age: 30, gender: "male", address: "", nickName: "nk",userImage : UIImage(named: "manPortrait")!.pngData()!)
         }
       
     }
