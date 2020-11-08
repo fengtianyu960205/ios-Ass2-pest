@@ -142,6 +142,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //performSegue(withIdentifier: "gotoDetailPlant", sender: self)
         if indexPath.section == 0{
              performSegue(withIdentifier: "userToPestList", sender: self)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
         
         
