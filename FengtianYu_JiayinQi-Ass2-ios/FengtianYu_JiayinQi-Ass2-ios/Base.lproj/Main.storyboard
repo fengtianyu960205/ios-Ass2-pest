@@ -1135,7 +1135,7 @@
                                     <constraint firstAttribute="width" constant="70" id="9UG-1O-Pwm"/>
                                     <constraint firstAttribute="height" constant="70" id="WoV-uT-E3v"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="locationbtn"/>
+                                <state key="normal" title="Button" image="locationBtn"/>
                                 <connections>
                                     <action selector="getCurrentLocation:" destination="SuL-Er-Int" eventType="touchUpInside" id="KGS-nh-nse"/>
                                 </connections>
@@ -1773,7 +1773,7 @@
         <image name="exclamationmark.triangle.fill" catalog="system" width="128" height="112"/>
         <image name="greaterthan" catalog="system" width="128" height="111"/>
         <image name="heart.slash.fill" catalog="system" width="128" height="112"/>
-        <image name="locationbtn" width="225" height="225"/>
+        <image name="locationBtn" width="225" height="225"/>
         <image name="logo" width="500" height="401"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
