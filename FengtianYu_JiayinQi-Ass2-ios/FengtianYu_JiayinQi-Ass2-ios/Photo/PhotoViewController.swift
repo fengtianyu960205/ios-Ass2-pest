@@ -15,8 +15,9 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     var currentLocation: CLLocationCoordinate2D?
     var userLocatrion : CLLocation?
     
-   
-    @IBOutlet weak var takePhotoBtn: UIButton!
+     weak var databaseController: DatabaseProtocol?
+    @IBOutlet weak var takePhoto: UIButton!
+    @IBOutlet weak var currentLocationBtn: UIButton!
     @IBOutlet weak var pestName: UITextField!
     @IBOutlet weak var state: UITextField!
     @IBOutlet weak var city: UITextField!
@@ -25,9 +26,17 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databaseController = appDelegate.databaseController
+        
         pestImage?.image = UIImage(named: "fox")
         
-        takePhotoBtn.isHidden = true
+        takePhoto.contentVerticalAlignment = .fill
+        takePhoto.contentHorizontalAlignment = .fill
+        takePhoto.imageEdgeInsets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+        
+        currentLocationBtn.isHidden = true
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.distanceFilter = 10
         locationManager.delegate = self
@@ -46,7 +55,8 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
             }
             
         }else{
-            takePhotoBtn.isHidden = false
+            currentLocationBtn.isHidden = false
+             locationBtnUI()
         }
         
     }
@@ -72,7 +82,8 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
     {
         if status == .authorizedWhenInUse {
-             takePhotoBtn.isHidden = false
+             currentLocationBtn.isHidden = false
+            locationBtnUI()
         }
      }
     
@@ -102,9 +113,7 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
         }
     }
     
-    @IBAction func takePhotoBtnAct(_ sender: Any) {
-        autoAddress()
-       }
+   
     
     func displayMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message,
@@ -114,7 +123,20 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
         self.present(alertController, animated: true, completion: nil)
     }
     
-
+   
+    @IBAction func getCurrentLocation(_ sender: Any) {
+        autoAddress()
+    }
+    
+    func locationBtnUI(){
+        
+        
+        currentLocationBtn.contentVerticalAlignment = .fill
+        currentLocationBtn.contentHorizontalAlignment = .fill
+        currentLocationBtn.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+               
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -125,4 +147,11 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     }
     */
 
+    @IBAction func takePhotoAct(_ sender: Any) {
+        displayMessage(title: "Add location", message: "Add location successfully.")
+    }
+    
+    func addressToGeoPoint(){
+        
+    }
 }

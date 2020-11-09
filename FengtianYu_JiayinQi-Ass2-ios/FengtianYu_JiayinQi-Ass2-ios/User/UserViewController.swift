@@ -75,7 +75,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func setupView(){
         // create a ui button
-        let button = UIButton(type: .custom)
+        let button = UIButton(type: .system)
         //set image for button
         button.setImage(UIImage(named: "settings"), for: .normal)
         //add function for button
@@ -108,13 +108,11 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func settingButtonPressed(_ sender: Any){
-           (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
            
-           if (sender as! UIButton).isSelected {
-               self.performSegue(withIdentifier: "userToSetting", sender: nil)
-           }else{
+           
+          
             self.performSegue(withIdentifier: "userToSetting", sender: nil)
-        }
+           
        }
 
     func numberOfSections(in tableview: UITableView) -> Int {

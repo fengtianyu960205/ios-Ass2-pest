@@ -175,6 +175,25 @@ class FirebaseController: NSObject,DatabaseProtocol {
         ])
     }
     
+    func addPestLocation(id: String, longitude: String,latitude:String,city:String,state:String)  {
+        
+        var specificPestRef = pestsRef?.document(id);
+        
+        
+        specificPestRef?.updateData([
+            "longitude": FieldValue.arrayUnion([longitude])
+        ])
+        specificPestRef?.updateData([
+            "latitude": FieldValue.arrayUnion([latitude])
+        ])
+        specificPestRef?.updateData([
+            "cities": FieldValue.arrayUnion([city])
+        ])
+        specificPestRef?.updateData([
+            "states": FieldValue.arrayUnion([state])
+        ])
+    }
+    
     
     
     func deletePest(pest: Pest) {
