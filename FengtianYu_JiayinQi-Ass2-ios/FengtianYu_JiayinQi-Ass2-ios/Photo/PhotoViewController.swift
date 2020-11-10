@@ -163,7 +163,7 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
             let placemark = placemarks?.first
             self.lat = placemark?.location?.coordinate.latitude
             self.lon = placemark?.location?.coordinate.longitude
-            self.databaseController?.addPestLocation(id: "M3rPEqjDrkP0QRCSK69T", longitude: "\(self.lon!)",latitude:"\(self.lat!)",city:"Melbourne",state:"VIC")
+            self.databaseController?.addPestLocation(id: "M3rPEqjDrkP0QRCSK69T",  location: "\(self.lon!)"+"\(self.lat!)"+"Melbourne"+"VIC")
         }
     }
 }

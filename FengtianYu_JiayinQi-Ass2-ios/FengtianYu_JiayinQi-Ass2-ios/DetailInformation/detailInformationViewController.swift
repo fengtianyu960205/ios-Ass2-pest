@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class detailInformationViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
     
@@ -139,11 +140,13 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         else{
             
             var index = 0
-            var size = integer_t((showedPest?.latitude.count)!) as integer_t
+            var size = integer_t((showedPest?.location.count)!) as integer_t
             for n in 1...size {
-                let lat = Double((showedPest?.latitude[index])!)!
-                let lng = Double((showedPest?.longitude[index])!)!
-                let location = LocationAnnotation(title: (showedPest?.cities[index])!,
+                let inputString = (showedPest?.location[index])!
+                let splits = inputString.components(separatedBy: ",")
+                let lng = Double(splits[0])!
+                let lat = (splits[1] as NSString).doubleValue
+                let location = LocationAnnotation(title: splits[2],
                 subtitle: "",
                 lat: lat, long: lng)
                 locationList.append(location)

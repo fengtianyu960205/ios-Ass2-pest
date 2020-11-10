@@ -35,7 +35,7 @@ protocol DatabaseProtocol: AnyObject {
     //func addHeroToTeam(hero: SuperHero, team: Team) -> Bool
     func deletePest(pest: Pest)
     func addPestComment(id: String, comment: String)
-    func addPestLocation(id: String, longitude: String,latitude:String,city:String,state:String) 
+    func addPestLocation(id: String, location:String) 
     //func getSpecificPest(id: String) -> Pest
     func getPestByID(_ id: String) -> Pest?
     //func deleteTeam(team: Team)
