@@ -148,6 +148,7 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     */
 
     @IBAction func takePhotoAct(_ sender: Any) {
+        //databaseController?.addPestLocation(id: "M3rPEqjDrkP0QRCSK69T", longitude: //"144.9631",latitude:"-37.8136",city:"Melbourne",state:"VIC")
         displayMessage(title: "Add location", message: "Add location successfully.")
     }
     
