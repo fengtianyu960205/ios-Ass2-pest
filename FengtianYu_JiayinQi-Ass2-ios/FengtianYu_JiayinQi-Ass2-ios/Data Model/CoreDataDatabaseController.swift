@@ -18,8 +18,8 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
     var userID : String?
     
     override init() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         userID = appDelegate.userId
         persistentContainer = NSPersistentContainer(name: "dataModel")
         persistentContainer.loadPersistentStores() { (description, error) in

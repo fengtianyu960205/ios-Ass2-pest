@@ -37,6 +37,7 @@ class FirebaseController: NSObject,DatabaseProtocol {
         
         self.setUpPestListener()
         }
+        
     }
     
     func setUpPestListener() {

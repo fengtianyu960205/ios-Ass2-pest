@@ -26,6 +26,7 @@ class Pest: NSObject,Decodable,Encodable {
     var cities : [String] = []
     var states : [String] = []
     var comments : [String] = []
+    var location : [String] = []
     
     
     enum CodingKeys: String,CodingKey {
@@ -46,6 +47,7 @@ class Pest: NSObject,Decodable,Encodable {
         case cities
         case states
         case comments
+        case location
         
     }
 

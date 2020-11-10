@@ -59,7 +59,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         let pestScore: Float = Float(showedPest?.harmScore ?? 0) / Float(100)
         let urlkey = showedPest?.image_url
         let url = URL(string : urlkey!)
-        pestImage.sd_setImage(with: url, placeholderImage: UIImage(named: "fox"))
+        pestImage.sd_setImage(with: url, placeholderImage: UIImage(named: "loading"))
         Utility.StyleProgressView(harmScoreProgress)
         setProgressView(progress: pestScore)
         
