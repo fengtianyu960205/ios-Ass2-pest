@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreData
+import CoreLocation
 
 class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     var locationManager: CLLocationManager = CLLocationManager()
@@ -23,6 +24,8 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var street: UITextField!
     @IBOutlet weak var pestImage: UIImageView!
+    var lat: Double?
+    var lon : Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,11 +151,19 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     */
 
     @IBAction func takePhotoAct(_ sender: Any) {
-        //databaseController?.addPestLocation(id: "M3rPEqjDrkP0QRCSK69T", longitude: //"144.9631",latitude:"-37.8136",city:"Melbourne",state:"VIC")
+        addressToGeoPoint()
         displayMessage(title: "Add location", message: "Add location successfully.")
     }
     
     func addressToGeoPoint(){
         
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString("Melbourne CBD, Melbourne, VIC") {
+            placemarks, error in
+            let placemark = placemarks?.first
+            self.lat = placemark?.location?.coordinate.latitude
+            self.lon = placemark?.location?.coordinate.longitude
+            self.databaseController?.addPestLocation(id: "M3rPEqjDrkP0QRCSK69T", longitude: "\(self.lon!)",latitude:"\(self.lat!)",city:"Melbourne",state:"VIC")
+        }
     }
 }
