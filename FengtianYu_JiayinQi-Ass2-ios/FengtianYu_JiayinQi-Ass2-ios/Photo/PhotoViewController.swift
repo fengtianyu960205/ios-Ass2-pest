@@ -152,18 +152,28 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
 
     @IBAction func takePhotoAct(_ sender: Any) {
         addressToGeoPoint()
-        displayMessage(title: "Add location", message: "Add location successfully.")
+        
     }
     
     func addressToGeoPoint(){
         
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString("Melbourne CBD, Melbourne, VIC") {
+        let streetString = self.street.text!
+        let cityString = self.city.text!
+        let stateString = self.state.text!
+        let addressString = String(streetString)+","+String(cityString)+","+String(stateString)
+        geocoder.geocodeAddressString(addressString) {
             placemarks, error in
             let placemark = placemarks?.first
             self.lat = placemark?.location?.coordinate.latitude
             self.lon = placemark?.location?.coordinate.longitude
-            self.databaseController?.addPestLocation(id: "M3rPEqjDrkP0QRCSK69T",  location: "\(self.lon!)"+"\(self.lat!)"+"Melbourne"+"VIC")
+            if placemark != nil{
+                self.databaseController?.addPestLocation(id: "M3rPEqjDrkP0QRCSK69T",  location: "\(self.lon!)"+","+"\(self.lat!)"+","+cityString+","+stateString)
+                self.displayMessage(title: "Add location", message: "Add location successfully.")
+            }
+            else{
+                self.displayMessage(title: "Add location", message: "Can not find this location")
+            }
         }
     }
 }
