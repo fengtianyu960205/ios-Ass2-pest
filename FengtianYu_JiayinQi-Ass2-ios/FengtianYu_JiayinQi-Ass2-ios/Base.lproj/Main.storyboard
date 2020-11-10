@@ -567,7 +567,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N28-QL-1bO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-761" y="542"/>
+            <point key="canvasLocation" x="-762.31884057971024" y="541.74107142857144"/>
         </scene>
         <!--Single Pest Location Map View Controller-->
         <scene sceneID="2BL-Va-FVe">
@@ -578,7 +578,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Sjc-ex-cIG">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -612,7 +612,7 @@
                                 <color key="progressTintColor" red="1" green="0.15336044520547945" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Dv-OC-XF3">
-                                <rect key="frame" x="5" y="412.5" width="404" height="439.5"/>
+                                <rect key="frame" x="5" y="412.5" width="404" height="390.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pestThreatCell" id="8Oa-ck-FXN" customClass="PestInformationTableViewCell" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target">
@@ -986,7 +986,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-Mr-jAU">
-                                <rect key="frame" x="0.0" y="148" width="414" height="704"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="655"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" id="vyn-ci-fvI">
@@ -1000,7 +1000,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIM-qb-Sxp">
-                                <rect key="frame" x="314" y="762" width="70" height="70"/>
+                                <rect key="frame" x="314" y="713" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="1Gf-Bk-szY"/>
                                     <constraint firstAttribute="width" constant="70" id="487-93-AVu"/>
@@ -1126,9 +1126,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2fT-kU-Mu3">
-                                <rect key="frame" x="10" y="464" width="304" height="249"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQs-2d-Erj">
                                 <rect key="frame" x="314" y="633" width="70" height="70"/>
                                 <constraints>
@@ -1151,6 +1148,24 @@
                                     <action selector="takePhotoAct:" destination="SuL-Er-Int" eventType="touchUpInside" id="Vhe-7P-Kcc"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="takepicture" translatesAutoresizingMaskIntoConstraints="NO" id="J5R-Xj-bD3">
+                                <rect key="frame" x="10" y="403" width="250" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="PCq-4s-f8v"/>
+                                    <constraint firstAttribute="width" constant="250" id="a3v-SP-Kjq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbt-JC-ktZ">
+                                <rect key="frame" x="84" y="577" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="auc-zx-svD"/>
+                                    <constraint firstAttribute="width" constant="70" id="evp-5p-ahv"/>
+                                </constraints>
+                                <state key="normal" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="addPhotoAct:" destination="SuL-Er-Int" eventType="touchUpInside" id="6tz-P8-TVR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1162,27 +1177,27 @@
                             <constraint firstItem="ViF-Qv-jbA" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="10" id="AxW-j9-tL7"/>
                             <constraint firstItem="mia-1Y-uWd" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="10" id="B7o-wV-6Hb"/>
                             <constraint firstItem="K89-xg-1u0" firstAttribute="top" secondItem="imL-4n-t5T" secondAttribute="top" constant="10" id="Bps-Cq-Yxf"/>
+                            <constraint firstItem="J5R-Xj-bD3" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="10" id="Doa-ug-0nn"/>
                             <constraint firstItem="imL-4n-t5T" firstAttribute="trailing" secondItem="mia-1Y-uWd" secondAttribute="trailing" constant="10" id="GVp-pr-JUL"/>
                             <constraint firstItem="5H3-hd-Xtu" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="10" id="Gc2-BB-Pfd"/>
-                            <constraint firstItem="imL-4n-t5T" firstAttribute="bottom" secondItem="2fT-kU-Mu3" secondAttribute="bottom" constant="100" id="HLV-s1-SK0"/>
                             <constraint firstItem="5H3-hd-Xtu" firstAttribute="top" secondItem="mia-1Y-uWd" secondAttribute="bottom" constant="10" id="L9y-cd-gLg"/>
                             <constraint firstItem="imL-4n-t5T" firstAttribute="trailing" secondItem="5H3-hd-Xtu" secondAttribute="trailing" constant="10" id="N9b-lL-2Tp"/>
                             <constraint firstItem="ViF-Qv-jbA" firstAttribute="top" secondItem="gv5-uR-o6n" secondAttribute="bottom" constant="10" id="QS9-vS-r2h"/>
+                            <constraint firstItem="imL-4n-t5T" firstAttribute="bottom" secondItem="qbt-JC-ktZ" secondAttribute="bottom" constant="166" id="RLq-sB-L5w"/>
                             <constraint firstItem="imL-4n-t5T" firstAttribute="trailing" secondItem="K89-xg-1u0" secondAttribute="trailing" constant="10" id="USr-in-SKn"/>
                             <constraint firstItem="imL-4n-t5T" firstAttribute="trailing" secondItem="ViF-Qv-jbA" secondAttribute="trailing" constant="10" id="VIV-qh-dbi"/>
                             <constraint firstItem="gv5-uR-o6n" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="10" id="Vcd-Br-2es"/>
-                            <constraint firstItem="2fT-kU-Mu3" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="10" id="Xwi-T0-U3l"/>
                             <constraint firstItem="H88-ya-cXX" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="10" id="YUM-bx-MJM"/>
                             <constraint firstItem="d5M-F5-27X" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="10" id="dTb-dX-xdS"/>
                             <constraint firstItem="K89-xg-1u0" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="10" id="gVR-Mu-NML"/>
-                            <constraint firstItem="imL-4n-t5T" firstAttribute="trailing" secondItem="2fT-kU-Mu3" secondAttribute="trailing" constant="100" id="grz-dG-w2t"/>
                             <constraint firstItem="mia-1Y-uWd" firstAttribute="top" secondItem="ViF-Qv-jbA" secondAttribute="bottom" constant="10" id="iRn-Op-jkV"/>
                             <constraint firstItem="H88-ya-cXX" firstAttribute="top" secondItem="K89-xg-1u0" secondAttribute="bottom" constant="10" id="ius-jM-FRN"/>
                             <constraint firstItem="gv5-uR-o6n" firstAttribute="top" secondItem="INW-IV-vHU" secondAttribute="bottom" constant="10" id="jOg-3b-mbn"/>
                             <constraint firstItem="imL-4n-t5T" firstAttribute="trailing" secondItem="INW-IV-vHU" secondAttribute="trailing" constant="10" id="jdj-wB-CwS"/>
                             <constraint firstItem="imL-4n-t5T" firstAttribute="bottom" secondItem="sQs-2d-Erj" secondAttribute="bottom" constant="110" id="lh8-0a-Fnn"/>
-                            <constraint firstItem="2fT-kU-Mu3" firstAttribute="top" secondItem="imL-4n-t5T" secondAttribute="top" constant="376" id="oc7-AJ-fjq"/>
+                            <constraint firstItem="imL-4n-t5T" firstAttribute="bottom" secondItem="J5R-Xj-bD3" secondAttribute="bottom" constant="10" id="qaA-xd-OLY"/>
                             <constraint firstItem="INW-IV-vHU" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="10" id="qbr-e3-oer"/>
+                            <constraint firstItem="qbt-JC-ktZ" firstAttribute="leading" secondItem="imL-4n-t5T" secondAttribute="leading" constant="84" id="sHB-5A-50e"/>
                             <constraint firstItem="d5M-F5-27X" firstAttribute="top" secondItem="H88-ya-cXX" secondAttribute="bottom" constant="10" id="x0z-vy-WNt"/>
                             <constraint firstItem="imL-4n-t5T" firstAttribute="trailing" secondItem="H88-ya-cXX" secondAttribute="trailing" constant="10" id="yEQ-Nz-4SK"/>
                             <constraint firstItem="imL-4n-t5T" firstAttribute="bottom" secondItem="XDS-ME-NbH" secondAttribute="bottom" constant="30" id="zGh-Zs-Dkp"/>
@@ -1193,16 +1208,17 @@
                     <connections>
                         <outlet property="city" destination="ViF-Qv-jbA" id="YXg-Bk-Q5U"/>
                         <outlet property="currentLocationBtn" destination="sQs-2d-Erj" id="CXe-el-eRf"/>
-                        <outlet property="pestImage" destination="2fT-kU-Mu3" id="ece-c8-bdS"/>
+                        <outlet property="pestImage" destination="J5R-Xj-bD3" id="KIB-1y-nTe"/>
                         <outlet property="pestName" destination="H88-ya-cXX" id="cYj-5D-amj"/>
                         <outlet property="state" destination="5H3-hd-Xtu" id="42f-p7-aHB"/>
                         <outlet property="street" destination="INW-IV-vHU" id="6de-jy-n1p"/>
                         <outlet property="takePhoto" destination="XDS-ME-NbH" id="UDM-7G-G5w"/>
+                        <outlet property="takePhotoBtn" destination="qbt-JC-ktZ" id="UuS-Zm-J4X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOA-ed-jTi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.78260869565219" y="542.41071428571422"/>
+            <point key="canvasLocation" x="134.78260869565219" y="541.74107142857144"/>
         </scene>
         <!--Map-->
         <scene sceneID="U8W-7L-ziQ">
@@ -1761,7 +1777,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Aev-vl-01c"/>
+        <segue reference="NcX-iE-pPq"/>
         <segue reference="cbo-Ui-eQM"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1779,9 +1795,11 @@
         <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="101"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus" width="512" height="512"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="takepicture" width="224" height="226"/>
     </resources>
 </document>

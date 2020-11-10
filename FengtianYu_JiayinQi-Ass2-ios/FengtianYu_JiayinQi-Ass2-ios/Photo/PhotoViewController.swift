@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreData
 import CoreLocation
+import SwiftUI
 
 class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     var locationManager: CLLocationManager = CLLocationManager()
@@ -23,9 +24,12 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     @IBOutlet weak var state: UITextField!
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var street: UITextField!
+    
+    @IBOutlet weak var takePhotoBtn: UIButton!
     @IBOutlet weak var pestImage: UIImageView!
     var lat: Double?
     var lon : Double?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,14 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         
-        pestImage?.image = UIImage(named: "fox")
+        takePhotoBtn.contentVerticalAlignment = .fill
+        takePhotoBtn.contentHorizontalAlignment = .fill
+        takePhotoBtn.imageEdgeInsets = UIEdgeInsets(top: 10, left: 35, bottom: 25, right: 10)
+               
+       // pestImage?.image = UIImage(named: "takepicture")
+        
+     //.resizable()
+     //.aspectRatio(contentMode: .fit)
         
         takePhoto.contentVerticalAlignment = .fill
         takePhoto.contentHorizontalAlignment = .fill
@@ -176,4 +187,9 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
             }
         }
     }
+    
+    @IBAction func addPhotoAct(_ sender: Any) {
+        self.displayMessage(title: "add photo", message: "Can not find this location")
+    }
+    
 }
