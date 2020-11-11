@@ -18,9 +18,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     @IBOutlet weak var getDirectionBtn: UIButton!
     @IBOutlet weak var DestinationText: UITextField!
     @IBOutlet weak var mapView: MKMapView!
-    weak var databaseController: DatabaseProtocol?
+   weak var databaseController: DatabaseProtocol?
     var allPests : [Pest] = []
     var locationList = [LocationAnnotation]()
+    var currentLocation: CLLocationCoordinate2D?
     
     
     
@@ -29,8 +30,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
-        
-        
+        allPests = databaseController?.getPests() as! [Pest]
+        addlocationtoMap()
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.distanceFilter = 10
         locationManager.delegate = self
@@ -55,27 +56,47 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-           locationManager.startUpdatingLocation()
-        databaseController?.addListener(listener: self)
+    func addlocationtoMap(){
+       
+        for specificPest in allPests{
+            var index = 0
+            var size = integer_t((specificPest.location.count)) as integer_t
+            for n in 1...size {
+                let inputString = (specificPest.location[index])
+                let splits = inputString.components(separatedBy: ",")
+                let lng = Double(splits[0])!
+                let lat = (splits[1] as NSString).doubleValue
+                let location = LocationAnnotation(title: splits[2],
+                subtitle: "",
+                lat: lat, long: lng)
+                locationList.append(location)
+               index += 1
+            }
+        }
         for pestLocation in locationList{
             self.mapView.addAnnotation(pestLocation)
             showCircle(coordinate: pestLocation.coordinate,
             radius: 10000)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           locationManager.startUpdatingLocation()
+        databaseController?.addListener(listener: self)
           
        }
        
     override func viewDidDisappear(_ animated: Bool) {
            super.viewWillDisappear(animated)
-           locationManager.stopUpdatingLocation()
+           //locationManager.stopUpdatingLocation()
         databaseController?.removeListener(listener: self)
-        locationList.removeAll()
+        //locationList.removeAll()
        }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+         currentLocation = locationManager.location?.coordinate
+           
     }
     
     @IBAction func getDIrectionAct(_ sender: Any) {
@@ -96,8 +117,12 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     }
     
     func mapthis(destinationCord : CLLocationCoordinate2D){
-        let sourceCordinate = (locationManager.location?.coordinate)!
-        let sourcePlacemark = MKPlacemark(coordinate: sourceCordinate)
+        let sourceCordinate = currentLocation
+        if sourceCordinate == nil{
+            self.displayMessage(title: "Error" , message: "can not track current location")
+            return
+        }
+        let sourcePlacemark = MKPlacemark(coordinate: sourceCordinate!)
         let destplaceMark = MKPlacemark(coordinate: destinationCord)
         
         let sourceItem = MKMapItem(placemark : sourcePlacemark)
@@ -175,22 +200,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     }
     
     func onPestChange(change: DatabaseChange, pests: [Pest]) {
-        allPests = pests
-        for specificPest in allPests{
-            var index = 0
-            var size = integer_t((specificPest.location.count)) as integer_t
-            for n in 1...size {
-                let inputString = (specificPest.location[index])
-                let splits = inputString.components(separatedBy: ",")
-                let lng = Double(splits[0])!
-                let lat = (splits[1] as NSString).doubleValue
-                let location = LocationAnnotation(title: splits[2],
-                subtitle: "",
-                lat: lat, long: lng)
-                locationList.append(location)
-               index += 1
-            }
-        }
+        
     }
     
     func onUserCDChange(change: DatabaseChange, user: [UserCD]) {
@@ -231,8 +241,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         let annotation = view.annotation as? LocationAnnotation
         focusOn(annotation: annotation as! MKAnnotation)
-       
-        
     }
     
 
