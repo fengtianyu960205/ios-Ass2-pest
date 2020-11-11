@@ -215,5 +215,9 @@ class FirebaseController: NSObject,DatabaseProtocol {
         listeners.removeDelegate(listener)
     }
     
+    func getPests() ->  [Pest]{
+        return pestList
+    }
+    
 
 }

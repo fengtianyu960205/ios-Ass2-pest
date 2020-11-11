@@ -42,6 +42,7 @@ protocol DatabaseProtocol: AnyObject {
     //func removeHeroFromTeam(hero: SuperHero, team: Team)
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)
+    func getPests() ->  [Pest]
 }
 
 
