@@ -12,7 +12,7 @@ import CoreData
 import CoreLocation
 import SwiftUI
 
-class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
+class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocationCoordinate2D?
     var userLocatrion : CLLocation?
@@ -29,6 +29,7 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     @IBOutlet weak var pestImage: UIImageView!
     var lat: Double?
     var lon : Double?
+    var takingPicture:UIImagePickerController!
     
     
     override func viewDidLoad() {
@@ -189,7 +190,58 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate{
     }
     
     @IBAction func addPhotoAct(_ sender: Any) {
-        self.displayMessage(title: "add photo", message: "Can not find this location")
+        
+       // self.displayMessage(title: "add photo", message: "Can not find this location")
+        let actionSheetController = UIAlertController()
+         
+         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (alertAction) -> Void in
+             print("Tap cancel Button")
+         }
+         
+         let takingPicturesAction = UIAlertAction(title: "take photo", style: UIAlertAction.Style.destructive) { (alertAction) -> Void in
+             self.getImageGo(type: 1)
+         }
+         
+         let photoAlbumAction = UIAlertAction(title: "photo library", style: UIAlertAction.Style.default) { (alertAction) -> Void in
+             self.getImageGo(type: 2)
+         }
+                 
+         actionSheetController.addAction(cancelAction)
+         actionSheetController.addAction(takingPicturesAction)
+         actionSheetController.addAction(photoAlbumAction)
+         
+
+        actionSheetController.popoverPresentationController?.sourceView = sender as? UIView
+         self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+   
+    // get image from photo library or user take a photo
+    func getImageGo(type:Int){
+        takingPicture =  UIImagePickerController.init()
+        
+        if(type==1){
+            takingPicture.sourceType = .camera
+           
+        }else if(type==2){
+            takingPicture.sourceType = .photoLibrary
+        }
+        
+        takingPicture.allowsEditing = false
+        takingPicture.delegate = self
+        present(takingPicture, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+           takingPicture.dismiss(animated: true, completion: nil)
+           if(takingPicture.allowsEditing == false){
+               
+               pestImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+           }else{
+               
+               pestImage.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+           }
+    
     }
     
 }
