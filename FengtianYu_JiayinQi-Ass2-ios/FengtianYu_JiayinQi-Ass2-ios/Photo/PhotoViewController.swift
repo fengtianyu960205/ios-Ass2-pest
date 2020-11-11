@@ -74,6 +74,10 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
              locationBtnUI()
         }
         
+        takePhotoBtn.imageEdgeInsets = UIEdgeInsets(top: 127.5, left: 71.25, bottom: 127.5, right: 71.25)
+        takePhoto.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        currentLocationBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -233,14 +237,17 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-           takingPicture.dismiss(animated: true, completion: nil)
-           if(takingPicture.allowsEditing == false){
-               
-               pestImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-           }else{
-               
-               pestImage.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-           }
+       takingPicture.dismiss(animated: true, completion: nil)
+       if(takingPicture.allowsEditing == false){
+           
+            pestImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            takePhotoBtn.setImage(nil, for: .normal)
+            
+       }else{
+           
+           pestImage.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+            takePhotoBtn.setImage(nil, for: .normal)
+       }
     
     }
     
