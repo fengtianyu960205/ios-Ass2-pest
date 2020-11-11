@@ -174,6 +174,9 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
                 //save the image
                 
+                // save to core data
+                coreDataDatabaseController?.cleanup()
+                
                 //user finish edit the profile
                 Utility.StyleUneditTextField(nameTextField)
                 Utility.StyleUneditTextField(ageTextField)
