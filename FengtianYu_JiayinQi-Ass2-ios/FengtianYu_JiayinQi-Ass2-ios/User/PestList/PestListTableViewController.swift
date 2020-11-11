@@ -22,6 +22,7 @@ class PestListTableViewController: UITableViewController,DatabaseListener {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         tableView.tableFooterView = UIView()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         coreDataDatabaseController = appDelegate.coreDataDatabaseController

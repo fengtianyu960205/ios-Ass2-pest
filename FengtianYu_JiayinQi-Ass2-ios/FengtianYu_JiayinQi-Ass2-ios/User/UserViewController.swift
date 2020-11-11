@@ -153,6 +153,11 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if segue.identifier == "userToPestList" {
         let destination = segue.destination as! PestListTableViewController
             destination.user = self.user
+            destination.hidesBottomBarWhenPushed = true
+        }
+        if segue.identifier == "userToSetting" {
+        let destination = segue.destination as! SettingViewController
+            destination.hidesBottomBarWhenPushed = true
         }
     }
     

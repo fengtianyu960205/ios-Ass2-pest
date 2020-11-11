@@ -36,6 +36,7 @@
 		759FF818254E4D2B003722C1 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF817254E4D2B003722C1 /* DatabaseProtocol.swift */; };
 		759FF81A254E4DA8003722C1 /* Pest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF819254E4DA8003722C1 /* Pest.swift */; };
 		759FF821254E4F0E003722C1 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF820254E4F0E003722C1 /* FirebaseController.swift */; };
+		75A8037B255BB99600D41D21 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A8037A255BB99600D41D21 /* MapViewController.swift */; };
 		75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15CE25380F3B003CC46B /* UserViewController.swift */; };
 		75BD15D125380F4E003CC46B /* PestCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */; };
 		75BD15D325380F76003CC46B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD15D225380F76003CC46B /* PhotoViewController.swift */; };
@@ -81,6 +82,7 @@
 		759FF817254E4D2B003722C1 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		759FF819254E4DA8003722C1 /* Pest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pest.swift; sourceTree = "<group>"; };
 		759FF820254E4F0E003722C1 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		75A8037A255BB99600D41D21 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		75BD15CE25380F3B003CC46B /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		75BD15D025380F4E003CC46B /* PestCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestCellTableViewCell.swift; sourceTree = "<group>"; };
 		75BD15D225380F76003CC46B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -178,13 +180,13 @@
 		751CB052253559CA00665CB4 /* FengtianYu_JiayinQi-Ass2-ios */ = {
 			isa = PBXGroup;
 			children = (
+				75A80379255BB98300D41D21 /* Map */,
 				6324B7C62558061C00F497D8 /* fonts */,
 				6324B7C12556E2B100F497D8 /* PopUp */,
 				75F979702553E9B600B47AE8 /* Data Model */,
 				6399EE47254F2540001493C6 /* LoginAndSignUp */,
 				7518D51C254EE6FE00F2E957 /* DetailInformation */,
 				759FF81F254E4E32003722C1 /* AllPests */,
-				759FF81E254E4E21003722C1 /* Map */,
 				759FF81D254E4E0B003722C1 /* Photo */,
 				759FF81C254E4E02003722C1 /* User */,
 				759FF81B254E4DE9003722C1 /* Search */,
@@ -242,19 +244,20 @@
 			path = Photo;
 			sourceTree = "<group>";
 		};
-		759FF81E254E4E21003722C1 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
 		759FF81F254E4E32003722C1 /* AllPests */ = {
 			isa = PBXGroup;
 			children = (
 				759FF810254E4826003722C1 /* AllPestsTableViewController.swift */,
 			);
 			path = AllPests;
+			sourceTree = "<group>";
+		};
+		75A80379255BB98300D41D21 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				75A8037A255BB99600D41D21 /* MapViewController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		75F979702553E9B600B47AE8 /* Data Model */ = {
@@ -429,6 +432,7 @@
 				759FF81A254E4DA8003722C1 /* Pest.swift in Sources */,
 				6364217325544A9F009FE455 /* PestCD+CoreDataClass.swift in Sources */,
 				75F979822554418F00B47AE8 /* UserCD+CoreDataProperties copy.swift in Sources */,
+				75A8037B255BB99600D41D21 /* MapViewController.swift in Sources */,
 				759FF818254E4D2B003722C1 /* DatabaseProtocol.swift in Sources */,
 				7518D520254EF8AB00F2E957 /* LocationAnnotation.swift in Sources */,
 				759FF811254E4826003722C1 /* AllPestsTableViewController.swift in Sources */,

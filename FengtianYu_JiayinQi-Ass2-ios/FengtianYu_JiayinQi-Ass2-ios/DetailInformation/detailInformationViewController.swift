@@ -39,10 +39,6 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         coreDataDatabaseController = appDelegate.coreDataDatabaseController
         user = coreDataDatabaseController?.fetchSpecificUser().first!
             
-        
-        
-        
-
         // Do any additional setup after loading the view.
         setupView()
     }

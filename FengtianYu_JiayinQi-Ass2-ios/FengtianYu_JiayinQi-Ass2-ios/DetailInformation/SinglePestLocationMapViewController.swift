@@ -23,7 +23,6 @@ class SinglePestLocationMapViewController: UIViewController,MKMapViewDelegate{
         
         mapView.delegate = self
         for pestLocation in locationList{
-            
             self.mapView.addAnnotation(pestLocation)
             showCircle(coordinate: pestLocation.coordinate,
             radius: 10000)
@@ -32,8 +31,7 @@ class SinglePestLocationMapViewController: UIViewController,MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView,
                     rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-           // If you want to include other shapes, then this check is needed.
-           // If you only want circles, then remove it.
+         
             let circleOverlay = overlay as? MKCircle
         let circleRenderer = MKCircleRenderer(overlay: circleOverlay as! MKOverlay)
                circleRenderer.fillColor = .red
