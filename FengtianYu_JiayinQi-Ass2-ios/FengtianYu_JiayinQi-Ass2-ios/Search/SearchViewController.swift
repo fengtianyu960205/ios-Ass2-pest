@@ -16,7 +16,7 @@ class SearchViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
+        //self.navigationController?.navigationBar.isHidden = true
         logoImage?.image = UIImage(named: "logo")
         tableView.delegate = self
         tableView.dataSource = self

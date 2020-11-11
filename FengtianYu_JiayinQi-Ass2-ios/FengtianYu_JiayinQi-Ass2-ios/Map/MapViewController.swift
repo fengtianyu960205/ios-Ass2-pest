@@ -27,7 +27,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.isHidden = true
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         allPests = databaseController?.getPests() as! [Pest]
@@ -89,7 +89,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
        
     override func viewDidDisappear(_ animated: Bool) {
            super.viewWillDisappear(animated)
-           //locationManager.stopUpdatingLocation()
+           locationManager.stopUpdatingLocation()
         databaseController?.removeListener(listener: self)
         //locationList.removeAll()
        }
