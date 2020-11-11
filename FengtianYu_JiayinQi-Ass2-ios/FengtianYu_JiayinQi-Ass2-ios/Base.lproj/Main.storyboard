@@ -1248,14 +1248,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6AJ-Mf-Qbq">
-                                <rect key="frame" x="0.0" y="188" width="414" height="625"/>
+                                <rect key="frame" x="0.0" y="198" width="414" height="615"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsL-pJ-xQx">
                                 <rect key="frame" x="343" y="704" width="51" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="mapLocation"/>
+                                <state key="normal" title="Button" image="pngegg"/>
+                                <connections>
+                                    <action selector="getLocationAct:" destination="OU2-JW-WJ8" eventType="touchUpInside" id="o4t-sm-w11"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6um-aF-21R">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6um-aF-21R">
                                 <rect key="frame" x="20" y="111" width="220" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="2X3-PR-aOg"/>
@@ -1264,7 +1267,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kTM-IB-bXn">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kTM-IB-bXn">
                                 <rect key="frame" x="20" y="153" width="220" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="SP3-yB-cZr"/>
@@ -1274,11 +1277,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn7-5J-831">
-                                <rect key="frame" x="248" y="133" width="161" height="30"/>
+                                <rect key="frame" x="248" y="133" width="161" height="40"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <state key="normal" title="Get Direction">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="getDIrectionAct:" destination="OU2-JW-WJ8" eventType="touchUpInside" id="el1-G2-K6u"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WdI-KT-XLe"/>
@@ -1287,12 +1293,12 @@
                             <constraint firstItem="6um-aF-21R" firstAttribute="leading" secondItem="WdI-KT-XLe" secondAttribute="leading" constant="20" id="0bd-lc-1K1"/>
                             <constraint firstItem="6um-aF-21R" firstAttribute="top" secondItem="WdI-KT-XLe" secondAttribute="top" constant="23" id="4Y0-EU-nTd"/>
                             <constraint firstItem="6AJ-Mf-Qbq" firstAttribute="top" secondItem="cn7-5J-831" secondAttribute="bottom" constant="25" id="7EB-Uf-IEx"/>
-                            <constraint firstItem="6AJ-Mf-Qbq" firstAttribute="top" secondItem="WdI-KT-XLe" secondAttribute="top" constant="100" id="9nu-o4-iL7"/>
+                            <constraint firstItem="6AJ-Mf-Qbq" firstAttribute="top" secondItem="WdI-KT-XLe" secondAttribute="top" constant="110" id="9nu-o4-iL7"/>
                             <constraint firstItem="kTM-IB-bXn" firstAttribute="top" secondItem="6um-aF-21R" secondAttribute="bottom" constant="8" id="C25-hh-icT"/>
                             <constraint firstItem="cn7-5J-831" firstAttribute="leading" secondItem="kTM-IB-bXn" secondAttribute="trailing" constant="8" id="CdW-U0-57c"/>
                             <constraint firstItem="WdI-KT-XLe" firstAttribute="bottom" secondItem="6AJ-Mf-Qbq" secondAttribute="bottom" id="GJf-Gu-Dud"/>
                             <constraint firstItem="WdI-KT-XLe" firstAttribute="trailing" secondItem="cn7-5J-831" secondAttribute="trailing" constant="5" id="Iq2-Bs-weH"/>
-                            <constraint firstItem="6AJ-Mf-Qbq" firstAttribute="top" secondItem="kTM-IB-bXn" secondAttribute="bottom" constant="1" id="LtL-x7-oXz"/>
+                            <constraint firstItem="6AJ-Mf-Qbq" firstAttribute="top" secondItem="kTM-IB-bXn" secondAttribute="bottom" constant="11" id="LtL-x7-oXz"/>
                             <constraint firstItem="kTM-IB-bXn" firstAttribute="leading" secondItem="WdI-KT-XLe" secondAttribute="leading" constant="20" id="NwC-si-JIC"/>
                             <constraint firstItem="cn7-5J-831" firstAttribute="top" secondItem="WdI-KT-XLe" secondAttribute="top" constant="45" id="QJB-Mt-vBr"/>
                             <constraint firstItem="6AJ-Mf-Qbq" firstAttribute="leading" secondItem="WdI-KT-XLe" secondAttribute="leading" id="YnU-7h-nTo"/>
@@ -1304,7 +1310,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="mappin.circle.fill" catalog="system" selectedImage="house.fill" id="yR8-2c-Xfz"/>
                     <connections>
+                        <outlet property="DestinationText" destination="kTM-IB-bXn" id="jSN-ha-glL"/>
+                        <outlet property="getDirectionBtn" destination="cn7-5J-831" id="Cjn-pk-aXa"/>
+                        <outlet property="getLocationBtn" destination="SsL-pJ-xQx" id="cTw-lG-scy"/>
                         <outlet property="mapView" destination="6AJ-Mf-Qbq" id="Zio-wn-jrY"/>
+                        <outlet property="startLocationText" destination="6um-aF-21R" id="h6h-bq-7Q7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ8-bm-Dl1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1875,13 +1885,13 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="locationBtn" width="225" height="225"/>
         <image name="logo" width="500" height="401"/>
-        <image name="mapLocation" width="512" height="512"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="113"/>
-        <image name="plus" width="512" height="512"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus" width="512" height="512"/>
+        <image name="pngegg" width="1200" height="1200"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="star" catalog="system" width="128" height="116"/>

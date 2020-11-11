@@ -18,10 +18,15 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     @IBOutlet weak var getDirectionBtn: UIButton!
     @IBOutlet weak var DestinationText: UITextField!
     @IBOutlet weak var mapView: MKMapView!
-   weak var databaseController: DatabaseProtocol?
+    @IBOutlet weak var getLocationBtn: UIButton!
+    @IBOutlet weak var startLocationText: UITextField!
+    weak var databaseController: DatabaseProtocol?
     var allPests : [Pest] = []
     var locationList = [LocationAnnotation]()
     var currentLocation: CLLocationCoordinate2D?
+    var userLocation : CLLocation?
+    var startLocationCord : CLLocationCoordinate2D?
+    var destinationCord: CLLocationCoordinate2D?
     
     
     
@@ -36,7 +41,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         locationManager.distanceFilter = 10
         locationManager.delegate = self
         mapView.delegate = self
-        
+        getLocationBtn.isHidden = true
         let authorisationStatus = CLLocationManager.authorizationStatus()
                
                if authorisationStatus != .authorizedWhenInUse {
@@ -51,7 +56,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                    }
                    
                }else{
-                   
+                getLocationBtn.isHidden = false
                }
         // Do any additional setup after loading the view.
     }
@@ -96,8 +101,17 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
          currentLocation = locationManager.location?.coordinate
+        userLocation = locationManager.location
            
     }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
+    {
+        if status == .authorizedWhenInUse {
+            getLocationBtn.isHidden = false
+            
+        }
+     }
     
     @IBAction func getDIrectionAct(_ sender: Any) {
         getAddress()
@@ -106,23 +120,38 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     func getAddress(){
         let geoCoder = CLGeocoder()
         
-        geoCoder.geocodeAddressString(DestinationText.text!) { (placemarks, error) in
+        geoCoder.geocodeAddressString(DestinationText.text!) { [self] (placemarks, error) in
             guard let placemarks = placemarks,let location = placemarks.first?.location
                 else{
                     self.displayMessage(title: "Error" , message: "destination not found")
                     return
             }
-            self.mapthis(destinationCord: location.coordinate )
+            geoCoder.geocodeAddressString(startLocationText.text!) { (placemarks, error) in
+               guard let placemarks = placemarks,let startlocation = placemarks.first?.location
+                    else{
+                        self.displayMessage(title: "Error" , message: "start location not found")
+                        return
+                }
+                self.startLocationCord = startlocation.coordinate
+                self.destinationCord = location.coordinate
+                mapthis(destinationCord:self.destinationCord! , startLocationCord: self.startLocationCord!)
+            }
+            
         }
+        //geoCoder.geocodeAddressString(startLocationText.text!) { (placemarks, error) in
+       //     guard let placemarks = placemarks,let startlocation = placemarks.first?.location
+       //         else{
+       //             self.displayMessage(title: "Error" , message: "start location not found")
+       //             return
+        //    }
+       //     self.startLocationCord = startlocation.coordinate
+       // }
+        //mapthis(destinationCord:self.destinationCord! , startLocationCord: //self.startLocationCord!)
     }
     
-    func mapthis(destinationCord : CLLocationCoordinate2D){
-        let sourceCordinate = currentLocation
-        if sourceCordinate == nil{
-            self.displayMessage(title: "Error" , message: "can not track current location")
-            return
-        }
-        let sourcePlacemark = MKPlacemark(coordinate: sourceCordinate!)
+    func mapthis(destinationCord : CLLocationCoordinate2D,startLocationCord :CLLocationCoordinate2D ){
+        let sourceCordinate = startLocationCord
+        let sourcePlacemark = MKPlacemark(coordinate: sourceCordinate)
         let destplaceMark = MKPlacemark(coordinate: destinationCord)
         
         let sourceItem = MKMapItem(placemark : sourcePlacemark)
@@ -244,4 +273,29 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     }
     
 
+    @IBAction func getLocationAct(_ sender: Any) {
+        autoAddress()
+    }
+    
+    func autoAddress(){
+        if let currentLocation = currentLocation {
+            
+            let geocoder = CLGeocoder()
+            geocoder.reverseGeocodeLocation(userLocation!) { (placemarks, error) in
+                if let error = error{
+                    self.displayMessage(title: "error", message: error.localizedDescription)
+                }
+                else if let placemarks = placemarks{
+                    for placemark in placemarks{
+                        self.startLocationText.text = placemark.subThoroughfare! + " " + placemark.thoroughfare!+" "+placemark.locality!+" "+placemark.administrativeArea!
+                       
+                    }
+                }
+            }
+        } else {
+            displayMessage(title: "Location Not Found", message: "The location has not yet been determined.")
+            
+        }
+    }
+    
 }
