@@ -95,6 +95,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Utility.StyleUneditTextField(nameTextField)
         Utility.StyleUneditTextField(ageTextField)
         Utility.StyleUneditTextField(locationTextField)
+        changeUserImageButton.isUserInteractionEnabled = false
         editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
        
         
@@ -195,6 +196,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 Utility.StyleUneditTextField(nameTextField)
                 Utility.StyleUneditTextField(ageTextField)
                 Utility.StyleUneditTextField(locationTextField)
+                changeUserImageButton.isUserInteractionEnabled = false
                 //set the segmentedControl
                 Utility.StyleUneditSegmentControl(genderSegmentControl)
                 editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
@@ -207,6 +209,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
             Utility.StyleTextField(nameTextField)
             Utility.StyleTextField(ageTextField)
             Utility.StyleTextField(locationTextField)
+            changeUserImageButton.isUserInteractionEnabled = true
             //set the segmentedControl
             Utility.StyleSegmentControl(genderSegmentControl)
             editButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
