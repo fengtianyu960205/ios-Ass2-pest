@@ -20,6 +20,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var genderSegmentControl: UISegmentedControl!
+    @IBOutlet weak var changeUserImageButton: UIButton!
     var listenerType: ListenerType = .users
     weak var coreDataDatabaseController: coreDataDatabaseProtocol?
     var user : UserCD?
@@ -160,6 +161,13 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
             destination.hidesBottomBarWhenPushed = true
         }
     }
+    @IBAction func changeUserImage(_ sender: Any) {
+        let imageVC = UIImagePickerController()
+        imageVC.delegate = self
+        imageVC.sourceType = .photoLibrary
+        imageVC.allowsEditing = true
+        present(imageVC, animated: true)
+    }
     
     @IBAction func editProfile(_ sender: Any) {
         editable = !editable
@@ -178,7 +186,8 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
                 
                 //save the image
-                
+                let  imageData = userImage.image?.pngData()
+                user!.setValue(imageData, forKey: "userImage")
                 // save to core data
                 coreDataDatabaseController?.cleanup()
                 
@@ -235,4 +244,19 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.present(alertController, animated: true, completion: nil)
     }
     
+}
+
+
+extension UserViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            userImage.image = image
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

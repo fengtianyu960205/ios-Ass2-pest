@@ -69,5 +69,7 @@
 		<string>MontserratAlternates-Italic.ttf</string>
 		<string>MontserratAlternates-Regular.ttf</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow access.</string>
 </dict>
 </plist>
