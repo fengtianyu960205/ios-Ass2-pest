@@ -74,9 +74,7 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
              locationBtnUI()
         }
         
-        takePhotoBtn.imageEdgeInsets = UIEdgeInsets(top: 127.5, left: 71.25, bottom: 127.5, right: 71.25)
-        takePhoto.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        currentLocationBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        setupView()
         
     }
     
@@ -89,6 +87,17 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
     override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         locationManager.stopUpdatingLocation()
+    }
+    
+    func setupView(){
+        Utility.StyleTextField(pestName)
+        Utility.StyleTextField(state)
+        Utility.StyleTextField(city)
+        Utility.StyleTextField(street)
+
+        takePhotoBtn.imageEdgeInsets = UIEdgeInsets(top: 127.5, left: 71.25, bottom: 127.5, right: 71.25)
+        takePhoto.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        currentLocationBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
