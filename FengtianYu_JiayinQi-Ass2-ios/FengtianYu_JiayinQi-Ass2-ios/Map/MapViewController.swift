@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import CoreData
+import UserNotifications
 
 class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate,DatabaseListener{
     
@@ -27,45 +28,60 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var userLocation : CLLocation?
     var startLocationCord : CLLocationCoordinate2D?
     var destinationCord: CLLocationCoordinate2D?
-    
-    
+    var geofence : CLCircularRegion?
+    let center = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set the database controller
         self.navigationController?.navigationBar.isHidden = true
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         allPests = databaseController?.getPests() as! [Pest]
+        
+        //ask user for authoriztion for location and notification
+        let authorisationStatus = CLLocationManager.authorizationStatus()
+        if authorisationStatus != .authorizedWhenInUse {
+            
+            if authorisationStatus == .notDetermined {
+                locationManager.requestWhenInUseAuthorization()
+            }
+            else if authorisationStatus == .denied{
+                locationManager.requestWhenInUseAuthorization()
+            }else if authorisationStatus == .restricted {
+                locationManager.requestWhenInUseAuthorization()
+            }
+            
+        }else{
+         getLocationBtn.isHidden = false
+        }
+        
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            <#code#>
+        }
+        
+        //add the location to the annotation list
         addlocationtoMap()
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.distanceFilter = 10
         locationManager.delegate = self
         mapView.delegate = self
         getLocationBtn.isHidden = true
-        let authorisationStatus = CLLocationManager.authorizationStatus()
+        
                
-               if authorisationStatus != .authorizedWhenInUse {
-                   
-                   if authorisationStatus == .notDetermined {
-                       locationManager.requestWhenInUseAuthorization()
-                   }
-                   else if authorisationStatus == .denied{
-                       locationManager.requestWhenInUseAuthorization()
-                   }else if authorisationStatus == .restricted {
-                       locationManager.requestWhenInUseAuthorization()
-                   }
-                   
-               }else{
-                getLocationBtn.isHidden = false
-               }
+               
         // Do any additional setup after loading the view.
+        
+        Utility.StyleTextField(DestinationText)
+        Utility.StyleTextField(startLocationText)
+        Utility.StyleButtonFilled(getDirectionBtn)
     }
     
     func addlocationtoMap(){
        
         for specificPest in allPests{
             var index = 0
-            var size = integer_t((specificPest.location.count)) as integer_t
+            let size = integer_t((specificPest.location.count)) as integer_t
             for n in 1...size {
                 let inputString = (specificPest.location[index])
                 let splits = inputString.components(separatedBy: ",")
@@ -75,6 +91,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                 subtitle: "",
                 lat: lat, long: lng)
                 locationList.append(location)
+                
                index += 1
             }
         }
@@ -82,6 +99,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             self.mapView.addAnnotation(pestLocation)
             showCircle(coordinate: pestLocation.coordinate,
             radius: 10000)
+            geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 500, identifier: "geofence")
+            geofence?.description = pestLocation.title
+            geofence?.notifyOnExit = true
+            geofence?.notifyOnEntry = true
+            locationManager.startMonitoring(for: geofence!)
         }
     }
     
@@ -295,6 +317,25 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         } else {
             displayMessage(title: "Location Not Found", message: "The location has not yet been determined.")
             
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        //the content of notification
+        let content = UNMutableNotificationContent()
+        content.title = "Pest Protection - Exiting"
+        content.body = "You have exit the range of " + region.description
+        
+        //create the trigger
+        let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
+        
+        
+        //create the reuest and register the notification
+        let uuid = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            //
         }
     }
     
