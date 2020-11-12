@@ -11,13 +11,13 @@ import UIKit
 class SearchViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var logoImage: UIImageView!
+   
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationController?.navigationBar.isHidden = true
-        logoImage?.image = UIImage(named: "logo")
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
