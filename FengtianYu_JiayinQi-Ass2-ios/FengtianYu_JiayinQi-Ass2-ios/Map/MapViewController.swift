@@ -338,4 +338,22 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         }
     }
     
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        let content = UNMutableNotificationContent()
+        content.title = "Pest Protection - Entering"
+        content.body = "You have exit the range of " + region.description
+        
+        //create the trigger
+        let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
+        
+        
+        //create the reuest and register the notification
+        let uuid = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            //
+        }
+    }
+    
 }
