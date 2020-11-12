@@ -57,7 +57,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         }
         
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            <#code#>
+            //
         }
         
         //add the location to the annotation list
@@ -100,7 +100,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             showCircle(coordinate: pestLocation.coordinate,
             radius: 10000)
             geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 500, identifier: "geofence")
-            geofence?.description = pestLocation.title
             geofence?.notifyOnExit = true
             geofence?.notifyOnEntry = true
             locationManager.startMonitoring(for: geofence!)
