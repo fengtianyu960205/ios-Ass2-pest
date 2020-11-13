@@ -1308,7 +1308,7 @@
                             <constraint firstItem="WdI-KT-XLe" firstAttribute="trailing" secondItem="6AJ-Mf-Qbq" secondAttribute="trailing" id="y3s-yE-8QC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="mappin.circle.fill" catalog="system" selectedImage="house.fill" id="yR8-2c-Xfz"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="house.fill" catalog="system" selectedImage="house.fill" id="yR8-2c-Xfz"/>
                     <connections>
                         <outlet property="DestinationText" destination="kTM-IB-bXn" id="jSN-ha-glL"/>
                         <outlet property="getDirectionBtn" destination="cn7-5J-831" id="Cjn-pk-aXa"/>
@@ -1886,11 +1886,10 @@
         <image name="locationBtn" width="225" height="225"/>
         <image name="logo" width="500" height="401"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
-        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="113"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus" width="512" height="512"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="pngegg" width="1200" height="1200"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>

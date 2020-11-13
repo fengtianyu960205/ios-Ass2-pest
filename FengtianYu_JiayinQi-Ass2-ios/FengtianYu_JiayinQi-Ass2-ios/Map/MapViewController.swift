@@ -91,7 +91,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                 subtitle: "",
                 lat: lat, long: lng)
                 locationList.append(location)
-                
                index += 1
             }
         }
@@ -205,12 +204,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     func mapView(_ mapView: MKMapView,
                     rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
            
-        //let circleOverlay = overlay as? MKCircle
-       // let circleRenderer = MKCircleRenderer(overlay: circleOverlay as! MKOverlay)
-       //        circleRenderer.fillColor = .red
-       //        circleRenderer.alpha = 0.5
-
-       // return circleRenderer
+      
         if let circleOverlay = overlay as? MKCircle {
             let circleRenderer = MKCircleRenderer(overlay: circleOverlay)
             circleRenderer.fillColor = .red
