@@ -30,6 +30,8 @@
 		751CB05E253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 751CB05C253559CA00665CB4 /* FengtianYu_JiayinQi_Ass2_ios.xcdatamodeld */; };
 		751CB060253559CF00665CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751CB05F253559CF00665CB4 /* Assets.xcassets */; };
 		751CB063253559CF00665CB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751CB061253559CF00665CB4 /* LaunchScreen.storyboard */; };
+		755A4EDB255FF85D008ADCCA /* CityPestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A4EDA255FF85C008ADCCA /* CityPestTableViewController.swift */; };
+		755A4EDE255FF86B008ADCCA /* StatePestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A4EDD255FF86B008ADCCA /* StatePestTableViewController.swift */; };
 		759FF80D254D91F3003722C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 759FF80C254D91F3003722C1 /* GoogleService-Info.plist */; };
 		759FF811254E4826003722C1 /* AllPestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF810254E4826003722C1 /* AllPestsTableViewController.swift */; };
 		759FF816254E4C90003722C1 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF815254E4C90003722C1 /* MulticastDelegate.swift */; };
@@ -76,6 +78,8 @@
 		751CB05F253559CF00665CB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		751CB062253559CF00665CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		751CB064253559CF00665CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		755A4EDA255FF85C008ADCCA /* CityPestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPestTableViewController.swift; sourceTree = "<group>"; };
+		755A4EDD255FF86B008ADCCA /* StatePestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePestTableViewController.swift; sourceTree = "<group>"; };
 		759FF80C254D91F3003722C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		759FF810254E4826003722C1 /* AllPestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPestsTableViewController.swift; sourceTree = "<group>"; };
 		759FF815254E4C90003722C1 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				759FF810254E4826003722C1 /* AllPestsTableViewController.swift */,
+				755A4EDA255FF85C008ADCCA /* CityPestTableViewController.swift */,
+				755A4EDD255FF86B008ADCCA /* StatePestTableViewController.swift */,
 			);
 			path = AllPests;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				6399EE4D254F25DE001493C6 /* LoginViewController.swift in Sources */,
 				75F979732553E9DB00B47AE8 /* dataModel.xcdatamodeld in Sources */,
 				75BD15EF2538635F003CC46B /* detailInformationViewController.swift in Sources */,
+				755A4EDB255FF85D008ADCCA /* CityPestTableViewController.swift in Sources */,
 				751CB058253559CA00665CB4 /* SearchViewController.swift in Sources */,
 				75BD15CF25380F3B003CC46B /* UserViewController.swift in Sources */,
 				751CB054253559CA00665CB4 /* AppDelegate.swift in Sources */,
@@ -447,6 +454,7 @@
 				751CB056253559CA00665CB4 /* SceneDelegate.swift in Sources */,
 				75F97966254FC8DD00B47AE8 /* WriteCommentViewController.swift in Sources */,
 				75BD15D125380F4E003CC46B /* PestCellTableViewCell.swift in Sources */,
+				755A4EDE255FF86B008ADCCA /* StatePestTableViewController.swift in Sources */,
 				759FF821254E4F0E003722C1 /* FirebaseController.swift in Sources */,
 				75F97964254FBABB00B47AE8 /* CommentViewController.swift in Sources */,
 			);

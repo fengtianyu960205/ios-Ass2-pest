@@ -159,6 +159,7 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener, UISe
     
     func onPestChange(change: DatabaseChange, pests: [Pest]) {
            allPest = pests
+            filteredPests = allPest 
             tableView.reloadData()
        }
 
