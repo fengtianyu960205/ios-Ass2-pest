@@ -17,7 +17,7 @@ class SearchViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     var first : AllPestsTableViewController?
     var second : CityPestTableViewController?
-    var third : AllPestsTableViewController?
+    var third : StatePestTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class SearchViewController: UIViewController, UIScrollViewDelegate {
 
         self.second = storyboard.instantiateViewController(withIdentifier: "B") as! CityPestTableViewController;
 
-        self.third = storyboard.instantiateViewController(withIdentifier: "A") as! AllPestsTableViewController;
+        self.third = storyboard.instantiateViewController(withIdentifier: "C") as! StatePestTableViewController;
         
         let viewControllers = [first, second, third]
         

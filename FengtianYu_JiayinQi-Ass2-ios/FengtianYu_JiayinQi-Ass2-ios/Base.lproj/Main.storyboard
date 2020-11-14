@@ -609,6 +609,80 @@
             </objects>
             <point key="canvasLocation" x="-1484" y="2034"/>
         </scene>
+        <!--State Pest Table View Controller-->
+        <scene sceneID="qnO-Hl-eMQ">
+            <objects>
+                <tableViewController storyboardIdentifier="C" id="gIh-c1-vOh" customClass="StatePestTableViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wST-Kn-BHw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="bcD-8m-2lW">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PestCell" rowHeight="150" id="ndp-5k-0ZN" customClass="PestCellTableViewCell" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ndp-5k-0ZN" id="mV5-Jq-Nwx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KIn-Pb-xaX">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="L30-ZW-7xY"/>
+                                                <constraint firstAttribute="height" constant="150" id="fA7-gz-FhJ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSi-9B-lRA">
+                                            <rect key="frame" x="140" y="41" width="234" height="21"/>
+                                            <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tup-Ey-OQd">
+                                            <rect key="frame" x="140" y="82" width="234" height="21"/>
+                                            <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Tup-Ey-OQd" firstAttribute="top" secondItem="TSi-9B-lRA" secondAttribute="bottom" constant="20" id="8im-BR-x1i"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="TSi-9B-lRA" secondAttribute="trailing" constant="20" id="KaU-8G-5NL"/>
+                                        <constraint firstItem="Tup-Ey-OQd" firstAttribute="leading" secondItem="KIn-Pb-xaX" secondAttribute="trailing" constant="20" id="Sfy-oP-6Ng"/>
+                                        <constraint firstAttribute="bottom" secondItem="KIn-Pb-xaX" secondAttribute="bottom" id="YOz-cF-5UY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Tup-Ey-OQd" secondAttribute="trailing" constant="20" id="cXT-Qn-FCZ"/>
+                                        <constraint firstItem="TSi-9B-lRA" firstAttribute="leading" secondItem="KIn-Pb-xaX" secondAttribute="trailing" constant="20" id="cqd-T8-0PQ"/>
+                                        <constraint firstItem="KIn-Pb-xaX" firstAttribute="top" secondItem="mV5-Jq-Nwx" secondAttribute="top" id="pxG-iT-hry"/>
+                                        <constraint firstItem="TSi-9B-lRA" firstAttribute="top" secondItem="mV5-Jq-Nwx" secondAttribute="topMargin" constant="30" id="uJV-cA-JTA"/>
+                                        <constraint firstItem="KIn-Pb-xaX" firstAttribute="leading" secondItem="mV5-Jq-Nwx" secondAttribute="leading" id="yvs-qm-Rpf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pestCategory" destination="Tup-Ey-OQd" id="wb0-W7-ynY"/>
+                                    <outlet property="pestImage" destination="KIn-Pb-xaX" id="S2y-Q2-OnT"/>
+                                    <outlet property="pestName" destination="TSi-9B-lRA" id="Irx-Ma-owR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gIh-c1-vOh" id="Cx6-n6-GRj"/>
+                            <outlet property="delegate" destination="gIh-c1-vOh" id="hiX-mx-uHE"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchBar" destination="bcD-8m-2lW" id="MbF-yD-SLh"/>
+                        <segue destination="Ikg-DJ-jtj" kind="show" identifier="StateToDetail" id="b6e-WB-lIB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="40z-wJ-DbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-646" y="2046"/>
+        </scene>
         <!--Single Pest Location Map View Controller-->
         <scene sceneID="2BL-Va-FVe">
             <objects>
@@ -1911,7 +1985,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ql2-EQ-cu5"/>
+        <segue reference="b6e-WB-lIB"/>
         <segue reference="cbo-Ui-eQM"/>
     </inferredMetricsTieBreakers>
     <resources>
