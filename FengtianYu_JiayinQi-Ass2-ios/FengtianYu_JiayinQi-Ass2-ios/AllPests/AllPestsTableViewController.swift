@@ -8,31 +8,26 @@
 import SDWebImage
 import UIKit
 
-class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISearchResultsUpdating{
+class AllPestsTableViewController: UITableViewController ,DatabaseListener, UISearchBarDelegate{
     
     var allPest: [Pest] = []
     var filteredPests: [Pest] = []
     weak var databaseController: DatabaseProtocol?
     var listenerType: ListenerType = .all
     var selectedPest : Pest?
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationController?.navigationBar.isHidden = true
-        
+        searchBar.delegate = self
+        searchBar.placeholder = "Search Pests name"
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         
         filteredPests = allPest
         
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Pests"
-        navigationItem.searchController = searchController
-        
-        // This view controller decides how the search controller is presented
-        definesPresentationContext = true
+       
         tableView.tableFooterView = UIView()
     }
 
@@ -45,22 +40,22 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
         super.viewWillDisappear(animated)
         databaseController?.removeListener(listener: self)
     }
+   
     
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let searchText = searchController.searchBar.text?.lowercased() else {
-            return
-        }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if searchText.count > 0 {
+        var text = searchText.lowercased()
+        if text.count > 0 {
             filteredPests = allPest.filter({ (pest: Pest) -> Bool in
-                return pest.name.lowercased().contains(searchText) ?? false
+                return pest.name.lowercased().contains(text) ?? false
             })
         } else {
             filteredPests = allPest
         }
         
         tableView.reloadData()
-    }
+       }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -164,8 +159,7 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener,UISea
     
     func onPestChange(change: DatabaseChange, pests: [Pest]) {
            allPest = pests
-       
-           updateSearchResults(for: navigationItem.searchController!)
+            tableView.reloadData()
        }
 
     func onUserCDChange(change: DatabaseChange, user: [UserCD]) {
