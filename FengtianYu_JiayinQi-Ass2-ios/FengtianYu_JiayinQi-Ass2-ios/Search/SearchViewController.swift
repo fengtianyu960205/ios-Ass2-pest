@@ -11,9 +11,10 @@ import UIKit
 class SearchViewController: UIViewController, UIScrollViewDelegate {
     
     
-    @IBOutlet weak var nameBtn: UIButton!
-    @IBOutlet weak var stateBtn: UIButton!
-    @IBOutlet weak var cityBtn: UIButton!
+    @IBOutlet weak var tabSegmentControl: UISegmentedControl!
+    //@IBOutlet weak var nameBtn: UIButton!
+    //@IBOutlet weak var stateBtn: UIButton!
+    //@IBOutlet weak var cityBtn: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     var first : AllPestsTableViewController?
     var second : CityPestTableViewController?
@@ -22,9 +23,11 @@ class SearchViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameBtn.setTitleColor(.red, for: .normal)
-        cityBtn.setTitleColor(.blue, for: .normal)
-        stateBtn.setTitleColor(.blue, for: .normal)
+        
+        Utility.StyleSegmentControl(tabSegmentControl)
+        //nameBtn.setTitleColor(.red, for: .normal)
+        //cityBtn.setTitleColor(.blue, for: .normal)
+        //stateBtn.setTitleColor(.blue, for: .normal)
         scrollView.delegate = self
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.first = storyboard.instantiateViewController(withIdentifier: "A") as! AllPestsTableViewController;
@@ -59,7 +62,7 @@ class SearchViewController: UIViewController, UIScrollViewDelegate {
     }
     
 
-    @IBAction func nameBtnAct(_ sender: Any) {
+    /*@IBAction func nameBtnAct(_ sender: Any) {
         scrollView.setContentOffset(CGPoint(x: CGFloat(0) * view.frame.size.width, y: 0), animated: true)
     }
     
@@ -87,6 +90,12 @@ class SearchViewController: UIViewController, UIScrollViewDelegate {
             nameBtn.setTitleColor(.blue, for: .normal)
             cityBtn.setTitleColor(.blue, for: .normal)
         }
+    }
+    */
+    
+    @IBAction func tabChanged(_ sender: Any) {
+        scrollView.setContentOffset(CGPoint(x: CGFloat(tabSegmentControl.selectedSegmentIndex) * view.frame.size.width, y: 0), animated: true)
+
     }
 }
 

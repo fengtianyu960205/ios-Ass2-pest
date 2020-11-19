@@ -75,8 +75,8 @@ class Utility{
         segmentControl.backgroundColor = .clear
         segmentControl.selectedSegmentTintColor = UIColor.white
         segmentControl.isUserInteractionEnabled = true
-        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "AvenirNextCondensed-Medium", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .normal)
-        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "AvenirNextCondensed-Medium", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.init(red: 233/255, green: 81/255, blue: 73/255, alpha: 1)], for: .selected)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "MontserratAlternates-Medium", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .normal)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "MontserratAlternates-Medium", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.init(red: 233/255, green: 81/255, blue: 73/255, alpha: 1)], for: .selected)
         segmentControl.layer.borderColor = UIColor.init(red: 15/255, green: 146/255, blue: 124/255, alpha: 1).cgColor
         segmentControl.layer.borderWidth = 1
     }
@@ -85,8 +85,8 @@ class Utility{
         segmentControl.backgroundColor = .clear
         segmentControl.selectedSegmentTintColor = .clear
         segmentControl.isUserInteractionEnabled = false
-        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "AvenirNextCondensed-Medium", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .normal)
-        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "AvenirNextCondensed-Medium", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.init(red: 233/255, green: 81/255, blue: 73/255, alpha: 1)], for: .selected)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "MontserratAlternates-Medium", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .normal)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "MontserratAlternates-Medium", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.init(red: 233/255, green: 81/255, blue: 73/255, alpha: 1)], for: .selected)
         segmentControl.layer.borderColor = UIColor.init(red: 15/255, green: 146/255, blue: 124/255, alpha: 1).cgColor
         segmentControl.layer.borderWidth = 0
     }
