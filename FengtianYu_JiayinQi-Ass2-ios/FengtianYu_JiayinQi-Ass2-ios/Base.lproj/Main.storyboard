@@ -1973,7 +1973,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Aev-vl-01c"/>
-        <segue reference="a9o-M3-4wc"/>
+        <segue reference="cbo-Ui-eQM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
@@ -1989,8 +1989,8 @@
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="113"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus" width="512" height="512"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="pngegg" width="1200" height="1200"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>

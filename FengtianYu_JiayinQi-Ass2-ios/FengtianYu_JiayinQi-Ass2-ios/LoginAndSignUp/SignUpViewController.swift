@@ -31,6 +31,7 @@ class SignUpViewController: UIViewController {
         errorLabel.alpha = 0;
         setupView()
         setupPWTextField()
+        self.navigationItem
     }
     
     
