@@ -31,11 +31,17 @@ class SignUpViewController: UIViewController {
         errorLabel.alpha = 0;
         setupView()
         setupPWTextField()
-        self.navigationItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     
     func setupView(){
+        self.navigationController?.navigationBar.isHidden = false
+
         Utility.StyleButtonFilled(signUpButton)
         Utility.StyleTextField(usernameTextField)
         Utility.StyleTextField(pwTextField)

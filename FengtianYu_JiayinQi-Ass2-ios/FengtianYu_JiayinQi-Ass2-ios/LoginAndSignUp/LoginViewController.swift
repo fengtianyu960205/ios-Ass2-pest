@@ -30,6 +30,10 @@ class LoginViewController: UIViewController {
         setupPWTextField()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
 
     
     // MARK: - Navigation
@@ -47,6 +51,7 @@ class LoginViewController: UIViewController {
     }
     
     func setupView(){
+        self.navigationController?.navigationBar.isHidden = true
         Utility.StyleButtonFilled(loginButton)
         Utility.StyleButtonHollowed(signUpButton)
         Utility.StyleTextField(usernameTextField)
