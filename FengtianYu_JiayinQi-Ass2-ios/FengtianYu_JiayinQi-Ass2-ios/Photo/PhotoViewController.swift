@@ -11,11 +11,13 @@ import MapKit
 import CoreData
 import CoreLocation
 import SwiftUI
+import FirebaseStorage
 
 class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocationCoordinate2D?
     var userLocatrion : CLLocation?
+    let storage = Storage.storage().reference()
     
      weak var databaseController: DatabaseProtocol?
     @IBOutlet weak var takePhoto: UIButton!
@@ -189,6 +191,16 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
             self.displayMessage(title: "Species Name", message: "the species is not in pest list ")
             return
         }
+        
+        guard let imageData = pestImage.image?.pngData()
+            else{
+                return
+        }
+        
+        let number = Int.random(in: 1..<100)
+        let numberString = String(number)
+        let ref = storage.child(pestID! + "/file" + numberString + ".png")
+        
         let geocoder = CLGeocoder()
         let streetString = self.street.text!
         let cityString = self.city.text!
@@ -200,7 +212,26 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
             self.lat = placemark?.location?.coordinate.latitude
             self.lon = placemark?.location?.coordinate.longitude
             if placemark != nil{
+                
                 self.databaseController?.addPestLocation(id: pestID! ,  location: "\(self.lon!)"+","+"\(self.lat!)"+","+cityString+","+stateString)
+                
+                ref.putData(imageData, metadata: nil) { (_, error) in
+                    guard error == nil
+                    else{
+                        self.displayMessage(title: "Download failure", message: "fail to upload")
+                        return
+                    }
+                    
+                    ref.downloadURL { (url, error) in
+                        guard let url = url , error == nil else{
+                            self.displayMessage(title: "download failure", message: "fail to download")
+                            return
+                        }
+                        let urlString = url.absoluteString
+                        self.databaseController?.addPestImages(id: pestID!, imageUrl: urlString)
+                    }
+                    
+                }
                 self.displayMessage(title: "Add location", message: "Add location successfully.")
             }
             else{

@@ -11,5 +11,6 @@ target 'FengtianYu_JiayinQi-Ass2-ios' do
 	pod 'Firebase/Firestore'
 	pod 'FirebaseFirestoreSwift'
 	pod 'SDWebImage'
+	pod 'Firebase/Storage'
 
 end

@@ -43,7 +43,8 @@ protocol DatabaseProtocol: AnyObject {
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)
     func getPests() ->  [Pest]
-    func getPestidByName(pestName : String) -> String 
+    func getPestidByName(pestName : String) -> String
+    func addPestImages(id: String, imageUrl:String) 
 }
 
 

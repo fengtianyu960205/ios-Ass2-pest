@@ -187,6 +187,17 @@ class FirebaseController: NSObject,DatabaseProtocol {
         
     }
     
+    func addPestImages(id: String, imageUrl:String)  {
+        
+        var specificPestRef = pestsRef?.document(id);
+        
+        
+        specificPestRef?.updateData([
+            "images": FieldValue.arrayUnion([imageUrl])
+        ])
+        
+    }
+    
     
     
     func deletePest(pest: Pest) {

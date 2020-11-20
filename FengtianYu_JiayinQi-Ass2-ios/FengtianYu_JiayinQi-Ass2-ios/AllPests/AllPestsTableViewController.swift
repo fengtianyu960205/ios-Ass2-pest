@@ -88,6 +88,7 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener, UISe
         pestCell.pestName.text = pest.name
        // pestCell.pestName.textColor = .secondaryLabel
         let urlkey = pest.image_url
+        
         let url = URL(string : urlkey)
        // do{
        //     let data = try Data(contentsOf : url!)

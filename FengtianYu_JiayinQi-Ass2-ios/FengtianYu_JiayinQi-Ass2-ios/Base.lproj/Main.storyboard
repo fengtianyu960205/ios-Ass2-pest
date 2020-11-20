@@ -677,14 +677,37 @@
                     <view key="view" contentMode="scaleToFill" id="9uy-s8-ow6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBr-0P-T7A">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="652"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="TJt-jl-eaH">
+                                <rect key="frame" x="146" y="713" width="123" height="28"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                            </pageControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="C3o-oB-9ZY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C3o-oB-9ZY" firstAttribute="bottom" secondItem="eBr-0P-T7A" secondAttribute="bottom" constant="156" id="2LM-1l-c55"/>
+                            <constraint firstItem="TJt-jl-eaH" firstAttribute="top" secondItem="eBr-0P-T7A" secondAttribute="bottom" constant="61" id="COA-Op-hSs"/>
+                            <constraint firstItem="C3o-oB-9ZY" firstAttribute="bottom" secondItem="TJt-jl-eaH" secondAttribute="bottom" constant="67" id="QGK-rh-jvy"/>
+                            <constraint firstItem="C3o-oB-9ZY" firstAttribute="trailing" secondItem="TJt-jl-eaH" secondAttribute="trailing" constant="145" id="Suq-b3-7Mb"/>
+                            <constraint firstItem="eBr-0P-T7A" firstAttribute="trailing" secondItem="C3o-oB-9ZY" secondAttribute="trailing" id="cZa-dL-nHs"/>
+                            <constraint firstItem="eBr-0P-T7A" firstAttribute="leading" secondItem="C3o-oB-9ZY" secondAttribute="leading" id="hDq-JW-BcX"/>
+                            <constraint firstItem="TJt-jl-eaH" firstAttribute="leading" secondItem="C3o-oB-9ZY" secondAttribute="leading" constant="146" id="mWb-qy-dyw"/>
+                            <constraint firstItem="eBr-0P-T7A" firstAttribute="top" secondItem="C3o-oB-9ZY" secondAttribute="top" id="yig-LX-kWK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rkH-TY-RWm"/>
+                    <connections>
+                        <outlet property="pageControl" destination="TJt-jl-eaH" id="gqX-oL-0Qg"/>
+                        <outlet property="scrollView" destination="eBr-0P-T7A" id="Mcz-o4-tbM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCH-Ll-NKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286" y="2054"/>
+            <point key="canvasLocation" x="285.50724637681162" y="2053.7946428571427"/>
         </scene>
         <!--Single Pest Location Map View Controller-->
         <scene sceneID="2BL-Va-FVe">

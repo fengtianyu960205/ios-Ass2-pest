@@ -11,9 +11,13 @@ import UIKit
 class PestAlbumViewController: UIViewController {
     var pest : Pest?
     
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //pageControl.numberOfPages = pest.
         // Do any additional setup after loading the view.
     }
     
