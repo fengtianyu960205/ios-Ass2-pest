@@ -72,26 +72,11 @@ class SearchViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func stateBtnAct(_ sender: Any) {
         scrollView.setContentOffset(CGPoint(x: CGFloat(2) * view.frame.size.width, y: 0), animated: true)
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        var number = Int(floor(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width)))
-        if number == 0{
-            nameBtn.setTitleColor(.red, for: .normal)
-            cityBtn.setTitleColor(.blue, for: .normal)
-            stateBtn.setTitleColor(.blue, for: .normal)
-        }
-        else if number == 1{
-            cityBtn.setTitleColor(.red, for: .normal)
-            nameBtn.setTitleColor(.blue, for: .normal)
-            stateBtn.setTitleColor(.blue, for: .normal)
-        }
-        else{
-            stateBtn.setTitleColor(.red, for: .normal)
-            nameBtn.setTitleColor(.blue, for: .normal)
-            cityBtn.setTitleColor(.blue, for: .normal)
-        }
-    }
     */
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        tabSegmentControl.selectedSegmentIndex = Int(floor(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width)))   
+    }
+    
     
     @IBAction func tabChanged(_ sender: Any) {
         scrollView.setContentOffset(CGPoint(x: CGFloat(tabSegmentControl.selectedSegmentIndex) * view.frame.size.width, y: 0), animated: true)
