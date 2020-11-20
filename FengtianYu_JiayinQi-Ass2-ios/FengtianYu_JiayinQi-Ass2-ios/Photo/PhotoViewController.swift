@@ -182,6 +182,13 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
     
     func addressToGeoPoint(){
         
+        var pestID : String?
+        pestID = self.databaseController?.getPestidByName(pestName: self.pestName.text!)
+        
+        if pestID == "" {
+            self.displayMessage(title: "Species Name", message: "the species is not in pest list ")
+            return
+        }
         let geocoder = CLGeocoder()
         let streetString = self.street.text!
         let cityString = self.city.text!
@@ -193,7 +200,7 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
             self.lat = placemark?.location?.coordinate.latitude
             self.lon = placemark?.location?.coordinate.longitude
             if placemark != nil{
-                self.databaseController?.addPestLocation(id: "M3rPEqjDrkP0QRCSK69T",  location: "\(self.lon!)"+","+"\(self.lat!)"+","+cityString+","+stateString)
+                self.databaseController?.addPestLocation(id: pestID! ,  location: "\(self.lon!)"+","+"\(self.lat!)"+","+cityString+","+stateString)
                 self.displayMessage(title: "Add location", message: "Add location successfully.")
             }
             else{

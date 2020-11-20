@@ -219,5 +219,16 @@ class FirebaseController: NSObject,DatabaseProtocol {
         return pestList
     }
     
+    func getPestidByName(pestName : String) -> String {
+        var name = pestName.trimmingCharacters(in: .whitespacesAndNewlines)
+        for pest in pestList {
+            if name == pest.name || name.lowercased() == pest.name.lowercased() {
+                return pest.id!
+            }
+            
+        }
+        return ""
+    }
+    
 
 }

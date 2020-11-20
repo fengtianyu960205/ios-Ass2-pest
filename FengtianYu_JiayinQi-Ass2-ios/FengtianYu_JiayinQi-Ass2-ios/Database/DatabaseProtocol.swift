@@ -43,6 +43,7 @@ protocol DatabaseProtocol: AnyObject {
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)
     func getPests() ->  [Pest]
+    func getPestidByName(pestName : String) -> String 
 }
 
 
