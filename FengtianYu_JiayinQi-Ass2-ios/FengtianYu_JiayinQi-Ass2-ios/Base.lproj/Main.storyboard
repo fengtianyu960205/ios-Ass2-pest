@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QkW-iG-Pc6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QkW-iG-Pc6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1933,9 +1933,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hln-iM-utD">
-                                <rect key="frame" x="10" y="108" width="394" height="249"/>
-                                <string key="text">Pests, invasive specious and woody weeds cause enormous damage in Australia to the environment, agriculture and society. The Department of Environment and Heritage states that invasive wild animals cause immense damage to soils, native plants and species. The natural habitats of one of 20 native species has been destroyed by invasive animals. Which is important to ensure tourists can understand the dangers of invasive species and pests as well as learning ways to avoid significant damage to their safety and the environment. </string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hln-iM-utD">
+                                <rect key="frame" x="10" y="108" width="394" height="601"/>
+                                <mutableString key="text">Pests, invasive specious and woody weeds cause enormous damage in Australia to the environment, agriculture and society. The Department of Environment and Heritage states that invasive wild animals cause immense damage to soils, native plants and species. The natural habitats of one of 20 native species has been destroyed by invasive animals. Which is important to ensure tourists can understand the dangers of invasive species and pests as well as learning ways to avoid significant damage to their safety and the environment. 
+
+The app offers you an integrated solution to deal with wildlife and pests. You can simply enter an address to check out pests around desired destination and tips for you to be well-prepared before the journey.
+
+This App can be used at any time to record address of pest animal sightings. Your record will be uploaded to the database, which will display your added address once you refresh the map.
+
+This App has been also designed as a wiki for people who interested in zoology and seek for a comprehensive pest information hub.</mutableString>
                                 <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1958,7 +1964,7 @@
         <!--Q& A-->
         <scene sceneID="QJA-1p-ZFf">
             <objects>
-                <viewController id="3WU-oB-taY" sceneMemberID="viewController">
+                <viewController id="3WU-oB-taY" customClass="QuestionViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sXf-gs-CQM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2014,7 +2020,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOh-FX-WgJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3964" y="1291"/>
+            <point key="canvasLocation" x="3701" y="1882"/>
         </scene>
         <!--User-->
         <scene sceneID="Jtk-ga-zTp">

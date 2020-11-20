@@ -37,6 +37,7 @@
 		755A4EDB255FF85D008ADCCA /* CityPestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A4EDA255FF85C008ADCCA /* CityPestTableViewController.swift */; };
 		755A4EDE255FF86B008ADCCA /* StatePestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A4EDD255FF86B008ADCCA /* StatePestTableViewController.swift */; };
 		759E9A522567617A006AF9D7 /* PestAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E9A512567617A006AF9D7 /* PestAlbumViewController.swift */; };
+		759E9A8925681D6E006AF9D7 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759E9A8825681D6E006AF9D7 /* QuestionViewController.swift */; };
 		759FF80D254D91F3003722C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 759FF80C254D91F3003722C1 /* GoogleService-Info.plist */; };
 		759FF811254E4826003722C1 /* AllPestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF810254E4826003722C1 /* AllPestsTableViewController.swift */; };
 		759FF816254E4C90003722C1 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759FF815254E4C90003722C1 /* MulticastDelegate.swift */; };
@@ -90,6 +91,7 @@
 		755A4EDA255FF85C008ADCCA /* CityPestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPestTableViewController.swift; sourceTree = "<group>"; };
 		755A4EDD255FF86B008ADCCA /* StatePestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePestTableViewController.swift; sourceTree = "<group>"; };
 		759E9A512567617A006AF9D7 /* PestAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PestAlbumViewController.swift; sourceTree = "<group>"; };
+		759E9A8825681D6E006AF9D7 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		759FF80C254D91F3003722C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		759FF810254E4826003722C1 /* AllPestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPestsTableViewController.swift; sourceTree = "<group>"; };
 		759FF815254E4C90003722C1 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				6364217C2554DA9B009FE455 /* SettingViewController.swift */,
+				759E9A8825681D6E006AF9D7 /* QuestionViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				75F979762553EA8200B47AE8 /* PestListTableViewController.swift in Sources */,
 				63460BA22567F07D0011A7C5 /* headerCollectionReusableView.swift in Sources */,
 				7518D51E254EE75200F2E957 /* SinglePestLocationMapViewController.swift in Sources */,
+				759E9A8925681D6E006AF9D7 /* QuestionViewController.swift in Sources */,
 				751CB056253559CA00665CB4 /* SceneDelegate.swift in Sources */,
 				75F97966254FC8DD00B47AE8 /* WriteCommentViewController.swift in Sources */,
 				75BD15D125380F4E003CC46B /* PestCellTableViewCell.swift in Sources */,
