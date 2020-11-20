@@ -141,7 +141,8 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //currentSelectedPlant = currentPlants[indexPath.row]
             //performSegue(withIdentifier: "gotoDetailPlant", sender: self)
         if indexPath.section == 0{
-             performSegue(withIdentifier: "userToPestList", sender: self)
+            //performSegue(withIdentifier: "userToPestList", sender: self)
+            performSegue(withIdentifier: "userToCollection", sender: self)
             tableView.deselectRow(at: indexPath, animated: true)
         }
         
@@ -153,12 +154,18 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "userToPestList" {
-        let destination = segue.destination as! PestListTableViewController
+            let destination = segue.destination as! PestListTableViewController
             destination.user = self.user
             destination.hidesBottomBarWhenPushed = true
         }
         if segue.identifier == "userToSetting" {
-        let destination = segue.destination as! SettingViewController
+            let destination = segue.destination as! SettingViewController
+            destination.hidesBottomBarWhenPushed = true
+        }
+        
+        if segue.identifier == "userToCollection" {
+            let destination = segue.destination as! pestCollectionViewController
+            destination.user = self.user
             destination.hidesBottomBarWhenPushed = true
         }
     }

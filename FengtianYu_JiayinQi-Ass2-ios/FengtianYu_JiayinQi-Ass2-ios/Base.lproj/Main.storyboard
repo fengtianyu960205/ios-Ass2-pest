@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QkW-iG-Pc6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QkW-iG-Pc6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -675,14 +675,14 @@
             <objects>
                 <viewController id="w2Z-Df-WGa" customClass="PestAlbumViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9uy-s8-ow6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBr-0P-T7A">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="652"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="569"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="TJt-jl-eaH">
-                                <rect key="frame" x="100" y="713" width="214" height="28"/>
+                                <rect key="frame" x="100" y="718" width="214" height="28"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <color key="tintColor" systemColor="linkColor"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemOrangeColor"/>
@@ -716,11 +716,11 @@
             <objects>
                 <viewController id="DZ4-ng-Ax6" customClass="SinglePestLocationMapViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mk2-f8-Omk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Sjc-ex-cIG">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h7e-sx-KHT"/>
@@ -746,15 +746,15 @@
             <objects>
                 <viewController id="Ikg-DJ-jtj" customClass="detailInformationViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eKE-Bf-mkD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="fmM-nA-poo">
-                                <rect key="frame" x="148" y="290" width="246" height="4"/>
+                                <rect key="frame" x="148" y="378" width="246" height="4"/>
                                 <color key="progressTintColor" red="1" green="0.15336044520547945" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Dv-OC-XF3">
-                                <rect key="frame" x="5" y="324.5" width="404" height="473.5"/>
+                                <rect key="frame" x="5" y="412.5" width="404" height="390.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pestThreatCell" id="8Oa-ck-FXN" customClass="PestInformationTableViewCell" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target">
@@ -1000,7 +1000,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14g-Kk-QMC">
-                                <rect key="frame" x="15" y="15" width="384" height="250"/>
+                                <rect key="frame" x="15" y="103" width="384" height="250"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r4n-aA-qfv">
                                         <rect key="frame" x="5" y="5" width="160" height="240"/>
@@ -1104,7 +1104,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harm Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNL-Pe-YRI">
-                                <rect key="frame" x="20" y="280" width="118" height="24.5"/>
+                                <rect key="frame" x="20" y="368" width="118" height="24.5"/>
                                 <fontDescription key="fontDescription" name="MontserratAlternates-Medium" family="Montserrat Alternates" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1159,17 +1159,17 @@
             <objects>
                 <viewController id="Ox9-wW-bx7" customClass="CommentViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m1W-jz-gtp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="European Fox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXs-BL-NR3">
-                                <rect key="frame" x="0.0" y="10" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-Mr-jAU">
-                                <rect key="frame" x="0.0" y="60" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="655"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" id="vyn-ci-fvI">
@@ -1183,7 +1183,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIM-qb-Sxp">
-                                <rect key="frame" x="314" y="708" width="70" height="70"/>
+                                <rect key="frame" x="314" y="713" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="1Gf-Bk-szY"/>
                                     <constraint firstAttribute="width" constant="70" id="487-93-AVu"/>
@@ -1225,11 +1225,11 @@
             <objects>
                 <viewController id="8IM-dO-Eej" customClass="WriteCommentViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oQM-Ne-xRu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZCf-x1-hHa">
-                                <rect key="frame" x="10" y="50" width="394" height="34"/>
+                                <rect key="frame" x="10" y="138" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1266,19 +1266,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K89-xg-1u0">
-                                <rect key="frame" x="10" y="438" width="394" height="20"/>
+                                <rect key="frame" x="10" y="438" width="394" height="21"/>
                                 <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5M-F5-27X">
-                                <rect key="frame" x="10" y="512" width="414" height="20"/>
+                                <rect key="frame" x="10" y="513" width="414" height="21"/>
                                 <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INW-IV-vHU">
-                                <rect key="frame" x="10" y="542" width="394" height="34"/>
+                                <rect key="frame" x="10" y="544" width="394" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="hQK-oQ-PVk"/>
                                 </constraints>
@@ -1286,13 +1286,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv5-uR-o6n">
-                                <rect key="frame" x="10" y="586" width="394" height="20"/>
+                                <rect key="frame" x="10" y="588" width="394" height="21"/>
                                 <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ViF-Qv-jbA">
-                                <rect key="frame" x="10" y="616" width="394" height="34"/>
+                                <rect key="frame" x="10" y="619" width="394" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="1tY-9Q-78P"/>
                                 </constraints>
@@ -1300,13 +1300,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mia-1Y-uWd">
-                                <rect key="frame" x="10" y="660" width="394" height="20"/>
+                                <rect key="frame" x="10" y="663" width="394" height="21"/>
                                 <fontDescription key="fontDescription" name="MontserratAlternates-Regular" family="Montserrat Alternates" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5H3-hd-Xtu">
-                                <rect key="frame" x="10" y="690" width="394" height="34"/>
+                                <rect key="frame" x="10" y="694" width="394" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="qyy-l5-E6p"/>
                                 </constraints>
@@ -1356,7 +1356,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H88-ya-cXX">
-                                <rect key="frame" x="10" y="468" width="394" height="34"/>
+                                <rect key="frame" x="10" y="469" width="394" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Jb1-Ax-Hqb"/>
                                 </constraints>
@@ -1706,6 +1706,7 @@
                         <outlet property="userImage" destination="QwV-AJ-kC6" id="FfC-Ed-i7I"/>
                         <segue destination="np2-P2-jFV" kind="show" identifier="userToSetting" id="5gD-Dp-dwc"/>
                         <segue destination="M5W-Tw-wRT" kind="show" identifier="userToPestList" id="IqM-QK-IGI"/>
+                        <segue destination="j1b-y7-K3a" kind="show" identifier="userToCollection" id="veU-Nd-v4h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJg-uC-NjV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1996,6 +1997,25 @@
             </objects>
             <point key="canvasLocation" x="2956.521739130435" y="1228.7946428571429"/>
         </scene>
+        <!--Pest Collection View Controller-->
+        <scene sceneID="dx6-c7-Qsk">
+            <objects>
+                <viewController id="j1b-y7-K3a" customClass="pestCollectionViewController" customModule="FengtianYu_JiayinQi_Ass2_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CWv-o3-qer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0zP-3v-qn5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ogg-kh-cRn"/>
+                    <connections>
+                        <segue destination="Ikg-DJ-jtj" kind="show" identifier="collectionToDetail" id="fqu-Gb-zw2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qOh-FX-WgJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3964" y="1291"/>
+        </scene>
         <!--User-->
         <scene sceneID="Jtk-ga-zTp">
             <objects>
@@ -2054,7 +2074,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ql2-EQ-cu5"/>
+        <segue reference="fqu-Gb-zw2"/>
         <segue reference="a9o-M3-4wc"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -2072,8 +2092,8 @@
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="113"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
-        <image name="plus" width="512" height="512"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus" width="512" height="512"/>
         <image name="pngegg" width="1200" height="1200"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
