@@ -88,15 +88,7 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener, UISe
         pestCell.pestName.text = pest.name
        // pestCell.pestName.textColor = .secondaryLabel
         let urlkey = pest.image_url
-        
         let url = URL(string : urlkey)
-       // do{
-       //     let data = try Data(contentsOf : url!)
-       //     pestCell.imageView?.image = UIImage(data : data)
-       // }catch let _{
-       //     print("error in fetching image")
-      //  }
-        //pestCell.imageView!.frame = pestCell.frame.offsetBy(dx: 10, dy: 10)
         pestCell.imageView?.sd_setImage(with: url, placeholderImage: UIImage(named: "loading"))
         return pestCell
     }
