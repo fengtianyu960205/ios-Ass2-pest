@@ -27,6 +27,7 @@ class PestAlbumViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
         pageControl.numberOfPages = (pest?.images.count)!
+        
         for index in 0..<(pest?.images.count)! {
             frame.origin.x = scrollView.frame.size.width * CGFloat(index)
             frame.size = scrollView.frame.size
@@ -37,6 +38,7 @@ class PestAlbumViewController: UIViewController, UIScrollViewDelegate {
             imageView.sd_setImage(with: url, placeholderImage: UIImage(named: "loading"))
             self.scrollView.addSubview(imageView)
         }
+        
         scrollView.contentSize = CGSize(width: CGFloat((pest?.images.count)!) * scrollView.frame.size.width, height: scrollView.frame.size.height)
     }
     
