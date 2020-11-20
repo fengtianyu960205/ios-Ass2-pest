@@ -76,7 +76,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
     }
     
      func numberOfSections(in tableview: UITableView) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,8 +105,13 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
             return cell
         }
         
-        else{
+        else if indexPath.section == 4{
             let cell = tableView.dequeueReusableCell(withIdentifier: "pestLocationCell",
+            for: indexPath) as! PestInformationTableViewCell
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "pestAlbumCell",
             for: indexPath) as! PestInformationTableViewCell
             return cell
         }
@@ -133,7 +138,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
             displayMessage(title: "Threat", msg: messagecontent, button: "Dismiss")
         }
         
-        else{
+        else if indexPath.section == 4{
             
             var index = 0
             var size = integer_t((showedPest?.location.count)!) as integer_t
@@ -151,6 +156,9 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
             
             performSegue(withIdentifier: "detailtomapview", sender: self)
         }
+        else{
+            performSegue(withIdentifier: "detailtoPestAlbum", sender: self)
+        }
         
     }
     
@@ -167,6 +175,10 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         if segue.identifier == "detailToComment" {
         let destination = segue.destination as! CommentViewController
             destination.commentedPest = self.showedPest
+        }
+        if segue.identifier == "detailtoPestAlbum" {
+        let destination = segue.destination as! PestAlbumViewController
+            destination.pest = self.showedPest
         }
     }
      
