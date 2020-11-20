@@ -17,6 +17,7 @@
 		63460B9E2567B8F60011A7C5 /* pestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63460B9C2567B8F60011A7C5 /* pestCollectionViewCell.swift */; };
 		63460B9F2567B8F60011A7C5 /* pestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63460B9D2567B8F60011A7C5 /* pestCollectionViewCell.xib */; };
 		63460BA22567F07D0011A7C5 /* headerCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63460BA12567F07D0011A7C5 /* headerCollectionReusableView.swift */; };
+		63460BA625682E9C0011A7C5 /* UserImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63460BA525682E9C0011A7C5 /* UserImagePopupViewController.swift */; };
 		6364216B2552F6E8009FE455 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364216A2552F6E8009FE455 /* Utility.swift */; };
 		6364217325544A9F009FE455 /* PestCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217225544A9F009FE455 /* PestCD+CoreDataClass.swift */; };
 		6364217625544AF8009FE455 /* PestCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364217525544AF8009FE455 /* PestCD+CoreDataProperties.swift */; };
@@ -69,6 +70,7 @@
 		63460B9C2567B8F60011A7C5 /* pestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pestCollectionViewCell.swift; sourceTree = "<group>"; };
 		63460B9D2567B8F60011A7C5 /* pestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = pestCollectionViewCell.xib; sourceTree = "<group>"; };
 		63460BA12567F07D0011A7C5 /* headerCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerCollectionReusableView.swift; sourceTree = "<group>"; };
+		63460BA525682E9C0011A7C5 /* UserImagePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImagePopupViewController.swift; sourceTree = "<group>"; };
 		6364216A2552F6E8009FE455 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		6364217225544A9F009FE455 /* PestCD+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PestCD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6364217525544AF8009FE455 /* PestCD+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PestCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				63460B9C2567B8F60011A7C5 /* pestCollectionViewCell.swift */,
 				63460B9D2567B8F60011A7C5 /* pestCollectionViewCell.xib */,
 				63460BA12567F07D0011A7C5 /* headerCollectionReusableView.swift */,
+				63460BA525682E9C0011A7C5 /* UserImagePopupViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				759FF81A254E4DA8003722C1 /* Pest.swift in Sources */,
 				6364217325544A9F009FE455 /* PestCD+CoreDataClass.swift in Sources */,
 				75F979822554418F00B47AE8 /* UserCD+CoreDataProperties copy.swift in Sources */,
+				63460BA625682E9C0011A7C5 /* UserImagePopupViewController.swift in Sources */,
 				75A8037B255BB99600D41D21 /* MapViewController.swift in Sources */,
 				759FF818254E4D2B003722C1 /* DatabaseProtocol.swift in Sources */,
 				7518D520254EF8AB00F2E957 /* LocationAnnotation.swift in Sources */,

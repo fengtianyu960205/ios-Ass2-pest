@@ -95,7 +95,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Utility.StyleUneditTextField(nameTextField)
         Utility.StyleUneditTextField(ageTextField)
         Utility.StyleUneditTextField(locationTextField)
-        changeUserImageButton.isUserInteractionEnabled = false
+        changeUserImageButton.isUserInteractionEnabled = true
         editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
        
         
@@ -168,13 +168,24 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
             destination.user = self.user
             destination.hidesBottomBarWhenPushed = true
         }
+        
+        if segue.identifier == "userToImagePopup"{
+            let destination = segue.destination as! UserImagePopupViewController
+            destination.image = self.userImage.image
+            destination.hidesBottomBarWhenPushed = true
+        }
     }
     @IBAction func changeUserImage(_ sender: Any) {
-        let imageVC = UIImagePickerController()
-        imageVC.delegate = self
-        imageVC.sourceType = .photoLibrary
-        imageVC.allowsEditing = true
-        present(imageVC, animated: true)
+        if editable == false {
+            performSegue(withIdentifier: "userToImagePopup", sender: self)
+        }
+        else{
+            let imageVC = UIImagePickerController()
+            imageVC.delegate = self
+            imageVC.sourceType = .photoLibrary
+            imageVC.allowsEditing = true
+            present(imageVC, animated: true)
+        }
     }
     
     @IBAction func editProfile(_ sender: Any) {
@@ -203,7 +214,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 Utility.StyleUneditTextField(nameTextField)
                 Utility.StyleUneditTextField(ageTextField)
                 Utility.StyleUneditTextField(locationTextField)
-                changeUserImageButton.isUserInteractionEnabled = false
+                changeUserImageButton.isUserInteractionEnabled = true
                 //set the segmentedControl
                 Utility.StyleUneditSegmentControl(genderSegmentControl)
                 editButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
