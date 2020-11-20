@@ -71,5 +71,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Please allow access.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>please allow access</string>
 </dict>
 </plist>
