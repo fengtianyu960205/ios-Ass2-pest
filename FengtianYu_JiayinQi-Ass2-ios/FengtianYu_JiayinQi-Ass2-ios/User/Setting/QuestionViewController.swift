@@ -7,13 +7,35 @@
 //
 
 import UIKit
+import WebKit
 
 class QuestionViewController: UIViewController {
 
+    @IBOutlet weak var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var html = """
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <title>aboutquestion</title>
+        </head>
+        <body>
+        <details>
+            <summary style="font-weight:bold;font-size:50px">What is harm score, why would I use it?</summary>
+
+            <p style= "font-size:40px">The harm score represents a predefined harmfulness of each listed species, if the scroe is 100, it means the species is extremely harmful to human while if the score is between 0 to 20, it means the species in not really hamrful but human still need some information about how to deal with them.
+            </p>
+        <br>
+        
+        </body>
+        </html>
+        
+        
+        """
+        webView.loadHTMLString(html, baseURL: nil)
     }
     
 
