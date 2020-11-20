@@ -14,10 +14,15 @@ class PestAlbumViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
+    weak var databaseController: DatabaseProtocol?
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databaseController = appDelegate.databaseController
+        pest = databaseController?.getPestByID((pest?.id)!)
         
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
