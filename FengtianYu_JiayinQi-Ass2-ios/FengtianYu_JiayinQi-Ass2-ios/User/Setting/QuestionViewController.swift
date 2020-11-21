@@ -30,13 +30,33 @@ class QuestionViewController: UIViewController {
             </p>
         </details>
         <br>
-
+        <br>
         <details>
             <summary style="font-weight:bold;font-size:50px">How to use photo screen ?</summary>
             <p style= "font-size:40px">In photo screen , user can take a photo and input their current address or click address button to generate current address automatically.Then they need to input the species name which is in the species list. After uploading, user can see the location in location screen and photo they just upload in pest album page.
             </p>
         </details>
-        
+        <br>
+        <br>
+        <details>
+            <summary style="font-weight:bold;font-size:50px">How to use Home map screen ?</summary>
+            <p style= "font-size:40px">In this page, there is an Australia map which shows all pests’ location. User can click the location button at right-bottom corner to generate user current location or just type start location in the blank. Then user type destination location and click get direction button. Then user can see some routes in a map and user can zoom the map to see whether there are pests through the route or not. This function is to help tourists plan their journey to avoid pests.
+            </p>
+        </details>
+        <br>
+        <br>
+        <details>
+            <summary style="font-weight:bold;font-size:50px">How to use Species search screen ?</summary>
+            <p style= "font-size:40px">In this page, user can search pest in pest list according pest name, city and state.user can scroll the view to change page or click the segment button to change page to search by name, city or state.
+            </p>
+        </details>
+        <br>
+        <br>
+        <details>
+            <summary style="font-weight:bold;font-size:50px">What is User interesting  pest list screen</summary>
+            <p style= "font-size:40px">In this screen, user can see their interesting pest list which they just add in pest detail information.
+            </p>
+        </details>
         </body>
         </html>
         
