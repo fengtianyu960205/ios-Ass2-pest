@@ -113,8 +113,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         for pestLocation in locationList{
             self.mapView.addAnnotation(pestLocation)
             showCircle(coordinate: pestLocation.coordinate,
-                       radius: 10000)}
-            /*
+                       radius: 10000)
+            
             let point1 = CLLocation(latitude: pestLocation.coordinate.latitude, longitude: pestLocation.coordinate.longitude)
             let point2 = CLLocation(latitude: currentLocation?.latitude ?? -42.880999, longitude: currentLocation?.longitude ?? 147.281095)
             
@@ -146,7 +146,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                 locationManager.startMonitoring(for: geofence!)
                 print(pestLocation)
             }
-        }*/
+        }
         
         
         
