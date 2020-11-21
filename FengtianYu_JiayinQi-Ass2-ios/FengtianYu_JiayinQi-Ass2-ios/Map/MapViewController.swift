@@ -12,7 +12,7 @@ import MapKit
 import CoreData
 import UserNotifications
 
-class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate,DatabaseListener{
+class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate,DatabaseListener, UNUserNotificationCenterDelegate{
     
    var listenerType: ListenerType = .all
     var locationManager: CLLocationManager = CLLocationManager()
@@ -41,24 +41,36 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         //ask user for authoriztion for location and notification
         let authorisationStatus = CLLocationManager.authorizationStatus()
-        if authorisationStatus != .authorizedWhenInUse {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        if authorisationStatus != .authorizedAlways {
             
             if authorisationStatus == .notDetermined {
                 locationManager.requestWhenInUseAuthorization()
+                locationManager.requestAlwaysAuthorization()
             }
             else if authorisationStatus == .denied{
                 locationManager.requestWhenInUseAuthorization()
+                locationManager.requestAlwaysAuthorization()
+
             }else if authorisationStatus == .restricted {
                 locationManager.requestWhenInUseAuthorization()
+                locationManager.requestAlwaysAuthorization()
+
             }
             
         }else{
          getLocationBtn.isHidden = false
         }
         
+        getLocationBtn.isHidden = false
+        
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             //
         }
+        center.delegate = self
+        
+        
         
         //add the location to the annotation list
         addlocationtoMap()
@@ -78,7 +90,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     }
     
     func addlocationtoMap(){
-       
+        var distanseslist : [Double] = []
+        
         for specificPest in allPests{
             var index = 0
             let size = integer_t((specificPest.location.count)) as integer_t
@@ -98,11 +111,42 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             self.mapView.addAnnotation(pestLocation)
             showCircle(coordinate: pestLocation.coordinate,
             radius: 10000)
-            geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 500, identifier: "geofence")
+            
+            let point1 = CLLocation(latitude: pestLocation.coordinate.latitude, longitude: pestLocation.coordinate.longitude)
+            let point2 = CLLocation(latitude: currentLocation?.latitude ?? -42.880999, longitude: currentLocation?.longitude ?? 147.281095)
+            
+            let distanse = point2.distance(from: point1)
+            
+            distanseslist.append(Double(distanse))
+            
+            
+            /*
+            geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 10000, identifier: pestLocation.title ?? "unknown location")
             geofence?.notifyOnExit = true
             geofence?.notifyOnEntry = true
-            locationManager.startMonitoring(for: geofence!)
+            locationManager.startMonitoring(for: geofence!)*/
         }
+        
+        distanseslist.sort()
+        let limit = distanseslist[18]
+        
+        for pestLocation in locationList{
+            let point1 = CLLocation(latitude: pestLocation.coordinate.latitude, longitude: pestLocation.coordinate.longitude)
+            let point2 = CLLocation(latitude: currentLocation?.latitude ?? -42.880999, longitude: currentLocation?.longitude ?? 147.281095)
+            
+            let distanse = point2.distance(from: point1)
+            
+            if Double(distanse) <= limit{
+                geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 10 * 1000, identifier: pestLocation.title ?? "unknown location")
+                geofence?.notifyOnExit = true
+                geofence?.notifyOnEntry = true
+                locationManager.startMonitoring(for: geofence!)
+                print(pestLocation)
+            }
+        }
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,6 +163,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         //locationList.removeAll()
        }
     
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
          currentLocation = locationManager.location?.coordinate
         userLocation = locationManager.location
@@ -127,7 +173,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
     {
-        if status == .authorizedWhenInUse {
+        if status == .authorizedAlways {
             getLocationBtn.isHidden = false
             
         }
@@ -315,39 +361,41 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         //the content of notification
-        let content = UNMutableNotificationContent()
-        content.title = "Pest Protection - Exiting"
-        content.body = "You have exit the range of " + region.description
-        
-        //create the trigger
-        let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
-        
-        
-        //create the reuest and register the notification
-        let uuid = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
-        
-        center.add(request) { (error) in
-            //
-        }
+        postNotification(region.identifier, "Exiting")
+        print(1)
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        postNotification(region.identifier, "Entering")
+        print(1)
+    }
+    
+    func postNotification(_ eventRegion : String, _ eventReason: String){
+        
         let content = UNMutableNotificationContent()
-        content.title = "Pest Protection - Entering"
-        content.body = "You have enter the range of " + region.description
-        
-        //create the trigger
-        let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
+        content.title = "Pest Protection - \(eventReason)"
+        content.body = "You have enter the range of \(eventRegion)"
+        content.sound = UNNotificationSound.default
         
         
-        //create the reuest and register the notification
+        let date = Date().addingTimeInterval(5)
+        let datecomponent = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: datecomponent, repeats: false)
+        
         let uuid = UUID().uuidString
+        
         let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
         
+        
         center.add(request) { (error) in
-            //
+            if let error = error{
+                print(error)
+            }else{
+                print("added \(eventReason) \(eventRegion)")
+            }
         }
+        
     }
     
 }
