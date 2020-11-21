@@ -38,7 +38,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         allPests = databaseController?.getPests() as! [Pest]
-        
+        getLocationBtn.isHidden = true
         //ask user for authoriztion for location and notification
         let authorisationStatus = CLLocationManager.authorizationStatus()
         locationManager.requestWhenInUseAuthorization()
@@ -78,7 +78,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         locationManager.distanceFilter = 10
         locationManager.delegate = self
         mapView.delegate = self
-        getLocationBtn.isHidden = true
+        
         
                
                
