@@ -351,6 +351,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                 }
                 else if let placemarks = placemarks{
                     for placemark in placemarks{
+                        if placemark.subThoroughfare == nil {
+                            self.displayMessage(title: "Location is not correct", message: "Please type location manually")
+                            return
+                        }
                         self.startLocationText.text = placemark.subThoroughfare! + " " + placemark.thoroughfare!+" "+placemark.locality!+" "+placemark.administrativeArea!
                        
                     }

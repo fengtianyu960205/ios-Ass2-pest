@@ -136,6 +136,10 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
                 }
                 else if let placemarks = placemarks{
                     for placemark in placemarks{
+                        if placemark.subThoroughfare == nil {
+                            self.displayMessage(title: "Location is not correct", message: "Please type location manually")
+                            return
+                        }
                         self.street.text = placemark.subThoroughfare! + " " +  placemark.thoroughfare!
                         self.city.text = placemark.locality
                         self.state.text = placemark.administrativeArea
