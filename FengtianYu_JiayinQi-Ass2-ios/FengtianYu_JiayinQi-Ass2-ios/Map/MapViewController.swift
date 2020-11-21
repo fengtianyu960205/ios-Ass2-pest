@@ -140,7 +140,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             let distanse = point2.distance(from: point1)
             
             if Double(distanse) <= limit{
-                geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 10 * 1000, identifier: pestLocation.title ?? "unknown location")
+                geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 10 * 1000, identifier: pestLocation.subtitle ?? "unknown location")
                 geofence?.notifyOnExit = true
                 geofence?.notifyOnEntry = true
                 locationManager.startMonitoring(for: geofence!)
@@ -201,7 +201,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             let distanse = point2.distance(from: point1)
             
             if Double(distanse) <= limit{
-                geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 10 * 1000, identifier: pestLocation.title ?? "unknown location")
+                geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 10 * 1000, identifier: pestLocation.subtitle ?? "unknown location")
                 geofence?.notifyOnExit = true
                 geofence?.notifyOnEntry = true
                 locationManager.startMonitoring(for: geofence!)
@@ -404,12 +404,12 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         //the content of notification
-        postNotification(region.identifier, "Exiting")
+        postNotification(region.identifier, "Exited")
         print(1)
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        postNotification(region.identifier, "Entering")
+        postNotification(region.identifier, "Entered")
         print(1)
     }
     
@@ -417,7 +417,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         let content = UNMutableNotificationContent()
         content.title = "Pest Protection - \(eventReason)"
-        content.body = "You have enter the range of \(eventRegion)"
+        content.body = "You have \(eventReason) the range of \(eventRegion)"
         content.sound = UNNotificationSound.default
         
         
