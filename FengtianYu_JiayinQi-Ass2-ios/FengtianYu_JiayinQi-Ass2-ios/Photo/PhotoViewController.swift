@@ -76,6 +76,11 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
              locationBtnUI()
         }
         
+        if authorisationStatus == .authorizedAlways{
+            currentLocationBtn.isHidden = false
+             locationBtnUI()
+        }
+        
         setupView()
         
     }
@@ -111,7 +116,7 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
     {
-        if status == .authorizedWhenInUse {
+        if status == .authorizedWhenInUse || status == .authorizedAlways  {
              currentLocationBtn.isHidden = false
             locationBtnUI()
         }

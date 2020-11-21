@@ -62,8 +62,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         }else{
          getLocationBtn.isHidden = false
         }
+        if authorisationStatus == .authorizedWhenInUse {
+            getLocationBtn.isHidden = false
+        }
         
-        getLocationBtn.isHidden = false
+        //getLocationBtn.isHidden = false
         
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             //
@@ -173,7 +176,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
     {
-        if status == .authorizedAlways {
+        if status == .authorizedWhenInUse || status == .authorizedAlways {
             getLocationBtn.isHidden = false
             
         }
