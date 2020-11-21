@@ -171,7 +171,43 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
          currentLocation = locationManager.location?.coordinate
         userLocation = locationManager.location
-           
+        var distanceslist : [Double] = []
+        for monitored in locationManager.monitoredRegions{
+            locationManager.stopMonitoring(for: monitored)
+        }
+        for pestLocation in locationList{
+            
+            let point1 = CLLocation(latitude: pestLocation.coordinate.latitude, longitude: pestLocation.coordinate.longitude)
+            let point2 = CLLocation(latitude: currentLocation?.latitude ?? -42.880999, longitude: currentLocation?.longitude ?? 147.281095)
+            
+            let distanse = point2.distance(from: point1)
+            
+            distanceslist.append(Double(distanse))
+            
+            
+            /*
+            geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 10000, identifier: pestLocation.title ?? "unknown location")
+            geofence?.notifyOnExit = true
+            geofence?.notifyOnEntry = true
+            locationManager.startMonitoring(for: geofence!)*/
+        }
+        distanceslist.sort()
+        let limit = distanceslist[18]
+        
+        for pestLocation in locationList{
+            let point1 = CLLocation(latitude: pestLocation.coordinate.latitude, longitude: pestLocation.coordinate.longitude)
+            let point2 = CLLocation(latitude: currentLocation?.latitude ?? -42.880999, longitude: currentLocation?.longitude ?? 147.281095)
+            
+            let distanse = point2.distance(from: point1)
+            
+            if Double(distanse) <= limit{
+                geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 10 * 1000, identifier: pestLocation.title ?? "unknown location")
+                geofence?.notifyOnExit = true
+                geofence?.notifyOnEntry = true
+                locationManager.startMonitoring(for: geofence!)
+                print(pestLocation)
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
