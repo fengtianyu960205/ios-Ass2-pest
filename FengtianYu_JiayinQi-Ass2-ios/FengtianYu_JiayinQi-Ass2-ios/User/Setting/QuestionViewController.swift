@@ -28,7 +28,14 @@ class QuestionViewController: UIViewController {
 
             <p style= "font-size:40px">The harm score represents a predefined harmfulness of each listed species, if the scroe is 100, it means the species is extremely harmful to human while if the score is between 0 to 20, it means the species in not really hamrful but human still need some information about how to deal with them.
             </p>
+        </details>
         <br>
+
+        <details>
+            <summary style="font-weight:bold;font-size:50px">How to use photo screen ?</summary>
+            <p style= "font-size:40px">In photo screen , user can take a photo and input their current address or click address button to generate current address automatically.Then they need to input the species name which is in the species list. After uploading, user can see the location in location screen and photo they just upload in pest album page.
+            </p>
+        </details>
         
         </body>
         </html>
