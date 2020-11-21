@@ -29,7 +29,7 @@ class UserImagePopupViewController: UIViewController {
     
     func setupView() {
         let initsize = view.frame.size.width - 10
-        userImageView.frame = CGRect(x: 0, y: (view.frame.size.height - initsize) / 2, width: initsize, height: initsize)
+        userImageView.frame = CGRect(x: 5, y: (view.frame.size.height - initsize) / 2, width: initsize, height: initsize)
         userImageView.image = image
         userImageView.contentMode = .scaleAspectFit
         backButton.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
