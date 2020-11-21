@@ -35,15 +35,7 @@ class pestCollectionViewController: UIViewController, DatabaseListener {
        
         pestlist = (user!.pestlist?.allObjects as? [PestCD])!
         
-        for pest in pestlist {
-            if pest.category == "Pest"{
-                pests.append(pest)
-            }else if pest.category == "Invasive species"{
-                invasives.append(pest)
-            }else{
-                plants.append(pest)
-            }
-        }
+        classify()
         
         
         createCollectionView()
@@ -62,6 +54,22 @@ class pestCollectionViewController: UIViewController, DatabaseListener {
            coreDataDatabaseController?.removeListener(listener: self)
        }
     
+    //update the collection view when the view will appear
+    func classify() {
+        pests = []
+        invasives = []
+        plants = []
+        for pest in pestlist {
+            if pest.category == "Pest"{
+                pests.append(pest)
+            }else if pest.category == "Invasive species"{
+                invasives.append(pest)
+            }else{
+                plants.append(pest)
+            }
+        }
+    }
+    
     
     func createCollectionView(){
         //create the layout for collection view, scroll vertically, whole screen, item size()
@@ -69,6 +77,7 @@ class pestCollectionViewController: UIViewController, DatabaseListener {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         layout.itemSize = CGSize(width: view.frame.size.width / 2.15, height: view.frame.size.height / 3.1)
+        //layout.itemSize = CGSize(width: view.frame.size.width / 2.15, height: view.frame.size.width / 2.15)
         
         //set the collection view
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -109,6 +118,8 @@ class pestCollectionViewController: UIViewController, DatabaseListener {
     func onUserCDChange(change: DatabaseChange, user: [UserCD]) {
         self.user = user.first
         pestlist = (self.user!.pestlist?.allObjects as? [PestCD])!
+        classify()
+        collectionView?.reloadData()
     }
 }
 
@@ -177,7 +188,7 @@ extension pestCollectionViewController : UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 20)
+        return CGSize(width: view.frame.size.width, height: 30)
     }
     
 }

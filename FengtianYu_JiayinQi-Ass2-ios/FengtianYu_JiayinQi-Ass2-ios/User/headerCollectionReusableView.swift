@@ -16,7 +16,7 @@ class headerCollectionReusableView: UICollectionReusableView {
         label.text = "text"
         label.textAlignment = .left
         label.textColor = .black
-        label.font = UIFont(name: "MontserratAlternates-Medium", size: 17)!
+        label.font = UIFont(name: "MontserratAlternates-Medium", size: 22)!
         return label
     }()
     
