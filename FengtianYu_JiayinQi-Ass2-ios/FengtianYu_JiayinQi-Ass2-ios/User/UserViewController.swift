@@ -46,6 +46,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         coreDataDatabaseController?.addListener(listener: self)
+        self.navigationController?.navigationBar.isHidden = false
         setValueforUIkits()
     }
        
