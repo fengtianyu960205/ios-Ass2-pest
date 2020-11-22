@@ -122,12 +122,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             
             distanseslist.append(Double(distanse))
             
-            
-            /*
-            geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 10000, identifier: pestLocation.title ?? "unknown location")
-            geofence?.notifyOnExit = true
-            geofence?.notifyOnEntry = true
-            locationManager.startMonitoring(for: geofence!)*/
+
         }
         
         distanseslist.sort()
@@ -163,7 +158,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
            super.viewWillDisappear(animated)
            locationManager.stopUpdatingLocation()
         databaseController?.removeListener(listener: self)
-        //locationList.removeAll()
        }
     
     
@@ -171,10 +165,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
          currentLocation = locationManager.location?.coordinate
         userLocation = locationManager.location
+        
         var distanceslist : [Double] = []
-        for monitored in locationManager.monitoredRegions{
-            locationManager.stopMonitoring(for: monitored)
-        }
+        //for monitored in locationManager.monitoredRegions{
+        //    locationManager.stopMonitoring(for: monitored)
+       // }
         for pestLocation in locationList{
             
             let point1 = CLLocation(latitude: pestLocation.coordinate.latitude, longitude: pestLocation.coordinate.longitude)
@@ -184,12 +179,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             
             distanceslist.append(Double(distanse))
             
-            
-            /*
-            geofence = CLCircularRegion(center: pestLocation.coordinate, radius: 10000, identifier: pestLocation.title ?? "unknown location")
-            geofence?.notifyOnExit = true
-            geofence?.notifyOnEntry = true
-            locationManager.startMonitoring(for: geofence!)*/
         }
         distanceslist.sort()
         let limit = distanceslist[18]
