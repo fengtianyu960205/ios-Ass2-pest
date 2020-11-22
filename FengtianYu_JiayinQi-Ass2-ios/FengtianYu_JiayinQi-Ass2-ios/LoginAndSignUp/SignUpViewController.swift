@@ -26,8 +26,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         
-        // Do any additional setup after loading the view.
-        
+        // set up the view, make the error label invisible
         errorLabel.alpha = 0;
         setupView()
         setupPWTextField()
@@ -35,13 +34,15 @@ class SignUpViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //make the navigation bar visible, user can back to login view
         self.navigationController?.navigationBar.isHidden = false
     }
     
     
     func setupView(){
+        //make the navigation bar visible, user can back to login view
         self.navigationController?.navigationBar.isHidden = false
-
+        //unify the style of the textfoeld and button
         Utility.StyleButtonFilled(signUpButton)
         Utility.StyleTextField(usernameTextField)
         Utility.StyleTextField(pwTextField)
@@ -49,12 +50,13 @@ class SignUpViewController: UIViewController {
     }
     
     func setupPWTextField(){
-        pwTextField.rightViewMode = .unlessEditing
         
+        //create a button with eye image so that user can choose to show the password or not
+        pwTextField.rightViewMode = .unlessEditing
         button.setImage(UIImage(named: "closedEye"), for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 25)
         button.frame = CGRect(x: CGFloat(pwTextField.frame.size.width - 5), y: CGFloat(5), width: CGFloat(5), height: CGFloat(5))
-        
+        //add a function to the button
         button.addTarget(self, action: #selector(btnPWVisible(_:)), for: .touchUpInside)
         pwTextField.rightView = button
         pwTextField.rightViewMode = .always
@@ -64,8 +66,10 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func btnPWVisible(_ sender: Any){
+        //when button is clicked, reverse attribute
         (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
         
+        //check the current attribute, if is selected, show the paaword. Otherwise, hide the password
         if (sender as! UIButton).isSelected {
             self.pwTextField.isSecureTextEntry = false
             self.pw2TextField.isSecureTextEntry = false
@@ -77,8 +81,9 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    
+    //use the regular expression to check the password
     func isPasswordSecure(_ password: String) -> Bool{
+        //pssword shold use numbers, characters and the length is equals or longer than 8
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[0-9])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
@@ -133,16 +138,20 @@ class SignUpViewController: UIViewController {
     }
     
     func validateField() -> String? {
+        
+        //the text field cannot be blank
         if usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || pwTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || pw2TextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Fill all the fields"
         }
         
+        //two password user entered should be the same
         if pwTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != pw2TextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
             return "Comfirm the password"
         }
         
         let password = pwTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        //check the password fill the requirement of regular expression
         if !isPasswordSecure(password) {
             return "Password must have characters and digits, length should be longer than 8"
         }
@@ -150,6 +159,7 @@ class SignUpViewController: UIViewController {
         return nil
     }
     
+    //if there is an error, make the error label visible and show the error
     func showErrorMessage(_ message: String){
         errorLabel.text = message
         errorLabel.alpha = 1
