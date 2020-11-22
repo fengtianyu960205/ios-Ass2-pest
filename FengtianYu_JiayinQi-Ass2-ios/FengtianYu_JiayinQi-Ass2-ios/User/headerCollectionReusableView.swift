@@ -11,6 +11,7 @@ import UIKit
 class headerCollectionReusableView: UICollectionReusableView {
     static let identifier = "headerCollectionReusableView"
     
+    //set the label in the header
     private let label : UILabel = {
         let label = UILabel()
         label.text = "text"
@@ -19,7 +20,7 @@ class headerCollectionReusableView: UICollectionReusableView {
         label.font = UIFont(name: "MontserratAlternates-Medium", size: 22)!
         return label
     }()
-    
+    // add the label to the header view
     public func configure(_ header : String) {
         backgroundColor = .clear
         label.text = header

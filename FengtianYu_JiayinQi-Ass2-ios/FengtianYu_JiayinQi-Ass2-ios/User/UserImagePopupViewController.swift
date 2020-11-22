@@ -18,16 +18,19 @@ class UserImagePopupViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //hide the navigation bar
         self.navigationController?.navigationBar.isHidden = true
         setupView()
     }
     
+    //hide the navigation bar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
     
     func setupView() {
+        //set up the size and constraint for the image view and button
         let initsize = view.frame.size.width - 10
         userImageView.frame = CGRect(x: 5, y: (view.frame.size.height - initsize) / 2, width: initsize, height: initsize)
         userImageView.image = image
@@ -49,6 +52,7 @@ class UserImagePopupViewController: UIViewController {
     }
     */
 
+    //go back to previous view
     @IBAction func goback(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
