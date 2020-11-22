@@ -14,8 +14,6 @@ import CoreData
 class SinglePestLocationMapViewController: UIViewController,MKMapViewDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
-   
-    
     var locationList = [LocationAnnotation]()
     
     override func viewDidLoad() {
@@ -23,6 +21,7 @@ class SinglePestLocationMapViewController: UIViewController,MKMapViewDelegate{
         
         mapView.delegate = self
         for pestLocation in locationList{
+            // add annotation in the map
             self.mapView.addAnnotation(pestLocation)
             showCircle(coordinate: pestLocation.coordinate,
             radius: 10000)
@@ -31,7 +30,7 @@ class SinglePestLocationMapViewController: UIViewController,MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView,
                     rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-         
+         // add overlay in the map
             let circleOverlay = overlay as? MKCircle
         let circleRenderer = MKCircleRenderer(overlay: circleOverlay as! MKOverlay)
                circleRenderer.fillColor = .red

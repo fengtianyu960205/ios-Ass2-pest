@@ -38,8 +38,7 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         
-        //commentedPest = databaseController?.getPestByID(pestId!)
-        //commentedPest = databaseController?.getPestByID(pestId!)
+        // get the pest
         pestId = commentedPest?.id
         comments = commentedPest?.comments as! [String]
         pestName.text = commentedPest?.name
@@ -89,6 +88,7 @@ class CommentViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func onPestChange(change: DatabaseChange, pests: [Pest]) {
        
+        // when pest comment change , refresh the page
         commentedPest = databaseController?.getPestByID(pestId!)
         comments = commentedPest?.comments as! [String]
         tableView.reloadData()

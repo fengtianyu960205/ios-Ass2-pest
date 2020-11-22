@@ -60,20 +60,20 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             }
             
         }else{
+            // if location status is always, show the button
          getLocationBtn.isHidden = false
         }
         if authorisationStatus == .authorizedWhenInUse {
+            // if location status is when in use, show the button
             getLocationBtn.isHidden = false
         }
         
-        //getLocationBtn.isHidden = false
+        
         
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             //
         }
         center.delegate = self
-        
-        
         
         //add the location to the annotation list
         addlocationtoMap()
@@ -82,9 +82,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         locationManager.delegate = self
         mapView.delegate = self
         
-        
-               
-               
         // Do any additional setup after loading the view.
         
         Utility.StyleTextField(DestinationText)
@@ -93,8 +90,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     }
     
     func addlocationtoMap(){
+        
         var distanseslist : [Double] = []
         
+        // append all pests location to location list
         for specificPest in allPests{
             var index = 0
             let size = integer_t((specificPest.location.count)) as integer_t
@@ -110,6 +109,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                index += 1
             }
         }
+        
+        // add all locations on the map
         for pestLocation in locationList{
             self.mapView.addAnnotation(pestLocation)
             showCircle(coordinate: pestLocation.coordinate,
@@ -163,9 +164,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // get user current address
          currentLocation = locationManager.location?.coordinate
         userLocation = locationManager.location
-        
         var distanceslist : [Double] = []
         //for monitored in locationManager.monitoredRegions{
         //    locationManager.stopMonitoring(for: monitored)
@@ -202,6 +203,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
     {
         if status == .authorizedWhenInUse || status == .authorizedAlways {
+            // if location statues is wheninuse or always ,show the button
             getLocationBtn.isHidden = false
             
         }
@@ -211,6 +213,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         getAddress()
     }
     
+    // This function is to  get the start address coordinate and destiantion address coordinate
     func getAddress(){
         let geoCoder = CLGeocoder()
         
@@ -232,17 +235,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             }
             
         }
-        //geoCoder.geocodeAddressString(startLocationText.text!) { (placemarks, error) in
-       //     guard let placemarks = placemarks,let startlocation = placemarks.first?.location
-       //         else{
-       //             self.displayMessage(title: "Error" , message: "start location not found")
-       //             return
-        //    }
-       //     self.startLocationCord = startlocation.coordinate
-       // }
-        //mapthis(destinationCord:self.destinationCord! , startLocationCord: //self.startLocationCord!)
+       
     }
     
+    // This function is to add a route from start location to destination on the map
     func mapthis(destinationCord : CLLocationCoordinate2D,startLocationCord :CLLocationCoordinate2D ){
         let sourceCordinate = startLocationCord
         let sourcePlacemark = MKPlacemark(coordinate: sourceCordinate)
@@ -275,10 +271,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
     }
     
+    
     func mapView(_ mapView: MKMapView,
                     rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
            
-      
+      // if it is a pest location ,show a circle
         if let circleOverlay = overlay as? MKCircle {
             let circleRenderer = MKCircleRenderer(overlay: circleOverlay)
             circleRenderer.fillColor = .red
@@ -286,6 +283,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
 
             return circleRenderer
         }
+        // if it is a route , show polyline
         let render = MKPolylineRenderer(overlay: overlay as! MKPolyline)
         render.strokeColor = .blue
         return render
@@ -326,11 +324,13 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     }
     
     func focusOn(annotation: MKAnnotation) {
+        // if user click one annotation, it can zoom the map
         mapView.selectAnnotation(annotation, animated: true)
      let zoomRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 20000,longitudinalMeters: 20000)
      mapView.setRegion(mapView.regionThatFits(zoomRegion), animated: true)
      }
     
+    // this function is to add a button on the annotation
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "pin"
         var view : MKPinAnnotationView
@@ -343,9 +343,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                 let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
                 annotationView.isEnabled = true
                 annotationView.canShowCallout = true
-                
-                
-
                 let btn = UIButton(type: .detailDisclosure)
                 annotationView.rightCalloutAccessoryView = btn
                 return annotationView
@@ -366,6 +363,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         autoAddress()
     }
     
+    // this function is to get user current address to show it in the blank
     func autoAddress(){
         if let currentLocation = currentLocation {
             

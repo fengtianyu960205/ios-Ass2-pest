@@ -31,7 +31,7 @@ class PestAlbumViewController: UIViewController, UIScrollViewDelegate {
         for index in 0..<(pest?.images.count)! {
             frame.origin.x = scrollView.frame.size.width * CGFloat(index)
             frame.size = scrollView.frame.size
-            
+            // get the image from firebase
             let imageView = UIImageView(frame : frame)
             let urlkey = pest?.images[index]
             let url = URL(string : urlkey!)
