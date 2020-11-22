@@ -127,6 +127,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         }
         
         distanseslist.sort()
+        // add geofence the limit is 18
         let limit = distanseslist[18]
         
         for pestLocation in locationList{
@@ -182,6 +183,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             
         }
         distanceslist.sort()
+        // add geofence the limit is 18
         let limit = distanceslist[18]
         
         for pestLocation in locationList{
