@@ -34,6 +34,7 @@ class WriteCommentViewController: UIViewController {
     
     @IBAction func saveComment(_ sender: Any) {
         let pestId = (commentedPest?.id)!
+        // write a comment and add the comment to the firebase
         databaseController!.addPestComment(id: pestId, comment: writeComment.text!)
         navigationController?.popViewController(animated: true)
     }

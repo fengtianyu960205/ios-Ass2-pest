@@ -7,7 +7,7 @@
 //
 import SDWebImage
 import UIKit
-
+// this class is for search a pest according its name
 class AllPestsTableViewController: UITableViewController ,DatabaseListener, UISearchBarDelegate{
     
     var allPest: [Pest] = []
@@ -26,8 +26,6 @@ class AllPestsTableViewController: UITableViewController ,DatabaseListener, UISe
         databaseController = appDelegate.databaseController
         
         filteredPests = allPest
-        
-       
         tableView.tableFooterView = UIView()
     }
 

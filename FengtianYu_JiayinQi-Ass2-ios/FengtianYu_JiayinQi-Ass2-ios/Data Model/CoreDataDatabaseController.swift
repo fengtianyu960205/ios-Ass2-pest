@@ -13,7 +13,6 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
     
     var listeners = MulticastDelegate<DatabaseListener>()
     var persistentContainer: NSPersistentContainer
-    //var PestsFetchedResultsController: NSFetchedResultsController<PestCD>?
     var UsersFetchedResultsController: NSFetchedResultsController<UserCD>?
     var userID : String?
     
@@ -49,7 +48,7 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
         }
        
     }
-    
+    // add a pest to coredata
     func addPest(name: String, pestID: String , category : String,pestImage : Data) -> PestCD {
         let pest = NSEntityDescription.insertNewObject(forEntityName: "PestCD",
         into: persistentContainer.viewContext) as! PestCD
@@ -62,6 +61,7 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
         return pest
     }
     
+    // add a user to coredata
     func addUser(userID: String, age: Int32, gender: String, address: String, nickName: String,userImage : Data) -> UserCD {
         let user = NSEntityDescription.insertNewObject(forEntityName: "UserCD",
         into: persistentContainer.viewContext) as! UserCD
@@ -111,7 +111,7 @@ class CoreDataDatabaseController: NSObject ,coreDataDatabaseProtocol,NSFetchedRe
         }
        
     }
-    
+    // get a specific user
     func fetchSpecificUser() -> [UserCD] {
         
         if UsersFetchedResultsController == nil {

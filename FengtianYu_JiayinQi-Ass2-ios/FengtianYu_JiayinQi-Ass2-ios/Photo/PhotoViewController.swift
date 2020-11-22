@@ -43,11 +43,6 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
         takePhotoBtn.contentVerticalAlignment = .fill
         takePhotoBtn.contentHorizontalAlignment = .fill
         takePhotoBtn.imageEdgeInsets = UIEdgeInsets(top: 10, left: 35, bottom: 25, right: 10)
-               
-       // pestImage?.image = UIImage(named: "takepicture")
-        
-     //.resizable()
-     //.aspectRatio(contentMode: .fit)
         
         takePhoto.contentVerticalAlignment = .fill
         takePhoto.contentHorizontalAlignment = .fill
@@ -72,11 +67,13 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
             }
             
         }else{
+            // if location status is wheninuse, then show the btn
             currentLocationBtn.isHidden = false
              locationBtnUI()
         }
         
         if authorisationStatus == .authorizedAlways{
+            // if location status is always, then show the btn
             currentLocationBtn.isHidden = false
              locationBtnUI()
         }
@@ -122,11 +119,10 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
         }
      }
     
+    // this function will show user current address in the blank
     func autoAddress(){
         if let currentLocation = currentLocation {
-            
-       // street.text = "\(currentLocation.latitude)"
-        //city.text = "\(currentLocation.longitude)"
+
             
             let geocoder = CLGeocoder()
             
@@ -191,6 +187,7 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
         
     }
     
+    // this function is to convert location to geopoint and upload the photo to firebase
     func addressToGeoPoint(){
         
         var pestID : String?
@@ -249,6 +246,7 @@ class PhotoViewController: UIViewController ,CLLocationManagerDelegate,UIImagePi
         }
     }
     
+    // this function is to show to take a photo
     @IBAction func addPhotoAct(_ sender: Any) {
         
        // self.displayMessage(title: "add photo", message: "Can not find this location")

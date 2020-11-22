@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 
+// this class is to show about and Q & A
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logOutButton: UIButton!

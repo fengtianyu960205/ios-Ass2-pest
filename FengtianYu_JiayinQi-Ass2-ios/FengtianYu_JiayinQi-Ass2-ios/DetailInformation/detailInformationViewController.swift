@@ -63,6 +63,7 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         
         userPestList = (user!.pestlist?.allObjects as? [PestCD])!
       
+        // if the pest is in user interesting pest list, make it fill
         for pest in userPestList{
             if showedPest!.id == pest.pestID {
                 flag = false
@@ -189,12 +190,14 @@ class detailInformationViewController: UIViewController , UITableViewDataSource,
         
             (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
             
+            // if the button is selected, add it to coredata, and make the button fill
             if (sender as! UIButton).isSelected {
                 pestcd = coreDataDatabaseController?.addPest(name: showedPest!.name, pestID: showedPest!.id! , category : showedPest!.category,pestImage : self.pestImage.image!.pngData()!)
                 coreDataDatabaseController?.addPestToUser(pestCD: pestcd!, userCD: user!)
                 pestListbtn.setImage(UIImage(systemName: "star.fill"), for: .normal)
                    
             }else{
+                // if the button is unselected, remove it from coredata, and make the button fill
                 coreDataDatabaseController?.removePestFromUser(pestCD: pestcd!, userCD: user!)
                 pestListbtn.setImage(UIImage(systemName: "star"), for: .normal)
                   

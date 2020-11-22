@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// this class is embeded with three viewcontroller, user can scroll the screen to different viewcontroller
 class SearchViewController: UIViewController, UIScrollViewDelegate {
     
     

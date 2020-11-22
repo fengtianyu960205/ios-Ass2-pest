@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import SDWebImage
 
+// this class is for search a pest according to the city
 class CityPestTableViewController: UITableViewController ,DatabaseListener, UISearchBarDelegate{
     
     
