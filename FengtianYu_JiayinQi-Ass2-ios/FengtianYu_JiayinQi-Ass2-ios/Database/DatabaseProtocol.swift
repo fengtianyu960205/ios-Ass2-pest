@@ -24,22 +24,17 @@ protocol DatabaseListener: AnyObject {
     var listenerType: ListenerType {get set}
     func onPestChange(change: DatabaseChange, pests: [Pest])
     func onUserCDChange(change: DatabaseChange, user: [UserCD])
-    //func onHeroListChange(change: DatabaseChange, heroes: [SuperHero])
+  
 }
 protocol DatabaseProtocol: AnyObject {
-    //var defaultTeam: Team {get}
+   
 
     func cleanup()
     func addPest(name: String, category: String) -> Pest
-    //func addTeam(teamName: String) -> Team
-    //func addHeroToTeam(hero: SuperHero, team: Team) -> Bool
     func deletePest(pest: Pest)
     func addPestComment(id: String, comment: String)
     func addPestLocation(id: String, location:String) 
-    //func getSpecificPest(id: String) -> Pest
     func getPestByID(_ id: String) -> Pest?
-    //func deleteTeam(team: Team)
-    //func removeHeroFromTeam(hero: SuperHero, team: Team)
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)
     func getPests() ->  [Pest]

@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 
+// this class is to show a webview with html code
 class QuestionViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
