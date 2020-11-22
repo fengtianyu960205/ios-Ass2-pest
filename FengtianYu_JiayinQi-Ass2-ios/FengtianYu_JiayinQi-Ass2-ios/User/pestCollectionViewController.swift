@@ -28,19 +28,21 @@ class pestCollectionViewController: UIViewController, DatabaseListener {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //set up core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         coreDataDatabaseController = appDelegate.coreDataDatabaseController
         
         databaseController = appDelegate.databaseController
        
         pestlist = (user!.pestlist?.allObjects as? [PestCD])!
-        
+        //classify the pests in the lists
         classify()
         
-        
+        //create the collection view
         createCollectionView()
     }
     
+    //add the listener
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
            coreDataDatabaseController?.addListener(listener: self)
@@ -48,7 +50,7 @@ class pestCollectionViewController: UIViewController, DatabaseListener {
        }
        
       
-       
+    //remove the listener
     override func viewWillDisappear(_ animated: Bool) {
            super.viewWillDisappear(animated)
            coreDataDatabaseController?.removeListener(listener: self)
@@ -124,6 +126,7 @@ class pestCollectionViewController: UIViewController, DatabaseListener {
 }
 
 extension pestCollectionViewController : UICollectionViewDelegate{
+    //if the image is clicked, go to detail view
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             let pest = pests[indexPath.row]
@@ -142,10 +145,12 @@ extension pestCollectionViewController : UICollectionViewDelegate{
 }
 
 extension pestCollectionViewController : UICollectionViewDataSource{
+    //set the section
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
     
+    //set the items in the section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             return pests.count
@@ -156,7 +161,7 @@ extension pestCollectionViewController : UICollectionViewDataSource{
         }
     }
     
-    
+    //set the cell for each section
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pestCollectionViewCell.identifier, for: indexPath) as! pestCollectionViewCell
         
@@ -170,7 +175,7 @@ extension pestCollectionViewController : UICollectionViewDataSource{
         
         return cell
     }
-    
+    //add header for each section
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCollectionReusableView.identifier, for: indexPath) as! headerCollectionReusableView
         
@@ -186,7 +191,7 @@ extension pestCollectionViewController : UICollectionViewDataSource{
         
         return header
     }
-    
+    //set the size for header
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.size.width, height: 30)
     }
