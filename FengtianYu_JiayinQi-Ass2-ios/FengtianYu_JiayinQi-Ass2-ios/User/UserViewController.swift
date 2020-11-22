@@ -29,22 +29,21 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //set core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         coreDataDatabaseController = appDelegate.coreDataDatabaseController
-        
-       tableView.delegate = self
-       tableView.dataSource = self
-       tableView.tableFooterView = UIView()
-        
-    
-        
+        //set the table view
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        //set the view
         setupView()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //add the listener,show the navigationbar
         coreDataDatabaseController?.addListener(listener: self)
         self.navigationController?.navigationBar.isHidden = false
         setValueforUIkits()
@@ -54,15 +53,16 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
        
     override func viewWillDisappear(_ animated: Bool) {
            super.viewWillDisappear(animated)
+        //remove the core data listener
            coreDataDatabaseController?.removeListener(listener: self)
        }
     
     func onUserCDChange(change: DatabaseChange, user: [UserCD]) {
-        
+        //set the user info
         self.user = user.first
         
     }
-    
+    //set the value of the user
     func setValueforUIkits(){
         nameTextField.text = user!.nickName
         ageTextField.text = "\(user!.age)"
@@ -110,14 +110,14 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         editable = false
     }
     
+    //the button on navigationbar clicked go to the setting view
     @IBAction func settingButtonPressed(_ sender: Any){
-           
-           
-          
-            self.performSegue(withIdentifier: "userToSetting", sender: nil)
-           
-       }
 
+        self.performSegue(withIdentifier: "userToSetting", sender: nil)
+           
+   }
+
+    //set the table view
     func numberOfSections(in tableview: UITableView) -> Int {
         return 1
     }
@@ -176,6 +176,8 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
             destination.hidesBottomBarWhenPushed = true
         }
     }
+    
+    //if user is not editing the profile, show the pop up, otherwise show the photo library
     @IBAction func changeUserImage(_ sender: Any) {
         if editable == false {
             performSegue(withIdentifier: "userToImagePopup", sender: self)
@@ -189,6 +191,8 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    
+    //if the editing button is clicked, change the view or save the data.
     @IBAction func editProfile(_ sender: Any) {
         editable = !editable
         if editable == false{
@@ -238,12 +242,15 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    //change the text field
     func inputValidation() -> Bool{
+        
+        //name,age,location cannot be blank
         if nameTextField.text == "" || ageTextField.text == "" || locationTextField.text == ""{
             displayMessage(title: "Error", message: "fill all the fields")
             return false
         }
-        
+        //age should be 0-150
         let age = Int(ageTextField.text!)
         if age != nil{
             if age! < 0 || age! > 150{
@@ -258,6 +265,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return true
     }
     
+    //display alert
     func displayMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message,
             preferredStyle: UIAlertController.Style.alert)
@@ -270,6 +278,7 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 
 extension UserViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    //set up the uiimagepicker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             userImage.image = image
